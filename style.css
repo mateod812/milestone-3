@@ -1,0 +1,30 @@
+p {
+    color: gray;
+    text-align: center;
+}
+
+#first {
+    background-color: blue;
+    width: 50%;
+    margin: auto;
+}
+
+#second {
+    background-color: green;
+    height:100%;
+    width:50%;
+    margin: auto;
+}
+
+h2 {
+    font-size:50px;
+    text-align: center;
+}
+
+h1 {
+    text-align: left;
+}
+
+body {
+    background-color: aliceblue;
+}
