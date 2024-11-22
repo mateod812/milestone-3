@@ -3,36 +3,46 @@ p {
     text-align: center;
 }
 
-@keyframes pulse {
-    from {background-color: red;}
-    to {background-color: blue;}
-}
-
-#first {
-    background-color: blue;
-    width: 50%;
+/* sets up our progress bar for indicating progress of car rental selection process */
+#progress_bar {
+    width:60%;
+    height: 50px;
+    padding: 18px;
     margin: auto;
-    animation-name: pulse;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+
+    background-image: url("road.png");
+
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
 }
 
-#second {
-    background-color: green;
-    height:100%;
-    width:50%;
+/* sets up our middle scrolling area for searching for vehicles/insurance/add-ons */
+#middle_scroll {
+    width: 60%;
+    height: 720px;
+    padding: 20px; 
     margin: auto;
+    text-align: center; /* makes it so items inside are centered*/
+    overflow: auto;
+    scrollbar-width: none;
+
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
 }
 
-h2 {
-    font-size:50px;
-    text-align: center;
-}
+#vehicle_item {
+    width: 525px;
+    height: 525px;
+    display: inline-block;
+    margin: 15px;
 
-h1 {
-    text-align: left;
-}
-
-body {
-    background-color: aliceblue;
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
 }
