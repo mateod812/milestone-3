@@ -3,6 +3,30 @@ p {
     text-align: center;
 }
 
+#header {
+    text-align: center;
+}
+
+#logo {
+    color: aliceblue;
+    margin: auto;
+} 
+
+#logo_border {
+    float: left;
+    width: 10%;
+    height: 50px;
+    padding: 18px;
+    margin-left: 50px;
+    text-align: center;
+    background-color: darkred;
+
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
 /* sets up our progress bar for indicating progress of car rental selection process */
 #progress_bar {
     width:60%;
@@ -25,7 +49,6 @@ p {
     height: 720px;
     padding: 20px; 
     margin: auto;
-    text-align: center; /* makes it so items inside are centered*/
     overflow: auto;
     scrollbar-width: none;
 
@@ -40,9 +63,53 @@ p {
     height: 525px;
     display: inline-block;
     margin: 15px;
+    position: relative;
 
     border-radius: 25px;
     border-width: 2px;
     border-style: solid;
     border-color: black;
+}
+
+#vehicle_img {
+    display: block;
+    max-width:300px;
+    max-height:300px;
+    width: auto;
+    height: auto;
+    margin: 25px;
+
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+.book_button {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+.book_button:hover {
+    background-color: aquamarine;
+}
+
+#vehicle_name {
+    position: absolute;
 }
