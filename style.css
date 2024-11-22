@@ -3,10 +3,18 @@ p {
     text-align: center;
 }
 
+@keyframes pulse {
+    from {background-color: red;}
+    to {background-color: blue;}
+}
+
 #first {
     background-color: blue;
     width: 50%;
     margin: auto;
+    animation-name: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
 }
 
 #second {
