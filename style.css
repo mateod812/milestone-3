@@ -35,7 +35,7 @@ p {
     margin: auto;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 
-    background-image: url("road.png");
+    background-image: url("companyImages/road.png");
     position: relative;
 
     border-radius: 25px;
