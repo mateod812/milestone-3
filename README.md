@@ -12,3 +12,7 @@ This favicon is just a temporary placeholder, can change later and this site fla
 Credit for favicon: <a href="https://www.flaticon.com/free-icons/car" title="car icons">Car icons created by BZZRINCANTATION - Flaticon</a>
 
 Credit for road.png: <a href="https://www.freepik.com/free-vector/tracks-winding-road-curve-pathway-set_13732403.htm#fromView=search&page=1&position=4&uuid=2c70f043-3106-4660-ac2d-2a9d7f002e8b&new_detail=true" title="road image">Road image created by starline - Freepik</a>
+
+Credit for flag: <a href="https://www.flaticon.com/free-icons/f1" title="f1 icons">F1 icons created by Boris farias - Flaticon</a>
+
+Credit for race car: <a href="https://www.flaticon.com/free-icons/formula-1" title="formula 1 icons">Formula 1 icons created by Freepik - Flaticon</a>

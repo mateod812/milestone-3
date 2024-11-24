@@ -13,8 +13,14 @@
                 <h1 id="logo">Car Rental</h1>
             </div>
             <div id="progress_bar">
-
+                <img id="progress_car"; src = "progress_car.png";>
+                <img id="progress_flag"; src= "flag.png";>
             </div>
+            <ul>
+                <li><a class = "active" href="#vehicles" onclick="moveToVehicles()">Vehicle Selection</a></li>
+                <li><a class = "active" href="#insurances" onclick="moveToInsurance()">Insurance Packages</a></li>
+                <li><a class = "active" href="#add-ons" onclick="moveToAddons()">Add-Ons</a></li>
+            </ul>
         </div>
         <br/>
         <div id="middle_scroll">
@@ -25,15 +31,21 @@
                 <h3 id="vehicle_name">2006 Acura RSX</h3>
              </div>
              <div id="vehicle_item">
-                <img id="vehicle_img"; src = "car1.png";>
+                <img id="vehicle_img"; src = "civic.jpg";>
+                <button class="book_button">Book Now</button>
+                <h3 id="vehicle_name">2024 Honda Civic</h3>
              </div>
              <div id="vehicle_item">
-                <img id="vehicle_img"; src = "car1.png";>
+                <img id="vehicle_img"; src = "gr86.png";>
+                <button class="book_button">Book Now</button>
+                <h3 id="vehicle_name">2022 Toyota GR86</h3>
              </div>
              <div id="vehicle_item">
-                <img id="vehicle_img"; src = "car1.png";>
+                <img id="vehicle_img"; src = "mazda.jpg";>
+                <button class="book_button">Book Now</button>
+                <h3 id="vehicle_name">2007 Mazda 3</h3>
              </div>
         </div>
-
+        <script src="scripts.js" type="text/javascript"></script>
     </body>
 </html>

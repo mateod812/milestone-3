@@ -36,6 +36,7 @@ p {
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 
     background-image: url("road.png");
+    position: relative;
 
     border-radius: 25px;
     border-width: 2px;
@@ -43,14 +44,44 @@ p {
     border-color: black;
 }
 
+#progress_car {
+    max-width:75px;
+    max-height:75px;
+    position: absolute;
+    left: 175px;
+    transition-duration: 3s;
+}
+
+.move_insurance {
+    transform: translateX(375px);
+}
+
+.move_vehicles {
+    transform: translateX(0px);
+}
+
+.move_addons {
+    transform: translateX(750px);
+}
+
+#progress_flag {
+    max-width:75px;
+    max-height:75px;
+    position: absolute;
+
+    right: -60px;
+    bottom: 25px;
+}
+
 /* sets up our middle scrolling area for searching for vehicles/insurance/add-ons */
 #middle_scroll {
     width: 60%;
-    height: 720px;
+    height: 650px;
     padding: 20px; 
     margin: auto;
     overflow: auto;
     scrollbar-width: none;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 
     border-radius: 25px;
     border-width: 2px;
@@ -64,6 +95,8 @@ p {
     display: inline-block;
     margin: 15px;
     position: relative;
+    padding-left: 10px;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 
     border-radius: 25px;
     border-width: 2px;
@@ -78,6 +111,7 @@ p {
     width: auto;
     height: auto;
     margin: 25px;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 
     border-radius: 25px;
     border-width: 2px;
@@ -94,6 +128,7 @@ p {
     text-decoration: none;
     display: inline-block;
     font-size: 40px;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 
     position: absolute;
     bottom: 10px;
@@ -112,4 +147,39 @@ p {
 
 #vehicle_name {
     position: absolute;
+    padding-left: 110px;
+    margin-top: -20px;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 60%;
+    margin: auto;
+    margin-top: 15px;
+    overflow: hidden;
+    background-color: darkred;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+  }
+  
+  li {
+    float: left;
+    width: 33.3%;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: red;
+  }
