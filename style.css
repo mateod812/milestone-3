@@ -1,6 +1,5 @@
-p {
-    color: gray;
-    text-align: center;
+#main {
+    background-color: #DAD4B5;
 }
 
 #header {
@@ -8,23 +7,23 @@ p {
 }
 
 #logo {
-    color: aliceblue;
+    color: #800000;
     margin: auto;
 } 
 
 #logo_border {
     float: left;
     width: 10%;
-    height: 50px;
+    height: 40px;
     padding: 18px;
     margin-left: 50px;
     text-align: center;
-    background-color: darkred;
+    background-color: #DAD4B5;
 
-    border-radius: 25px;
+    border-radius: 15px;
     border-width: 2px;
     border-style: solid;
-    border-color: black;
+    border-color: #800000;
 }
 
 /* sets up our progress bar for indicating progress of car rental selection process */
@@ -41,7 +40,7 @@ p {
     border-radius: 25px;
     border-width: 2px;
     border-style: solid;
-    border-color: black;
+    border-color: #800000;
 }
 
 #progress_car {
@@ -49,7 +48,7 @@ p {
     max-height:75px;
     position: absolute;
     left: 175px;
-    transition-duration: 3s;
+    transition-duration: 1s;
 }
 
 .move_insurance {
@@ -86,7 +85,7 @@ p {
     border-radius: 25px;
     border-width: 2px;
     border-style: solid;
-    border-color: black;
+    border-color: #800000;
 }
 
 #vehicle_item {
@@ -101,7 +100,7 @@ p {
     border-radius: 25px;
     border-width: 2px;
     border-style: solid;
-    border-color: black;
+    border-color: #800000;
 }
 
 #vehicle_img {
@@ -116,13 +115,13 @@ p {
     border-radius: 25px;
     border-width: 2px;
     border-style: solid;
-    border-color: black;
+    border-color: #800000;
 }
 
 .book_button {
-    background-color: #04AA6D; /* Green */
+    background-color: #DAD4B5;
     border: none;
-    color: white;
+    color: #800000;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -138,11 +137,11 @@ p {
     border-radius: 25px;
     border-width: 2px;
     border-style: solid;
-    border-color: black;
+    border-color: #800000;
 }
 
 .book_button:hover {
-    background-color: aquamarine;
+    background-color: #F2E8C6;
 }
 
 #vehicle_name {
@@ -158,28 +157,28 @@ ul {
     margin: auto;
     margin-top: 15px;
     overflow: hidden;
-    background-color: darkred;
+    background-color: #DAD4B5;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 
     border-radius: 25px;
     border-width: 2px;
     border-style: solid;
-    border-color: black;
+    border-color: #800000;
   }
   
   li {
     float: left;
-    width: 33.3%;
+    width: 33.333%;
   }
   
   li a {
     display: block;
-    color: white;
+    color: #800000;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
   
   li a:hover {
-    background-color: red;
+    background-color: #F2E8C6;
   }
