@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>Car Rental Site</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="icon" type="image/x-icon" href="companyImages/favicon.ico">
         <link rel="stylesheet" href="style.css">
     </head>
 
@@ -13,8 +13,8 @@
                 <h1 id="logo">Car Rental</h1>
             </div>
             <div id="progress_bar">
-                <img id="progress_car"; src = "progress_car.png";>
-                <img id="progress_flag"; src= "flag.png";>
+                <img id="progress_car"; src = "companyImages/progress_car.png";>
+                <img id="progress_flag"; src= "companyImages/flag.png";>
             </div>
             <ul>
                 <li><a class = "active" href="#vehicles" onclick="moveToVehicles()">Vehicle Selection</a></li>
@@ -25,27 +25,11 @@
         <br/>
         <div id="middle_scroll">
             <!-- cars go here, javascript to flip between cars/insurance/add-ons -->
-             <div id="vehicle_item">
-                <img id="vehicle_img"; src = "car1.png";>
-                <button class="book_button">Book Now</button>
-                <h3 id="vehicle_name">2006 Acura RSX</h3>
-             </div>
-             <div id="vehicle_item">
-                <img id="vehicle_img"; src = "civic.jpg";>
-                <button class="book_button">Book Now</button>
-                <h3 id="vehicle_name">2024 Honda Civic</h3>
-             </div>
-             <div id="vehicle_item">
-                <img id="vehicle_img"; src = "gr86.png";>
-                <button class="book_button">Book Now</button>
-                <h3 id="vehicle_name">2022 Toyota GR86</h3>
-             </div>
-             <div id="vehicle_item">
-                <img id="vehicle_img"; src = "mazda.jpg";>
-                <button class="book_button">Book Now</button>
-                <h3 id="vehicle_name">2007 Mazda 3</h3>
+            <div id = "vehicle_container"></div>
+
              </div>
         </div>
-        <script src="scripts.js" type="text/javascript"></script>
+        <script src="scripts/ProgressBar.js" type="text/javascript"></script>
+        <script src="scripts/Vehicle.js" ></script>
     </body>
 </html>
