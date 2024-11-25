@@ -16,3 +16,9 @@ Credit for road.png: <a href="https://www.freepik.com/free-vector/tracks-winding
 Credit for flag: <a href="https://www.flaticon.com/free-icons/f1" title="f1 icons">F1 icons created by Boris farias - Flaticon</a>
 
 Credit for race car: <a href="https://www.flaticon.com/free-icons/formula-1" title="formula 1 icons">Formula 1 icons created by Freepik - Flaticon</a>
+
+Credit for seats icon: <a href="https://www.flaticon.com/free-icons/chair" title="chair icons">Chair icons created by DinosoftLabs - Flaticon</a>
+
+Credit for luggage icon: <a href="https://www.flaticon.com/free-icons/travel" title="travel icons">Travel icons created by Freepik - Flaticon</a>
+
+Credit for money icon: <a href="https://www.flaticon.com/free-icons/coin" title="coin icons">Coin icons created by Gregor Cresnar - Flaticon</a>

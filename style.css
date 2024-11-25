@@ -2,6 +2,10 @@
     background-color: #DAD4B5;
 }
 
+body {
+    font: sans-serif;
+}
+
 #header {
     text-align: center;
 }
@@ -14,7 +18,7 @@
 #logo_border {
     float: left;
     width: 10%;
-    height: 40px;
+    height: 50%;
     padding: 18px;
     margin-left: 50px;
     text-align: center;
@@ -28,7 +32,7 @@
 
 /* sets up our progress bar for indicating progress of car rental selection process */
 #progress_bar {
-    width:60%;
+    width: 60%;
     height: 50px;
     padding: 18px;
     margin: auto;
@@ -52,15 +56,15 @@
 }
 
 .move_insurance {
-    transform: translateX(375px);
+    transform: translateX(19vw);
 }
 
 .move_vehicles {
-    transform: translateX(0px);
+    transform: translateX(0vw);
 }
 
 .move_addons {
-    transform: translateX(750px);
+    transform: translateX(39vw);
 }
 
 #progress_flag {
@@ -73,7 +77,40 @@
 }
 
 /* sets up our middle scrolling area for searching for vehicles/insurance/add-ons */
-#middle_scroll {
+#vehicle_scroll {
+    display: inline-block;
+    width: 60%;
+    height: 650px;
+    padding: 20px; 
+    margin: auto;
+    overflow: auto;
+    scrollbar-width: none;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #800000;
+}
+
+#insurance_scroll {
+    display: none;
+    width: 60%;
+    height: 650px;
+    padding: 20px; 
+    margin: auto;
+    overflow: auto;
+    scrollbar-width: none;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #800000;
+}
+
+#addons_scroll {
+    display: none;
     width: 60%;
     height: 650px;
     padding: 20px; 
@@ -150,6 +187,73 @@
     margin-top: -20px;
 }
 
+#seats_img {
+    display: block;
+    max-width:50px;
+    max-height:50px;
+    margin-left: 375px;
+    margin-top: -250px;
+}
+
+#num_seats {
+    display: block;
+    max-width:50px;
+    max-height:50px;
+    margin-left: 450px;
+    margin-top: -45px;
+    font-size: 50px;
+}
+
+#luggage_img {
+    display: block;
+    max-width:50px;
+    max-height:50px;
+    margin-left: 375px;
+}
+
+#num_luggage {
+    display: block;
+    max-width:50px;
+    max-height:50px;
+    margin-left: 450px;
+    margin-top: -45px;
+    font-size: 50px;
+}
+
+#price_cost {
+    display: block;
+    max-width:50px;
+    max-height:50px;
+    margin-left: 375px;
+    margin-top: 10px;
+    font-size: 40px;
+}
+
+#additional_features {
+    margin-left: 35px;
+    margin-top: 35px;
+}
+
+#bluetooth {
+    margin-left: 35px;
+    margin-top: -20px;
+}
+
+#ac {
+    margin-left: 35px;
+    margin-top: -15px;
+}
+
+#cruise {
+    margin-left: 35px;
+    margin-top: -15px;
+}
+
+#carplay {
+    margin-left: 35px;
+    margin-top: -15px;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -175,6 +279,7 @@ ul {
     display: block;
     color: #800000;
     text-align: center;
+    font-size: 110%;
     padding: 14px 16px;
     text-decoration: none;
   }
@@ -182,3 +287,44 @@ ul {
   li a:hover {
     background-color: #F2E8C6;
   }
+
+#filter_div {
+    display: inline-block;
+    width: 15%;
+    height: 650px;
+    margin: left;
+    padding: 20px;
+    margin-right: 20px;
+
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #800000;
+}
+
+#summary_div {
+    display: inline-block;
+    width: 15%;
+    height: 650px;
+    margin: right;
+    padding: 20px;
+    margin-left: 20px;
+    position: relative;
+
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #800000;
+}
+
+#summary_vehicle {
+    position: absolute;
+    left: 15px;
+    bottom: 300px;
+}
+
+#summary_vehicle_current {
+    position: absolute;
+    left: 20px;
+    bottom: 280px;
+}

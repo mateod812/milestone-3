@@ -10,6 +10,7 @@ const VehicleTypes =  {
 const NUM_VEHICLE_TYPES = Object.keys(VehicleTypes).length;
 
 class Vehicle {
+    static car_id = 0; //every car needs an unique ID to know which button was pressed
     constructor(array) {
         this.year = array[0];
         this.make = array[1];
@@ -23,8 +24,29 @@ class Vehicle {
         } else {
             this.bluetooth = false;
         }
+
+        if ( array[7] == "yes") {
+            this.ac = true;
+        } else {
+            this.ac = false;
+        }
+
+        if ( array[8] == "yes") {
+            this.cruise = true;
+        } else {
+            this.cruise = false;
+        }
+
+        if ( array[9] == "yes") {
+            this.carplay = true;
+        } else {
+            this.carplay = false;
+        }
+
         this.isRented = false;
-        this.image = array[7];
+        this.image = array[10];
+        this.ID = Vehicle.car_id;
+        Vehicle.car_id++;
     }
 
     getCarInfo() {
@@ -46,7 +68,8 @@ class Vehicle {
 
 
  class VehicleInventory {
-    
+
+
     vehicleList = [];
     constructor(){
         this.createVehicleList();
@@ -99,23 +122,106 @@ class Vehicle {
             const button = document.createElement("button");
             button.className = "book_button";
             button.textContent = "Book Now";
+            button.setAttribute("data-id",car.ID);
+
+            const seats = document.createElement("img");
+            seats.id = "seats_img";
+            seats.src = "companyImages/car-seat.png";
+
+            const num_seats = document.createElement("h1");
+            num_seats.id = "num_seats";
+            num_seats.textContent = `${car.numSeats}`;
+
+            const luggage = document.createElement("img");
+            luggage.id = "luggage_img";
+            luggage.src = "companyImages/luggage.png";
+
+            const num_luggage = document.createElement("h1");
+            num_luggage.id = "num_luggage";
+            num_luggage.textContent = `${car.luggageSpace}`;
+
+            const price_cost = document.createElement("h1");
+            price_cost.id = "price_cost";
+            price_cost.textContent = `$${car.price}/day`;
+
+            const additional_features = document.createElement("h4");
+            additional_features.id = "additional_features";
+            additional_features.textContent = `Additional Features:`;
+
+            const bluetooth = document.createElement("p");
+            bluetooth.id = "bluetooth";
+            if (car.bluetooth == true) {
+                bluetooth.textContent = `This vehicle has bluetooth capabilities.`;
+            }
+
+            const ac = document.createElement("p");
+            ac.id = "ac";
+            if (car.ac == true) {
+                ac.textContent = `This vehicle has air conditioning.`;
+            }
+
+            const cruise = document.createElement("p");
+            cruise.id = "cruise";
+            if (car.cruise == true) {
+                cruise.textContent = `This vehicle has cruise control.`;
+            }
+            
+            // weird sizing thing where if 1 vehicle has one of these elements and others don't it shifts the vehicle boxes up/down
+            const carplay = document.createElement("p");
+            carplay.id = "carplay";
+            if (car.carplay == true) {
+                carplay.textContent = `This vehicle has Apple Carplay`;
+            }
 
 
             vehicleItem.appendChild(img);
             vehicleItem.appendChild(button);
             vehicleItem.appendChild(name);
+            vehicleItem.appendChild(seats);
+            vehicleItem.appendChild(num_seats);
+            vehicleItem.appendChild(luggage);
+            vehicleItem.appendChild(num_luggage);
+            vehicleItem.appendChild(price_cost);
+            vehicleItem.appendChild(additional_features);
+            vehicleItem.appendChild(bluetooth);
+            vehicleItem.appendChild(ac);
+            vehicleItem.appendChild(cruise);
+            vehicleItem.appendChild(carplay);
 
             container.appendChild(vehicleItem);
         }
     }
+
+    bookCar(ID) {
+        for (let i = 0; i < this.vehicleList.length; i++) {
+            for (let j = 0; j < this.vehicleList[i].length; j++) {
+                const car = this.vehicleList[i][j];
+                if (car.ID == ID) {
+                    car.isRented = true;
+                    console.log(`${car.year} ${car.make} ${car.model} is now rented` );
+                    
+                    const existingCar = document.getElementById("summary_vehicle_current");
+                    if (existingCar) { existingCar.remove(); }
+
+                    var carName = document.createElement("h4");
+                    carName.textContent = `${car.year} ${car.make} ${car.model}`;
+                    carName.id = "summary_vehicle_current";
+                    var summary = document.getElementById("summary_div");
+                    summary.appendChild(carName);
+                }
+            }
+            
+        }
+    }
+
+
+
 }
 
 
-const bruh  = document.getElementById("vehicle_name");
-
-civicArray = ["2024","Honda","Civic","5","4","98","yes","sedanImages/2024_Honda_Civic.jpg"];
-corollaArray = ["2024","Toyota","Corolla","5","4","93","yes","sedanImages/2024_Toyota_Corolla.jpg"];
-jettaArray = ["2024","Volkswagon","Jetta","5","5","99","yes","sedanImages/2024_Volkswagon_Jetta.jpg"];
+civicArray = ["2024","Honda","Civic","5","4","98","yes","yes","yes","no","sedanImages/2024_Honda_Civic.jpg"];
+corollaArray = ["2024","Toyota","Corolla","5","4","93","yes","yes","yes","no","sedanImages/2024_Toyota_Corolla.jpg"];
+jettaArray = ["2024","Volkswagon","Jetta","5","5","99","yes","yes","yes","no","sedanImages/2024_Volkswagon_Jetta.jpg"];
 
 const civic = new Vehicle(civicArray);
 const corolla = new Vehicle(corollaArray);
@@ -128,4 +234,5 @@ carList.addSedans(jetta);
 
 console.log(carList.getFirstSedan());
 carList.renderSedans();
+
 
