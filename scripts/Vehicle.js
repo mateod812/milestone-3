@@ -204,7 +204,7 @@ class Vehicle {
                     if (existingCar) { existingCar.remove(); }
 
                     var carName = document.createElement("h4");
-                    carName.textContent = `${car.year} ${car.make} ${car.model}`;
+                    carName.textContent = `${car.year} ${car.make} ${car.model} ---------- $${car.price}/day`;
                     carName.id = "summary_vehicle_current";
                     var summary = document.getElementById("summary_div");
                     summary.appendChild(carName);
