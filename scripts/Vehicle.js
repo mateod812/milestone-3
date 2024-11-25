@@ -100,10 +100,35 @@ class Vehicle {
             button.className = "book_button";
             button.textContent = "Book Now";
 
+            const seats = document.createElement("img");
+            seats.id = "seats_img";
+            seats.src = "companyImages/car-seat.png";
+
+            const num_seats = document.createElement("h1");
+            num_seats.id = "num_seats";
+            num_seats.textContent = `${car.numSeats}`;
+
+            const luggage = document.createElement("img");
+            luggage.id = "luggage_img";
+            luggage.src = "companyImages/luggage.png";
+
+            const num_luggage = document.createElement("h1");
+            num_luggage.id = "num_luggage";
+            num_luggage.textContent = `${car.luggageSpace}`;
+
+            const price_cost = document.createElement("h1");
+            price_cost.id = "price_cost";
+            price_cost.textContent = `$${car.price}/day`;
+
 
             vehicleItem.appendChild(img);
             vehicleItem.appendChild(button);
             vehicleItem.appendChild(name);
+            vehicleItem.appendChild(seats);
+            vehicleItem.appendChild(num_seats);
+            vehicleItem.appendChild(luggage);
+            vehicleItem.appendChild(num_luggage);
+            vehicleItem.appendChild(price_cost);
 
             container.appendChild(vehicleItem);
         }

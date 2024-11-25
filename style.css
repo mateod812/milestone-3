@@ -2,6 +2,10 @@
     background-color: #DAD4B5;
 }
 
+body {
+    font: sans-serif;
+}
+
 #header {
     text-align: center;
 }
@@ -150,6 +154,48 @@
     margin-top: -20px;
 }
 
+#seats_img {
+    display: block;
+    max-width:50px;
+    max-height:50px;
+    margin-left: 375px;
+    margin-top: -250px;
+}
+
+#num_seats {
+    display: block;
+    max-width:50px;
+    max-height:50px;
+    margin-left: 450px;
+    margin-top: -45px;
+    font-size: 50px;
+}
+
+#luggage_img {
+    display: block;
+    max-width:50px;
+    max-height:50px;
+    margin-left: 375px;
+}
+
+#num_luggage {
+    display: block;
+    max-width:50px;
+    max-height:50px;
+    margin-left: 450px;
+    margin-top: -45px;
+    font-size: 50px;
+}
+
+#price_cost {
+    display: block;
+    max-width:50px;
+    max-height:50px;
+    margin-left: 375px;
+    margin-top: 10px;
+    font-size: 40px;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -175,6 +221,7 @@ ul {
     display: block;
     color: #800000;
     text-align: center;
+    font-size: 110%;
     padding: 14px 16px;
     text-decoration: none;
   }
