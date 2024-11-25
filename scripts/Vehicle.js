@@ -10,6 +10,7 @@ const VehicleTypes =  {
 const NUM_VEHICLE_TYPES = Object.keys(VehicleTypes).length;
 
 class Vehicle {
+    static car_id = 0; //every car needs an unique ID to know which button was pressed
     constructor(array) {
         this.year = array[0];
         this.make = array[1];
@@ -25,6 +26,8 @@ class Vehicle {
         }
         this.isRented = false;
         this.image = array[7];
+        this.ID = Vehicle.car_id;
+        Vehicle.car_id++;
     }
 
     getCarInfo() {
@@ -46,7 +49,8 @@ class Vehicle {
 
 
  class VehicleInventory {
-    
+
+
     vehicleList = [];
     constructor(){
         this.createVehicleList();
@@ -99,6 +103,7 @@ class Vehicle {
             const button = document.createElement("button");
             button.className = "book_button";
             button.textContent = "Book Now";
+            button.setAttribute("data-id",car.ID);
 
             const seats = document.createElement("img");
             seats.id = "seats_img";
@@ -133,10 +138,24 @@ class Vehicle {
             container.appendChild(vehicleItem);
         }
     }
+
+    bookCar(ID) {
+        for (let i = 0; i < this.vehicleList.length; i++) {
+            for (let j = 0; j < this.vehicleList[i].length; j++) {
+                const car = this.vehicleList[i][j];
+                if (car.ID == ID) {
+                    car.isRented = true;
+                    console.log(`${car.year} ${car.make} ${car.model} is now rented` );
+                }
+            }
+            
+        }
+    }
+
+
+
 }
 
-
-const bruh  = document.getElementById("vehicle_name");
 
 civicArray = ["2024","Honda","Civic","5","4","98","yes","sedanImages/2024_Honda_Civic.jpg"];
 corollaArray = ["2024","Toyota","Corolla","5","4","93","yes","sedanImages/2024_Toyota_Corolla.jpg"];
@@ -153,4 +172,6 @@ carList.addSedans(jetta);
 
 console.log(carList.getFirstSedan());
 carList.renderSedans();
+
+
 
