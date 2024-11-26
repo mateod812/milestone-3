@@ -1,9 +1,9 @@
 // JS enum
-const VehicleTypes =  {
+const VehicleTypes = {
     TRUCK: 0,
     SEDAN: 1,
     MID_SIZE_SUV: 2,
-    FULL_SIZE_SUV: 3
+    FULL_SIZE_SUV: 3,
 };
 
 //length of the Enum
@@ -16,28 +16,28 @@ class Vehicle {
         this.make = array[1];
         this.model = array[2];
         this.numSeats = array[3];
-        this.luggageSpace = array[4]; 
+        this.luggageSpace = array[4];
         this.price = array[5];
 
-        if ( array[6] == "yes") {
+        if (array[6] == "yes") {
             this.bluetooth = true;
         } else {
             this.bluetooth = false;
         }
 
-        if ( array[7] == "yes") {
+        if (array[7] == "yes") {
             this.ac = true;
         } else {
             this.ac = false;
         }
 
-        if ( array[8] == "yes") {
+        if (array[8] == "yes") {
             this.cruise = true;
         } else {
             this.cruise = false;
         }
 
-        if ( array[9] == "yes") {
+        if (array[9] == "yes") {
             this.carplay = true;
         } else {
             this.carplay = false;
@@ -50,7 +50,7 @@ class Vehicle {
     }
 
     getCarInfo() {
-        return ` ${this.year} ${this.make} ${this.model} ${this.numSeats} ${this.isRented}`; 
+        return ` ${this.year} ${this.make} ${this.model} ${this.numSeats} ${this.isRented}`;
     }
 
     rentCar() {
@@ -66,18 +66,14 @@ class Vehicle {
     }
 }
 
-
- class VehicleInventory {
-
-
+class VehicleInventory {
     vehicleList = [];
-    constructor(){
+    renderedCarList = [];
+    constructor() {
         this.createVehicleList();
-    };
+    }
 
-
-
-    //only way i found to create a 2d array dynamically, 
+    //only way i found to create a 2d array dynamically,
     //for if we add more Vehicle types
     createVehicleList() {
         for (let index = 0; index < NUM_VEHICLE_TYPES; index++) {
@@ -89,30 +85,36 @@ class Vehicle {
         return this.vehicleList[VehicleTypes.SEDAN][0];
     }
 
-
     addSedans(sedan) {
         this.vehicleList[VehicleTypes.SEDAN].push(sedan);
     }
-    
+
     printSedans() {
-        for (let index = 0; index < this.vehicleList[VehicleTypes.SEDAN].length; index++) {
+        for (
+            let index = 0;
+            index < this.vehicleList[VehicleTypes.SEDAN].length;
+            index++
+        ) {
             const element = this.vehicleList[VehicleTypes.SEDAN][index];
             console.log(element);
         }
     }
 
-    renderSedans() {
-        const container = document.getElementById("vehicle_container");
 
-        for (let i = 0; i < this.vehicleList[VehicleTypes.SEDAN].length; i++) {
-            const car = this.vehicleList[VehicleTypes.SEDAN][i];
+    renderVehicles(carArray) {
+        this.renderedCarList = carArray;
+        const container = document.getElementById("vehicle_container");
+        container.innerHTML = '';
+
+        for (let i = 0; i < carArray.length; i++) {
+            const car = carArray[i];
 
             const vehicleItem = document.createElement("div");
-            vehicleItem.id = "vehicle_item"
+            vehicleItem.id = "vehicle_item";
 
             const img = document.createElement("img");
             img.src = car.image;
-            img.alt =  "Vehicle Image";
+            img.alt = "Vehicle Image";
             img.id = "vehicle_img";
 
             const name = document.createElement("h3");
@@ -122,7 +124,7 @@ class Vehicle {
             const button = document.createElement("button");
             button.className = "book_button";
             button.textContent = "Book Now";
-            button.setAttribute("data-id",car.ID);
+            button.setAttribute("data-id", car.ID);
 
             const seats = document.createElement("img");
             seats.id = "seats_img";
@@ -165,14 +167,13 @@ class Vehicle {
             if (car.cruise == true) {
                 cruise.textContent = `This vehicle has cruise control.`;
             }
-            
+
             // weird sizing thing where if 1 vehicle has one of these elements and others don't it shifts the vehicle boxes up/down
             const carplay = document.createElement("p");
             carplay.id = "carplay";
             if (car.carplay == true) {
                 carplay.textContent = `This vehicle has Apple Carplay`;
             }
-
 
             vehicleItem.appendChild(img);
             vehicleItem.appendChild(button);
@@ -190,6 +191,26 @@ class Vehicle {
 
             container.appendChild(vehicleItem);
         }
+
+        // const buttons = Array.from(document.getElementsByClassName('book_button'));
+        // for (let button of buttons) {
+        //     button.addEventListener('click', function(event) {
+        //         book_now(event);
+        // });
+    
+
+
+    }
+
+    renderAll() {
+        const bigCarList = [];
+        for (let i = 0; i < this.vehicleList.length; i++) {
+            for (let j = 0; j < this.vehicleList[i].length; j++) {
+                bigCarList.push(this.vehicleList[i][j]);
+            }
+        }
+        this.renderVehicles(bigCarList);
+
     }
 
     bookCar(ID) {
@@ -198,10 +219,14 @@ class Vehicle {
                 const car = this.vehicleList[i][j];
                 if (car.ID == ID) {
                     car.isRented = true;
-                    console.log(`${car.year} ${car.make} ${car.model} is now rented` );
-                    
-                    const existingCar = document.getElementById("summary_vehicle_current");
-                    if (existingCar) { existingCar.remove(); }
+                    console.log(`${car.year} ${car.make} ${car.model} is now rented`);
+
+                    const existingCar = document.getElementById(
+                        "summary_vehicle_current"
+                    );
+                    if (existingCar) {
+                        existingCar.remove();
+                    }
 
                     var carName = document.createElement("h4");
                     carName.textContent = `${car.year} ${car.make} ${car.model} ---------- $${car.price}/day`;
@@ -210,18 +235,58 @@ class Vehicle {
                     summary.appendChild(carName);
                 }
             }
-            
         }
     }
 
-
-
+    sortCarsLowtoHigh() { 
+        this.renderedCarList.sort((a,b) => a.price - b.price);
+        this.renderVehicles(this.renderedCarList);
+    }
+    sortCarsHightoLow() { 
+        this.renderedCarList.sort((a,b) => b.price - a.price);
+        this.renderVehicles(this.renderedCarList);
+    }
 }
 
-
-civicArray = ["2024","Honda","Civic","5","4","98","yes","yes","yes","no","sedanImages/2024_Honda_Civic.jpg"];
-corollaArray = ["2024","Toyota","Corolla","5","4","93","yes","yes","yes","no","sedanImages/2024_Toyota_Corolla.jpg"];
-jettaArray = ["2024","Volkswagon","Jetta","5","5","99","yes","yes","yes","no","sedanImages/2024_Volkswagon_Jetta.jpg"];
+civicArray = [
+    "2024",
+    "Honda",
+    "Civic",
+    "5",
+    "4",
+    "98",
+    "yes",
+    "yes",
+    "yes",
+    "no",
+    "sedanImages/2024_Honda_Civic.jpg",
+];
+corollaArray = [
+    "2024",
+    "Toyota",
+    "Corolla",
+    "5",
+    "4",
+    "93",
+    "yes",
+    "yes",
+    "yes",
+    "no",
+    "sedanImages/2024_Toyota_Corolla.jpg",
+];
+jettaArray = [
+    "2024",
+    "Volkswagon",
+    "Jetta",
+    "5",
+    "5",
+    "99",
+    "yes",
+    "yes",
+    "yes",
+    "no",
+    "sedanImages/2024_Volkswagon_Jetta.jpg",
+];
 
 const civic = new Vehicle(civicArray);
 const corolla = new Vehicle(corollaArray);
@@ -232,7 +297,4 @@ carList.addSedans(civic);
 carList.addSedans(corolla);
 carList.addSedans(jetta);
 
-console.log(carList.getFirstSedan());
-carList.renderSedans();
-
-
+carList.renderAll();

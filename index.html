@@ -24,7 +24,18 @@
         </div>
         <br/>
         <div id="filter_div">
-            
+            <div id="price_filters">
+                
+                <label for="low_to_high"> 
+                    <input type="radio" id="low_to_high" name="price_filter">
+                    Low to High
+                </label>
+                
+                <label for="high_to_low"> 
+                    <input type="radio"  id="high_to_low" name="price_filter">    
+                    High to Low
+                </label>
+            </div>
         </div>
         <div id="vehicle_scroll">
             <!-- cars go here, javascript to flip between cars/insurance/add-ons -->
@@ -44,5 +55,6 @@
         <script src="scripts/ProgressBar.js" type="text/javascript"></script>
         <script src="scripts/Vehicle.js"></script>
         <script src="scripts/BookNowButton.js" ></script>
+        <script src="scripts/Filters.js" ></script>
     </body>
 </html>

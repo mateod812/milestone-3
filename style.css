@@ -290,16 +290,20 @@ ul {
 
 #filter_div {
     display: inline-block;
+    vertical-align: top;
+
     width: 15%;
     height: 650px;
     margin: left;
     padding: 20px;
     margin-right: 20px;
 
+
     border-radius: 25px;
     border-width: 2px;
     border-style: solid;
     border-color: #800000;
+
 }
 
 #summary_div {
@@ -332,3 +336,12 @@ ul {
     left: 20px;
     bottom: 175px;
 }
+
+
+#price_filters {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    
+}
+
+
