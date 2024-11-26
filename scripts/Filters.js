@@ -1,4 +1,3 @@
-// const price_checkbox = document.getElementById('price_filters');
 const price_checkbox = document.querySelectorAll('#price_filters input[type="radio"]');
 
 for (let price of price_checkbox) {
