@@ -21,6 +21,10 @@ class VehicleInventory {
         this.vehicleList[VehicleTypes.SEDAN].push(sedan);
     }
 
+    addTrucks(truck) {
+        this.vehicleList[VehicleTypes.TRUCK].push(truck);
+    }
+
     printSedans() {
         for (
             let index = 0;
@@ -33,13 +37,12 @@ class VehicleInventory {
     }
 
 
-    renderVehicles(carArray) {
-        this.renderedCarList = carArray;
+    renderVehicles() {
         const container = document.getElementById("vehicle_container");
         container.innerHTML = '';
 
-        for (let i = 0; i < carArray.length; i++) {
-            const car = carArray[i];
+        for (let i = 0; i < this.renderedCarList.length; i++) {
+            const car = this.renderedCarList[i];
 
             const vehicleItem = document.createElement("div");
             vehicleItem.id = "vehicle_item";
@@ -133,7 +136,8 @@ class VehicleInventory {
                 bigCarList.push(this.vehicleList[i][j]);
             }
         }
-        this.renderVehicles(bigCarList);
+        this.renderedCarList = bigCarList;
+        this.renderVehicles();
 
     }
 
@@ -164,10 +168,32 @@ class VehicleInventory {
 
     sortCarsLowtoHigh() { 
         this.renderedCarList.sort((a,b) => a.price - b.price);
-        this.renderVehicles(this.renderedCarList);
+        this.renderVehicles();
     }
     sortCarsHightoLow() { 
         this.renderedCarList.sort((a,b) => b.price - a.price);
-        this.renderVehicles(this.renderedCarList);
+        this.renderVehicles();
     }
+
+    filterTrucks() {
+        this.renderedCarList = this.vehicleList[VehicleTypes.TRUCK];
+        console.log(this.renderedCarList);
+        this.renderVehicles();
+    }
+
+    filterSedans() {
+        this.renderedCarList = this.vehicleList[VehicleTypes.SEDAN];
+        console.log(this.renderedCarList);
+        this.renderVehicles();
+    }
+
+    filterMinSeats(givenSeats) {
+        for (let i = 0; i < this.renderedCarList.length; i++) {
+                if (this.renderedCarList[i].numSeats < givenSeats) {
+                    this.renderedCarList.splice(i,1)
+            }
+        }
+        this.renderVehicles();
+    }
+
 }

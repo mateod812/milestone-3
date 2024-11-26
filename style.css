@@ -341,7 +341,18 @@ ul {
 #price_filters {
     display: flex;
     flex-direction: column; /* Stack items vertically */
-    
+    margin-bottom: 20px; /* Adds space below this section */   
+}
+#vehicle_type_filters {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    margin-bottom: 20px; /* Adds space below this section */   
 }
 
+
+#vehicle_option_filters  {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    margin-bottom: 20px; /* Adds space below this section */   
+}
 

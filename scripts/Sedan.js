@@ -2,7 +2,7 @@ civicArray = [
     "2024",
     "Honda",
     "Civic",
-    "5",
+    "4",
     "4",
     "98",
     "yes",
