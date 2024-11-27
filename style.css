@@ -354,3 +354,66 @@ ul {
 }
 
 
+#insurance_scroll {
+    display: none; /* Hide by default; show via JavaScript */
+    padding: 20px;
+}
+
+.insurance_option {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.insurance_option h3 {
+    margin: 5px 0;
+}
+
+.insurance_option p {
+    margin: 10px 0;
+}
+
+.insurance_option button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.insurance_option button:hover {
+    background-color: #45a049;
+}
+
+
+.addon_option {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.addon_option h3 {
+    margin: 0 0 10px;
+}
+
+.addon_option p {
+    margin: 5px 0;
+}
+
+.addon_option button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.addon_option button:hover {
+    background-color: #218838;
+}

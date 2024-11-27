@@ -76,11 +76,138 @@
                 <div id = "vehicle_container"></div>
             </div>
             <div id="insurance_scroll">
+            <div id="insurance_options">
+                <h2>Insurance Packages</h2>
+            
+                <!-- Collision Damage Waiver -->
+                <div class="insurance_option">
+                    <h3>Collision Damage Waiver (CDW)</h3>
+                    <p>Reduces your financial responsibility for damage to the rental car in case of an accident or collision. Deductibles may apply.</p>
+                    <p><strong>Cost:</strong> $20/day</p>
+                    <button onclick="selectInsurance('Collision Damage Waiver')">Select</button>
+                </div>
+            
+                <!-- Loss Damage Waiver -->
+                <div class="insurance_option">
+                    <h3>Loss Damage Waiver (LDW)</h3>
+                    <p>Waives your liability for damage or theft of the rental vehicle, including loss of use fees.</p>
+                    <p><strong>Cost:</strong> $25/day</p>
+                    <button onclick="selectInsurance('Loss Damage Waiver')">Select</button>
+                </div>
+            
+                <!-- Personal Accident Insurance -->
+                <div class="insurance_option">
+                    <h3>Personal Accident Insurance (PAI)</h3>
+                    <p>Covers medical expenses for you and your passengers in case of an accident.</p>
+                    <p><strong>Cost:</strong> $10/day</p>
+                    <button onclick="selectInsurance('Personal Accident Insurance')">Select</button>
+                </div>
+            
+                <!-- Supplemental Liability Insurance -->
+                <div class="insurance_option">
+                    <h3>Supplemental Liability Insurance (SLI)</h3>
+                    <p>Protects against third-party claims for bodily injury or property damage.</p>
+                    <p><strong>Cost:</strong> $15/day</p>
+                    <button onclick="selectInsurance('Supplemental Liability Insurance')">Select</button>
+                </div>
+            
+                <!-- Personal Effects Coverage -->
+                <div class="insurance_option">
+                    <h3>Personal Effects Coverage (PEC)</h3>
+                    <p>Insures your personal belongings in case of theft or damage while inside the rental car.</p>
+                    <p><strong>Cost:</strong> $5/day</p>
+                    <button onclick="selectInsurance('Personal Effects Coverage')">Select</button>
+                </div>
+            
+                <!-- Roadside Assistance Protection -->
+                <div class="insurance_option">
+                    <h3>Roadside Assistance Protection</h3>
+                    <p>Covers roadside emergencies like towing, flat tires, battery jumps, or lockouts.</p>
+                    <p><strong>Cost:</strong> $7/day</p>
+                    <button onclick="selectInsurance('Roadside Assistance Protection')">Select</button>
+                </div>
+            
+                <!-- Tire and Windshield Protection -->
+                <div class="insurance_option">
+                    <h3>Tire and Windshield Protection</h3>
+                    <p>Covers specific damage to tires, wheels, and windshields.</p>
+                    <p><strong>Cost:</strong> $8/day</p>
+                    <button onclick="selectInsurance('Tire and Windshield Protection')">Select</button>
+                </div>
+            </div>
+            
+            
+
+
+
+
+
 
             </div>
             <div id="addons_scroll">
-
+            <div id="addons_options">
+                <h2>Add-Ons</h2>
+            
+                <!-- GPS Navigation -->
+                <div class="addon_option">
+                    <h3>GPS Navigation System</h3>
+                    <p>Get turn-by-turn directions and avoid getting lost during your trip.</p>
+                    <p><strong>Cost:</strong> $10/day</p>
+                    <button onclick="selectAddon('GPS Navigation System')">Add</button>
+                </div>
+            
+                <!-- Child Safety Seat -->
+                <div class="addon_option">
+                    <h3>Child Safety Seat</h3>
+                    <p>Ensure safety for your child with a properly installed car seat.</p>
+                    <p><strong>Cost:</strong> $15/day</p>
+                    <button onclick="selectAddon('Child Safety Seat')">Add</button>
+                </div>
+            
+                <!-- Additional Driver -->
+                <div class="addon_option">
+                    <h3>Additional Driver</h3>
+                    <p>Add an extra driver to share the driving responsibilities.</p>
+                    <p><strong>Cost:</strong> $20/day</p>
+                    <button onclick="selectAddon('Additional Driver')">Add</button>
+                </div>
+            
+                <!-- WiFi Hotspot -->
+                <div class="addon_option">
+                    <h3>WiFi Hotspot</h3>
+                    <p>Stay connected on the go with a portable WiFi hotspot.</p>
+                    <p><strong>Cost:</strong> $12/day</p>
+                    <button onclick="selectAddon('WiFi Hotspot')">Add</button>
+                </div>
+            
+                <!-- Roof Rack -->
+                <div class="addon_option">
+                    <h3>Roof Rack</h3>
+                    <p>Carry additional luggage, skis, or equipment with a roof rack.</p>
+                    <p><strong>Cost:</strong> $8/day</p>
+                    <button onclick="selectAddon('Roof Rack')">Add</button>
+                </div>
+            
+                <!-- Ski Rack -->
+                <div class="addon_option">
+                    <h3>Ski Rack</h3>
+                    <p>Transport your skis securely with a dedicated ski rack.</p>
+                    <p><strong>Cost:</strong> $10/day</p>
+                    <button onclick="selectAddon('Ski Rack')">Add</button>
+                </div>
+            
+                <!-- Bike Rack -->
+                <div class="addon_option">
+                    <h3>Bike Rack</h3>
+                    <p>Take your bike along for the ride with a convenient bike rack.</p>
+                    <p><strong>Cost:</strong> $7/day</p>
+                    <button onclick="selectAddon('Bike Rack')">Add</button>
+                </div>
+            
             </div>
+            </div>
+
+
             <div id="summary_div">
                 <h2 id="summary_vehicle">Summary</h2>
             </div>
