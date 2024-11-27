@@ -334,9 +334,11 @@ ul {
 }
 
 #summary_vehicle {
+    display: inline-block;
+    vertical-align: top;
     margin: 0;
     width: 90%;
-    margin-top: 50vh;
+
 
     border-width: 2px;
     border-style: hidden hidden solid hidden;
