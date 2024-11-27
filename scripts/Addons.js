@@ -1,24 +1,24 @@
-let insuranceOptions = [];
+let addonOptions = [];
 
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Add event listeners to all buttons with data-insurance attribute
-    document.querySelectorAll("button[data-insurance]").forEach(button => {
-        button.addEventListener("click", () => insurance_buttons(button));
+    // Add event listeners to all buttons with data-addon attribute
+    document.querySelectorAll("button[data-addon]").forEach(button => {
+        button.addEventListener("click", () => addon_buttons(button));
     });
 });
 
-function insurance_buttons(button) {
-    let option = button.getAttribute("data-insurance");
+function addon_buttons(button) {
+    let option = button.getAttribute("data-addon");
     let cost = button.getAttribute("data-cost");
 
     let fuckMeMan = [];
 
 
     fuckMeMan.push(option,cost);
-    if (!insuranceOptions.includes(option)) {
-        insuranceOptions.push(option);
+    if (!addonOptions.includes(option)) {
+        addonOptions.push(option);
         add_Car_Summary(fuckMeMan);
         button.textContent = "Selected";
         button.style.color = "black"; // Change text color to black
@@ -28,6 +28,6 @@ function insurance_buttons(button) {
         button.textContent = "Select";
         button.style.backgroundColor = "#4CAF50";
         button.style.color = "White"; // Change text color to black
-        insuranceOptions = insuranceOptions.filter(item => (item !== option));
+        addonOptions = addonOptions.filter(item => (item !== option));
     }
 }

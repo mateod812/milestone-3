@@ -115,68 +115,73 @@
             </div>
             
 
+
+
+
+
             <div id="addons_scroll">
-            <div id="addons_options">
-                <h2>Add-Ons</h2>
-            
-                <!-- GPS Navigation -->
-                <div class="addon_option">
-                    <h3>GPS Navigation System</h3>
-                    <p>Get turn-by-turn directions and avoid getting lost during your trip.</p>
-                    <p><strong>Cost:</strong> $10/day</p>
-                    <button onclick="selectAddon('GPS Navigation System')">Add</button>
+                <div id="addons_options">
+                    <h2>Add-Ons</h2>
+                
+                    <!-- GPS Navigation -->
+                    <div class="addon_option">
+                        <h3>GPS Navigation System</h3>
+                        <p>Get turn-by-turn directions and avoid getting lost during your trip.</p>
+                        <p><strong>Cost:</strong> <span class="addon_cost">$10/day</span></p>
+                        <button data-addon="GPS Navigation System" data-cost="10">Add</button>
+                    </div>
+                
+                    <!-- Child Safety Seat -->
+                    <div class="addon_option">
+                        <h3>Child Safety Seat</h3>
+                        <p>Ensure safety for your child with a properly installed car seat.</p>
+                        <p><strong>Cost:</strong> <span class="addon_cost">$15/day</span></p>
+                        <button data-addon="Child Safety Seat" data-cost="15">Add</button>
+                    </div>
+                
+                    <!-- Additional Driver -->
+                    <div class="addon_option">
+                        <h3>Additional Driver</h3>
+                        <p>Add an extra driver to share the driving responsibilities.</p>
+                        <p><strong>Cost:</strong> <span class="addon_cost">$20/day</span></p>
+                        <button data-addon="Additional Driver" data-cost="20">Add</button>
+                    </div>
+                
+                    <!-- WiFi Hotspot -->
+                    <div class="addon_option">
+                        <h3>WiFi Hotspot</h3>
+                        <p>Stay connected on the go with a portable WiFi hotspot.</p>
+                        <p><strong>Cost:</strong> <span class="addon_cost">$12/day</span></p>
+                        <button data-addon="WiFi Hotspot" data-cost="12">Add</button>
+                    </div>
+                
+                    <!-- Roof Rack -->
+                    <div class="addon_option">
+                        <h3>Roof Rack</h3>
+                        <p>Carry additional luggage, skis, or equipment with a roof rack.</p>
+                        <p><strong>Cost:</strong> <span class="addon_cost">$8/day</span></p>
+                        <button data-addon="Roof Rack" data-cost="8">Add</button>
+                    </div>
+                
+                    <!-- Ski Rack -->
+                    <div class="addon_option">
+                        <h3>Ski Rack</h3>
+                        <p>Transport your skis securely with a dedicated ski rack.</p>
+                        <p><strong>Cost:</strong> <span class="addon_cost">$10/day</span></p>
+                        <button data-addon="Ski Rack" data-cost="10">Add</button>
+                    </div>
+                
+                    <!-- Bike Rack -->
+                    <div class="addon_option">
+                        <h3>Bike Rack</h3>
+                        <p>Take your bike along for the ride with a convenient bike rack.</p>
+                        <p><strong>Cost:</strong> <span class="addon_cost">$7/day</span></p>
+                        <button data-addon="Bike Rack" data-cost="7">Add</button>
+                    </div>
+                
                 </div>
-            
-                <!-- Child Safety Seat -->
-                <div class="addon_option">
-                    <h3>Child Safety Seat</h3>
-                    <p>Ensure safety for your child with a properly installed car seat.</p>
-                    <p><strong>Cost:</strong> $15/day</p>
-                    <button onclick="selectAddon('Child Safety Seat')">Add</button>
-                </div>
-            
-                <!-- Additional Driver -->
-                <div class="addon_option">
-                    <h3>Additional Driver</h3>
-                    <p>Add an extra driver to share the driving responsibilities.</p>
-                    <p><strong>Cost:</strong> $20/day</p>
-                    <button onclick="selectAddon('Additional Driver')">Add</button>
-                </div>
-            
-                <!-- WiFi Hotspot -->
-                <div class="addon_option">
-                    <h3>WiFi Hotspot</h3>
-                    <p>Stay connected on the go with a portable WiFi hotspot.</p>
-                    <p><strong>Cost:</strong> $12/day</p>
-                    <button onclick="selectAddon('WiFi Hotspot')">Add</button>
-                </div>
-            
-                <!-- Roof Rack -->
-                <div class="addon_option">
-                    <h3>Roof Rack</h3>
-                    <p>Carry additional luggage, skis, or equipment with a roof rack.</p>
-                    <p><strong>Cost:</strong> $8/day</p>
-                    <button onclick="selectAddon('Roof Rack')">Add</button>
-                </div>
-            
-                <!-- Ski Rack -->
-                <div class="addon_option">
-                    <h3>Ski Rack</h3>
-                    <p>Transport your skis securely with a dedicated ski rack.</p>
-                    <p><strong>Cost:</strong> $10/day</p>
-                    <button onclick="selectAddon('Ski Rack')">Add</button>
-                </div>
-            
-                <!-- Bike Rack -->
-                <div class="addon_option">
-                    <h3>Bike Rack</h3>
-                    <p>Take your bike along for the ride with a convenient bike rack.</p>
-                    <p><strong>Cost:</strong> $7/day</p>
-                    <button onclick="selectAddon('Bike Rack')">Add</button>
-                </div>
-            
             </div>
-            </div>
+            
 
 
 
@@ -187,7 +192,7 @@
                 <div id="summary_info_div"></div>
                 <h2 id="summary_vehicle_total">Total</h2>
                 <div id="total_value">
-                    bruh
+                    $0 per day
                 </div>
             </div>
 
@@ -210,5 +215,6 @@
         <script src="scripts/BookNowButton.js" ></script>
         <script src="scripts/Filters.js" ></script>
         <script src="scripts/Insurance.js" ></script>
+        <script src="scripts/Addons.js" ></script>
     </body>
 </html>

@@ -49,16 +49,17 @@ function create_summary_list() {
         const sumItem = document.createElement("h4");
         if (element instanceof Vehicle) {
             sumItem.textContent = `${element.year} ${element.make} ${element.model} ---------- $${element.price}/day`;
-            totalperDay += element.price;
+            totalperDay += parseInt(element.price);
         } else {
             element = summaryList[i][0];
             sumItem.textContent = element;
-
+            totalperDay += parseInt(summaryList[i][1]);
         }
         
         sumItem.id = "summary_vehicle_current";
         const summary = document.getElementById("summary_info_div");
         summary.appendChild(sumItem);
-        console.log("$ "+totalperDay);
     }
+    const containerTotal = document.getElementById("total_value");
+    containerTotal.textContent =`$${totalperDay} per Day`
 }
