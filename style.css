@@ -62,7 +62,7 @@ body {
     max-width:75px;
     max-height:75px;
     position: absolute;
-    left: 175px;
+    left: 15%;
     transition-duration: 1s;
 }
 
@@ -349,8 +349,20 @@ ul {
 
 #price_filters {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    
+    flex-direction: column; /* Stack items vertically /
+    margin-bottom: 20px; /* Adds space below this section */
+}
+#vehicle_type_filters {
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 20px; 
+}
+
+
+#vehicle_option_filters  {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; 
 }
 
 
