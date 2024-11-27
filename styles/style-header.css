@@ -1,0 +1,48 @@
+header {
+    display: flex;
+    background-color: brown;
+    justify-content: center;
+}
+
+header .header-row {
+    display:flex;
+    max-width: 900px;
+    font-size: 18px;
+    width: 75%;
+    height: 88px;
+    justify-content: space-between;
+}
+
+
+/*Logo*/
+header .icon.icon-header-logo {
+    min-width: 200px;
+    background-image: url("./icon-set/site-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 8px 0px;
+}
+
+/*Support Button*/
+.support-button {
+    font-size: 18px;
+    min-width: 150px;
+    text-decoration: none;
+    padding: 12px 0px;
+    margin: 20px;
+    background-color: #e95555;
+    color:rgb(255, 255, 255);
+    text-align: center;
+    border-style: none;
+    border-radius: 8px;
+    box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.253);
+}
+
+.support-button:hover {
+    box-shadow: inset 0px 0px 20px 20px rgb(230, 95, 95);
+    transition: 0.4s;
+    transform: scale(1.1);
+}
+
+

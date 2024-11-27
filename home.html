@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Car Rental Site</title>
+        <link rel="stylesheet" href="./styles/style-landing.css">
+        <link rel="stylesheet" href="./jquery-ui.css">
+    </head>
+
+    <!--Dependencies for Datepicker Widget-->
+    <script src="./scripts/jquery-3.7.1.js"></script>
+    <script src="./scripts/jquery-ui.js"></script>
+
+    <!--Function to call Datepicker from JQuery-->
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+    </script>
+
+    <body>
+
+        <header>
+            <div class="header-row">
+                <a class="icon icon-header-logo" href="./home.html" target="_self"></a>
+                <a class="support-button" href="#">Support</a>
+            </div>
+        </header>
+
+        <div class="navbar">
+            <a href="#">Home</a>
+            <a href="#">Our Vehicles</a>
+            <a href="#">About Us</a>
+        </div>
+
+        <div class="imagespot">
+
+            <label for="locations">Choose a location:</label>
+            <select name="locations" id="locations">
+                <option value="volvo">Winnipeg West</option>
+                <option value="saab">Winnipeg East</option>
+                <option value="mercedes">Winnipeg North</option>
+                <option value="audi">Winnipeg South</option>
+              </select>
+
+            <p>Pickup Date: <input type="text" id="datepicker"></p>
+            <p>Return Date: <input type="text" id="datepicker"></p>
+            
+            <a href="./index.html" target="_self">CLICK ME</a>
+            
+            <!--
+            <h1>My Website</h1>
+            <p>A website created by me.</p>
+            -->
+        </div>
+
+        <div class="container">
+            
+            <div class="testimonials">
+                <h1>See what customers are saying</h1>
+                <ul class="testimonials_list">
+
+                    <li>
+                        <img src="./styles/icon-set/server-icon.png" alt="Ian Spellman">
+                        <blockquote>
+                            <p>Oh man my life got so crazy once I started using this website.</p>
+                        </blockquote>
+                        <h3>Ian Spellman</h3>
+                        <h4>Spellcorp Inc.</h4>
+                    </li>
+
+                    <li>
+                        <img src="./styles/icon-set/server-icon.png" alt="Italian Trulli">
+                        <blockquote>
+                            <p>Oh man my life got so crazy once I started using this website.</p>
+                        </blockquote>
+                        <h3>Ian Spellman</h3>
+                        <h4>Spellcorp Inc.</h4>
+                    </li>
+
+                    <li>
+                        <img src="./styles/icon-set/server-icon.png" alt="Italian Trulli">
+                        <blockquote>
+                            <p>Oh man my life got so crazy once I started using this website.</p>
+                        </blockquote>
+                        <h3>Ian Spellman</h3>
+                        <h4>Spellcorp Inc.</h4>
+                    </li>
+
+                </ul>
+            </div>
+            
+            <div class="review-section">
+                <h1>Have something to Say?</h1>
+                <button class="review-button">Write a Review</button>
+            </div>
+            
+        </div>
+
+        <footer>
+            <div class="footer-social">
+                <ul class="footer-social_links">
+                    <li>
+                        <a class="icon icon-footer-socials-circle" target="_blank" title="Instagram">
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon icon-footer-socials-circle" target="_blank" title="Twitter">
+                            Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon icon-footer-socials-circle" target="_blank" title="Facebook">
+                            Facebook
+                        </a>
+                    </li>
+                </ul>
+        </footer> 
+
+    </body>
+
+</html>
