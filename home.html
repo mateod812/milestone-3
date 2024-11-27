@@ -4,7 +4,7 @@
     <head>
         <title>Car Rental Site</title>
         <link rel="stylesheet" href="./styles/style-landing.css">
-        <link rel="stylesheet" href="./jquery-ui.css">
+        <link rel="stylesheet" href="./styles/jquery-ui.css">
     </head>
 
     <!--Dependencies for Datepicker Widget-->
@@ -33,25 +33,29 @@
             <a href="#">About Us</a>
         </div>
 
-        <div class="imagespot">
+        <div class="locationdatetime_form">
 
-            <label for="locations">Choose a location:</label>
-            <select name="locations" id="locations">
-                <option value="volvo">Winnipeg West</option>
-                <option value="saab">Winnipeg East</option>
-                <option value="mercedes">Winnipeg North</option>
-                <option value="audi">Winnipeg South</option>
-              </select>
+            <form>
+                <label for="locations">Choose a location:</label>
 
-            <p>Pickup Date: <input type="text" id="datepicker"></p>
-            <p>Return Date: <input type="text" id="datepicker"></p>
-            
-            <a href="./index.html" target="_self">CLICK ME</a>
-            
-            <!--
-            <h1>My Website</h1>
-            <p>A website created by me.</p>
-            -->
+                <select name="locations" id="locations" required>
+                    <option value="">Not Selected</option>
+                    <option value="wpgW">Winnipeg West</option>
+                    <option value="wpgE">Winnipeg East</option>
+                    <option value="wpgN">Winnipeg North</option>
+                    <option value="wpgS">Winnipeg South</option>
+                </select>
+
+                <label for="pickup-date">Pickup Date:</label>
+                <input type="datetime-local" name="pickupdate" min="2024-11-29" max="2025-11-29" required>
+
+                <label for="return-date">Return Date:</label>
+                <input type="datetime-local" name="returndate" min="2024-11-29" max="2025-11-29" required>
+
+                <a href="./index.html" target="_self">Find your perfect vehicle</a>
+                
+            </form>
+
         </div>
 
         <div class="container">
