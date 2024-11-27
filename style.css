@@ -2,12 +2,23 @@
     background-color: #DAD4B5;
 }
 
+#filter_scroll_summary {
+    display: inline-flex;
+    width: 100%;
+}
+
 body {
     font: sans-serif;
 }
 
-#header {
+#header_progress {
+    display: inline-flex;
     text-align: center;
+    width: 100%;
+}
+#header_navbar {
+    display: inline-flex;
+    width: 100%;
 }
 
 #logo {
@@ -80,9 +91,10 @@ body {
 #vehicle_scroll {
     display: inline-block;
     width: 60%;
+    max-width: 60%;
     height: 650px;
-    padding: 20px; 
-    margin: auto;
+    padding: 20px;
+
     overflow: auto;
     scrollbar-width: none;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
@@ -98,7 +110,7 @@ body {
     width: 60%;
     height: 650px;
     padding: 20px; 
-    margin: auto;
+
     overflow: auto;
     scrollbar-width: none;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
@@ -114,7 +126,7 @@ body {
     width: 60%;
     height: 650px;
     padding: 20px; 
-    margin: auto;
+
     overflow: auto;
     scrollbar-width: none;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
@@ -259,7 +271,8 @@ ul {
     padding: 0;
     width: 60%;
     margin: auto;
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     overflow: hidden;
     background-color: #DAD4B5;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
@@ -292,12 +305,10 @@ ul {
     display: inline-block;
     vertical-align: top;
 
-    width: 15%;
+    width: 15vw;
     height: 650px;
-    margin: left;
     padding: 20px;
     margin-right: 20px;
-
 
     border-radius: 25px;
     border-width: 2px;
@@ -308,12 +319,13 @@ ul {
 
 #summary_div {
     display: inline-block;
-    width: 15%;
+    vertical-align: top;
+
+    width: 15vw;
     height: 650px;
     margin: right;
     padding: 20px;
     margin-left: 20px;
-    position: relative;
 
     border-radius: 25px;
     border-width: 2px;
@@ -322,37 +334,23 @@ ul {
 }
 
 #summary_vehicle {
-    position: absolute;
-    left: 15px;
-    bottom: 200px;
+    margin: 0;
     width: 90%;
+    margin-top: 50vh;
 
     border-width: 2px;
     border-style: hidden hidden solid hidden;
 }
 
 #summary_vehicle_current {
-    position: absolute;
-    left: 20px;
-    bottom: 175px;
+    margin-top: 1vh;
 }
 
 
 #price_filters {
     display: flex;
     flex-direction: column; /* Stack items vertically */
-    margin-bottom: 20px; /* Adds space below this section */   
-}
-#vehicle_type_filters {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    margin-bottom: 20px; /* Adds space below this section */   
+    
 }
 
-
-#vehicle_option_filters  {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    margin-bottom: 20px; /* Adds space below this section */   
-}
 
