@@ -76,74 +76,68 @@
                 <div id = "vehicle_container"></div>
             </div>
             <div id="insurance_scroll">
-            <div id="insurance_options">
-                <h2>Insurance Packages</h2>
+                <div id="insurance_options">
+                    <h2>Insurance Packages</h2>
             
-                <!-- Collision Damage Waiver -->
-                <div class="insurance_option">
-                    <h3>Collision Damage Waiver (CDW)</h3>
-                    <p>Reduces your financial responsibility for damage to the rental car in case of an accident or collision. Deductibles may apply.</p>
-                    <p><strong>Cost:</strong> $20/day</p>
-                    <button onclick="selectInsurance('Collision Damage Waiver')">Select</button>
-                </div>
+                    <!-- Collision Damage Waiver -->
+                    <div class="insurance_option">
+                        <h3>Collision Damage Waiver (CDW)</h3>
+                        <p>Reduces your financial responsibility for damage to the rental car in case of an accident or collision. Deductibles may apply.</p>
+                        <p><strong>Cost:</strong> $20/day</p>
+                        <button data-insurance="Collision Damage Waiver">Select</button>
+                    </div>
             
-                <!-- Loss Damage Waiver -->
-                <div class="insurance_option">
-                    <h3>Loss Damage Waiver (LDW)</h3>
-                    <p>Waives your liability for damage or theft of the rental vehicle, including loss of use fees.</p>
-                    <p><strong>Cost:</strong> $25/day</p>
-                    <button onclick="selectInsurance('Loss Damage Waiver')">Select</button>
-                </div>
+                    <!-- Loss Damage Waiver -->
+                    <div class="insurance_option">
+                        <h3>Loss Damage Waiver (LDW)</h3>
+                        <p>Waives your liability for damage or theft of the rental vehicle, including loss of use fees.</p>
+                        <p><strong>Cost:</strong> $25/day</p>
+                        <button data-insurance="Loss Damage Waiver">Select</button>
+                    </div>
             
-                <!-- Personal Accident Insurance -->
-                <div class="insurance_option">
-                    <h3>Personal Accident Insurance (PAI)</h3>
-                    <p>Covers medical expenses for you and your passengers in case of an accident.</p>
-                    <p><strong>Cost:</strong> $10/day</p>
-                    <button onclick="selectInsurance('Personal Accident Insurance')">Select</button>
-                </div>
+                    <!-- Personal Accident Insurance -->
+                    <div class="insurance_option">
+                        <h3>Personal Accident Insurance (PAI)</h3>
+                        <p>Covers medical expenses for you and your passengers in case of an accident.</p>
+                        <p><strong>Cost:</strong> $10/day</p>
+                        <button data-insurance="Personal Accident Insurance">Select</button>
+                    </div>
             
-                <!-- Supplemental Liability Insurance -->
-                <div class="insurance_option">
-                    <h3>Supplemental Liability Insurance (SLI)</h3>
-                    <p>Protects against third-party claims for bodily injury or property damage.</p>
-                    <p><strong>Cost:</strong> $15/day</p>
-                    <button onclick="selectInsurance('Supplemental Liability Insurance')">Select</button>
-                </div>
+                    <!-- Supplemental Liability Insurance -->
+                    <div class="insurance_option">
+                        <h3>Supplemental Liability Insurance (SLI)</h3>
+                        <p>Protects against third-party claims for bodily injury or property damage.</p>
+                        <p><strong>Cost:</strong> $15/day</p>
+                        <button data-insurance="Supplemental Liability Insurance">Select</button>
+                    </div>
             
-                <!-- Personal Effects Coverage -->
-                <div class="insurance_option">
-                    <h3>Personal Effects Coverage (PEC)</h3>
-                    <p>Insures your personal belongings in case of theft or damage while inside the rental car.</p>
-                    <p><strong>Cost:</strong> $5/day</p>
-                    <button onclick="selectInsurance('Personal Effects Coverage')">Select</button>
-                </div>
+                    <!-- Personal Effects Coverage -->
+                    <div class="insurance_option">
+                        <h3>Personal Effects Coverage (PEC)</h3>
+                        <p>Insures your personal belongings in case of theft or damage while inside the rental car.</p>
+                        <p><strong>Cost:</strong> $5/day</p>
+                        <button data-insurance="Personal Effects Coverage">Select</button>
+                    </div>
             
-                <!-- Roadside Assistance Protection -->
-                <div class="insurance_option">
-                    <h3>Roadside Assistance Protection</h3>
-                    <p>Covers roadside emergencies like towing, flat tires, battery jumps, or lockouts.</p>
-                    <p><strong>Cost:</strong> $7/day</p>
-                    <button onclick="selectInsurance('Roadside Assistance Protection')">Select</button>
-                </div>
+                    <!-- Roadside Assistance Protection -->
+                    <div class="insurance_option">
+                        <h3>Roadside Assistance Protection</h3>
+                        <p>Covers roadside emergencies like towing, flat tires, battery jumps, or lockouts.</p>
+                        <p><strong>Cost:</strong> $7/day</p>
+                        <button data-insurance="Roadside Assistance Protection">Select</button>
+                    </div>
             
-                <!-- Tire and Windshield Protection -->
-                <div class="insurance_option">
-                    <h3>Tire and Windshield Protection</h3>
-                    <p>Covers specific damage to tires, wheels, and windshields.</p>
-                    <p><strong>Cost:</strong> $8/day</p>
-                    <button onclick="selectInsurance('Tire and Windshield Protection')">Select</button>
-                </div>
+                    <!-- Tire and Windshield Protection -->
+                    <div class="insurance_option">
+                        <h3>Tire and Windshield Protection</h3>
+                        <p>Covers specific damage to tires, wheels, and windshields.</p>
+                        <p><strong>Cost:</strong> $8/day</p>
+                        <button data-insurance="Tire and Windshield Protection">Select</button>
+                    </div>
+                </div> 
             </div>
             
-            
 
-
-
-
-
-
-            </div>
             <div id="addons_scroll">
             <div id="addons_options">
                 <h2>Add-Ons</h2>
@@ -224,5 +218,6 @@
 
         <script src="scripts/BookNowButton.js" ></script>
         <script src="scripts/Filters.js" ></script>
+        <script src="scripts/Insurance.js" ></script>
     </body>
 </html>

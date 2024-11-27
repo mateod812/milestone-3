@@ -78,7 +78,6 @@ function add_option_filter(event) {
     const vehicle = event.target;
 }
 
-apply_price_filters();
 
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.getElementById('seats_slider');
@@ -90,3 +89,4 @@ document.addEventListener('DOMContentLoaded', () => {
         carList.filterMinSeats(slider.value);
     });
 });
+apply_price_filters();
