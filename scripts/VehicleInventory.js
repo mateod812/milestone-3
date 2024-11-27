@@ -146,21 +146,9 @@ class VehicleInventory {
             for (let j = 0; j < this.vehicleList[i].length; j++) {
                 const car = this.vehicleList[i][j];
                 if (car.ID == ID) {
-                    car.isRented = true;
                     console.log(`${car.year} ${car.make} ${car.model} is now rented`);
-
-                    const existingCar = document.getElementById(
-                        "summary_vehicle_current"
-                    );
-                    if (existingCar) {
-                        existingCar.remove();
-                    }
-
-                    var carName = document.createElement("h4");
-                    carName.textContent = `${car.year} ${car.make} ${car.model} ---------- $${car.price}/day`;
-                    carName.id = "summary_vehicle_current";
-                    var summary = document.getElementById("summary_div");
-                    summary.appendChild(carName);
+                    add_Car_Summary(car);
+                    car.isRented = true;
                 }
             }
         }

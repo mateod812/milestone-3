@@ -320,10 +320,9 @@ ul {
 #summary_div {
     display: inline-block;
     vertical-align: top;
-
     width: 15vw;
     height: 650px;
-    margin: right;
+    margin-right: 20px; /* Fixed the invalid 'margin: right' */
     padding: 20px;
     margin-left: 20px;
 
@@ -331,6 +330,10 @@ ul {
     border-width: 2px;
     border-style: solid;
     border-color: #800000;
+
+    display: flex; /* Use flexbox to manage layout */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Push items to top and bottom */
 }
 
 #summary_vehicle {
@@ -339,10 +342,19 @@ ul {
     margin: 0;
     width: 90%;
 
-
     border-width: 2px;
     border-style: hidden hidden solid hidden;
 }
+
+#summary_vehicle_total {
+    margin-top: auto; 
+    text-align: left; 
+    border-width: 2px;
+    border-style: hidden hidden solid hidden;
+}
+
+
+
 
 #summary_vehicle_current {
     margin-top: 1vh;

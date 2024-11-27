@@ -1,4 +1,7 @@
-const insuranceOptions = [];
+let insuranceOptions = [];
+let buttonArray = [];
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     // Add event listeners to all buttons with data-insurance attribute
@@ -8,23 +11,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function insurance_buttons(button) {
-    const option = button.getAttribute("data-insurance");
+    let option = button.getAttribute("data-insurance");
+    let cost = button.getAttribute("data-cost");
 
+    let fuckMeMan = [];
+
+
+    fuckMeMan.push(option,cost);
     if (!insuranceOptions.includes(option)) {
         insuranceOptions.push(option);
-
-        var optionName = document.createElement("h4");
-            optionName.textContent = option;
-            optionName.id = "summary_vehicle_current";
-
-
-        var summary = document.getElementById("summary_div");
-        summary.append(optionName);
+        add_Car_Summary(fuckMeMan);
+        button.textContent = "Selected";
+        button.style.color = "black"; // Change text color to black
+        button.style.backgroundColor = "white";
+    } else {
+        remove_car_option(fuckMeMan); 
+        button.textContent = "Select";
+        button.style.backgroundColor = "#4CAF50";
+        button.style.color = "White"; // Change text color to black
+        insuranceOptions = insuranceOptions.filter(item => (item !== option));
     }
-    button.textContent = "Selected";
-    button.style.color = "black"; // Change text color to black
-
-    button.style.backgroundColor = "white";
-    console.log(insuranceOptions); 
-
 }
