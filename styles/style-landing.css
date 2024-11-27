@@ -1,0 +1,47 @@
+@import url("./style-header.css");
+@import url("./style-navbar.css");
+@import url("./style-reviews.css");
+@import url("./style-footer.css");
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.imagespot {
+  padding: 80px;
+  text-align: center;
+  background: #d66d27;
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.imagespot h1 {
+  font-size: 40px;
+}
+
+/* Column container */
+.container {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Main column */
+.review-section {   
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.testimonials {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
