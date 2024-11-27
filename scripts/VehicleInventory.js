@@ -188,15 +188,9 @@ class VehicleInventory {
     }
 
     filterMinSeats(givenSeats) {
-
         const deepCopy = structuredClone(this.renderedCarList);
-
-
-        for (let i = 0; i < this.renderedCarList.length; i++) {
-                if (this.renderedCarList[i].numSeats <= givenSeats) {
-                    this.renderedCarList.splice(i,1)
-            }
-        }
+        this.renderedCarList = this.renderedCarList.filter(car => car.numSeats >= givenSeats);
+        console.log(givenSeats);
         this.renderVehicles();
         this.renderedCarList = deepCopy;
     }
