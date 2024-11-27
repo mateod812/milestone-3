@@ -1,4 +1,8 @@
-let activePriceFilter = null; // Variable to track the active price filter
+const filterState = {
+    price: null, 
+    vehicleType: null, 
+    minSeats: null 
+};
 
 function apply_price_filters() {
     const price_checkbox = document.querySelectorAll('#price_filters input[type="radio"]');
@@ -42,26 +46,32 @@ for (let type of vehicle_type) {
 function add_vehicle_filter(event) {
     const vehicle = event.target;
     const whichBox = vehicle.id;
+    vehicleType = whichBox;
 
     if (vehicle.checked) {
         if (whichBox === "sedan") {
+            vehicleType = "sedan";
             carList.filterSedans();
         } else if (whichBox === "truck") {
+            vehicleType = "truck";
             carList.filterTrucks();
         } else if (whichBox === "all_vehicles") {
+            vehicle_type = "all_Vehicles";
             carList.renderAll();
         }
     } else {
         carList.renderAll();
     }
+    attach_book_now_button();
 
-    if (activePriceFilter === "low_to_high") {
+    if (price === "low_to_high") {
         carList.sortCarsLowtoHigh();
-    } else if (activePriceFilter === "high_to_low") {
+    } else if (price === "high_to_low") {
         carList.sortCarsHightoLow();
     }
-
     attach_book_now_button();
+
+    carList.filterMinSeats(minSeats);
 }
 
 
@@ -87,6 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
     slider.addEventListener('input', () => {
         sliderValue.textContent = slider.value;
         carList.filterMinSeats(slider.value);
+        attach_book_now_button();
+        minSeats = slider.value;
     });
 });
 apply_price_filters();
