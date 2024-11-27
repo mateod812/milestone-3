@@ -2,12 +2,23 @@
     background-color: #DAD4B5;
 }
 
+#filter_scroll_summary {
+    display: inline-flex;
+    width: 100%;
+}
+
 body {
     font: sans-serif;
 }
 
-#header {
+#header_progress {
+    display: inline-flex;
     text-align: center;
+    width: 100%;
+}
+#header_navbar {
+    display: inline-flex;
+    width: 100%;
 }
 
 #logo {
@@ -51,7 +62,7 @@ body {
     max-width:75px;
     max-height:75px;
     position: absolute;
-    left: 175px;
+    left: 15%;
     transition-duration: 1s;
 }
 
@@ -80,9 +91,10 @@ body {
 #vehicle_scroll {
     display: inline-block;
     width: 60%;
+    max-width: 60%;
     height: 650px;
-    padding: 20px; 
-    margin: auto;
+    padding: 20px;
+
     overflow: auto;
     scrollbar-width: none;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
@@ -98,7 +110,7 @@ body {
     width: 60%;
     height: 650px;
     padding: 20px; 
-    margin: auto;
+
     overflow: auto;
     scrollbar-width: none;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
@@ -114,7 +126,7 @@ body {
     width: 60%;
     height: 650px;
     padding: 20px; 
-    margin: auto;
+
     overflow: auto;
     scrollbar-width: none;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
@@ -259,7 +271,8 @@ ul {
     padding: 0;
     width: 60%;
     margin: auto;
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     overflow: hidden;
     background-color: #DAD4B5;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
@@ -290,9 +303,10 @@ ul {
 
 #filter_div {
     display: inline-block;
-    width: 15%;
+    vertical-align: top;
+
+    width: 15vw;
     height: 650px;
-    margin: left;
     padding: 20px;
     margin-right: 20px;
 
@@ -300,16 +314,18 @@ ul {
     border-width: 2px;
     border-style: solid;
     border-color: #800000;
+
 }
 
 #summary_div {
     display: inline-block;
-    width: 15%;
+    vertical-align: top;
+
+    width: 15vw;
     height: 650px;
     margin: right;
     padding: 20px;
     margin-left: 20px;
-    position: relative;
 
     border-radius: 25px;
     border-width: 2px;
@@ -318,17 +334,97 @@ ul {
 }
 
 #summary_vehicle {
-    position: absolute;
-    left: 15px;
-    bottom: 200px;
+    margin: 0;
     width: 90%;
+    margin-top: 50vh;
 
     border-width: 2px;
     border-style: hidden hidden solid hidden;
 }
 
 #summary_vehicle_current {
-    position: absolute;
-    left: 20px;
-    bottom: 175px;
+    margin-top: 1vh;
+}
+
+
+#price_filters {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; 
+}
+#vehicle_type_filters {
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 20px; 
+}
+
+#vehicle_option_filters  {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+
+#insurance_scroll {
+    display: none; /* Hide by default; show via JavaScript */
+    padding: 20px;
+}
+
+.insurance_option {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.insurance_option h3 {
+    margin: 5px 0;
+}
+
+.insurance_option p {
+    margin: 10px 0;
+}
+
+.insurance_option button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.insurance_option button:hover {
+    background-color: #45a049;
+}
+
+
+.addon_option {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.addon_option h3 {
+    margin: 0 0 10px;
+}
+
+.addon_option p {
+    margin: 5px 0;
+}
+
+.addon_option button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.addon_option button:hover {
+    background-color: #218838;
 }
