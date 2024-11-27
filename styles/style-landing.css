@@ -14,7 +14,7 @@ body {
 }
 
 /* Header/logo Title */
-.imagespot {
+.locationdatetime_form {
   padding: 80px;
   text-align: center;
   background: #d66d27;
@@ -22,7 +22,7 @@ body {
 }
 
 /* Increase the font size of the heading */
-.imagespot h1 {
+.locationdatetime_form h1 {
   font-size: 40px;
 }
 
