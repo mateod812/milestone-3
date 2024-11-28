@@ -10,6 +10,7 @@ F150Array = [
     "yes",
     "yes",
     "truckImages/2024_Dodge_Ram1500.jpg",
+    "truck"
 ];
 
 ramArray = [
@@ -24,4 +25,5 @@ ramArray = [
     "yes",
     "yes",
     "truckImages/2024_Dodge_Ram1500.jpg",
+    "truck"
 ];

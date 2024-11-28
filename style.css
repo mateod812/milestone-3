@@ -236,7 +236,7 @@ body {
     display: block;
     max-width:50px;
     max-height:50px;
-    margin-left: 375px;
+    margin-left: 365px;
     margin-top: 10px;
     font-size: 40px;
 }
@@ -304,6 +304,7 @@ ul {
 #filter_div {
     display: inline-block;
     vertical-align: top;
+    position: relative;
 
     width: 15vw;
     height: 650px;
@@ -378,6 +379,56 @@ ul {
     margin-bottom: 20px;
 }
 
+.dropbtn {
+    background-color: #800000;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: red;
+}
+
+.dropdown {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.dropdown-content {
+    display: block;
+    position: relative;
+}
+
+.show {
+    display:none;
+}
+
+.applyfiltersbtn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.applyfiltersbtn:hover {
+    background-color: #4CAF50;
+}
+
 
 #insurance_scroll {
     display: none; /* Hide by default; show via JavaScript */
@@ -441,4 +492,40 @@ ul {
 
 .addon_option button:hover {
     background-color: #218838;
+}
+
+
+#summary_info_div {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Arrange divs vertically */
+    gap: 20px; /* Add space between each div */
+    margin: 20px;
+    padding: 10px;
+}
+
+#vehicle_div, #insurance_div, #addon_div {
+    border-radius: 8px; /* Round the corners */
+    padding: 15px; /* Add padding inside the divs */
+}
+
+
+#vehicle_div::before {
+    content: "Vehicles";
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#insurance_div::before {
+    content: "Insurance";
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#addon_div::before {
+    content: "Add-ons";
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
 }

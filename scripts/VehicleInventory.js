@@ -141,6 +141,19 @@ class VehicleInventory {
 
     }
 
+    //Gets a car from ID, probably, idk how this works but ctr-c - ctrl-v go brrrrr
+    fromId(ID) 
+    {
+        for (let i = 0; i < this.vehicleList.length; i++) {
+            for (let j = 0; j < this.vehicleList[i].length; j++) {
+                const car = this.vehicleList[i][j];
+                if (car.ID == ID) {
+                    return car
+                }
+            }
+        }
+    }
+
     bookCar(ID) {
         for (let i = 0; i < this.vehicleList.length; i++) {
             for (let j = 0; j < this.vehicleList[i].length; j++) {
@@ -149,6 +162,7 @@ class VehicleInventory {
                     console.log(`${car.year} ${car.make} ${car.model} is now rented`);
                     add_Car_Summary(car);
                     car.isRented = true;
+                    cart.setVehicle(cart, ID);
                 }
             }
         }
@@ -181,5 +195,34 @@ class VehicleInventory {
         console.log(givenSeats);
         this.renderVehicles();
         this.renderedCarList = deepCopy;
+    } 
+    applyFilters(filterState) {
+        let filteredVehicles = [];
+        for (let type of this.vehicleList) {
+            filteredVehicles = filteredVehicles.concat(type);
+        }
+
+        if (filterState.vehicleType) {
+            filteredVehicles = filteredVehicles.filter(vehicle => vehicle.vehicleType === filterState.vehicleType);
+            console.log(filterState.vehicleType);
+        }
+
+        if (filterState.minSeats) {
+            filteredVehicles = filteredVehicles.filter(vehicle => vehicle.numSeats >= filterState.minSeats);
+        }
+
+        if (filterState.price === "low_to_high") {
+            filteredVehicles.sort((a,b) => a.price - b.price);
+        }
+        else if (filterState.price === "high_to_low") {
+            filteredVehicles.sort((a,b) => b.price - a.price);
+            console.log(filteredVehicles[0]);
+        }
+        console.log(filterState.price);
+        console.log(filterState.vehicleType);
+        console.log(filterState.minSeats);
+        this.renderedCarList = filteredVehicles;
+        this.renderVehicles();
+        attach_book_now_button();
     }
 }
