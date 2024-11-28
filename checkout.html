@@ -41,8 +41,9 @@
             padding-bottom: 20px
         }
 
-        .desc{
-            font-size:12px
+        .desc {
+            font-size: 12px;
+            font-style:normal;
         }
 
         .summary-bubble {
@@ -50,6 +51,9 @@
             height: fit-content;
             width: 45%;
             word-break: break-word;
+        }
+        .variable{
+            font-style:normal;
         }
     </style>
 </head>
@@ -91,26 +95,26 @@
 
                         <p>
                             <img src="companyImages/car-seat.png" height="15" width="15" />
-                            <var id="vseats"></var> Seats.
+                            <var class="variable" id="vseats"></var> Seats.
                         </p>
                         <p>
                             <img src="companyImages/luggage.png" height="15" width="15" />
-                            <var id="vcargo"></var> Bags.
+                            <var class="variable" id="vcargo"></var> Bags.
                         </p>
                     </div>
                     <div class="summary-bubble" style="float: right; width:55%">
                         <h3>Pickup Info:</h3>
                         <p>
-                            Address: <var id="vaddress"></var>
+                            Address: <var class="variable" id="vaddress"></var>
                         </p>
 
                         <p>
                             Start Date:
-                            <var id="vsdate"></var>
+                            <var class="variable" id="vsdate"></var>
                         </p>
                         <p>
                             Dropoff Date:
-                            <var id="vedate"></var>
+                            <var class="variable" id="vedate"></var>
                         </p>
                     </div>
 
@@ -127,7 +131,7 @@
                                     <var class="desc" id="ioption_desc">Desc</var>
                                 </div>
                                 <div style="float: right; width: 20%; margin-top: 0;  text-align: right">
-                                    <h5 style="margin-top: 0;margin-bottom: 6px;">$<var id="ioption_cost">0</var>/day</h5>
+                                    <h5 style="margin-top: 0;margin-bottom: 6px;">$<var class="variable" id="ioption_cost">0</var>/day</h5>
                                     <button id="ioption_button" style="margin-top: 0;height:30px; width: 30px; text-align: center">X</button>
                                 </div>
 
@@ -145,7 +149,7 @@
                                     <var class="desc" id="aoption_desc">Desc</var>
                                 </div>
                                 <div style="float: right; width: 20%; margin-top: 0;  text-align: right">
-                                    <h5 style="margin-top: 0;margin-bottom: 6px;">$<var id="aoption_cost">0</var>/day</h5>
+                                    <h5 style="margin-top: 0;margin-bottom: 6px;">$<var class="variable" id="aoption_cost">0</var>/day</h5>
                                     <button id="aoption_button" style="margin-top: 0;height:30px; width: 30px; text-align: center">X</button>
                                 </div>
 
@@ -160,8 +164,8 @@
                         <h5 style="margin-bottom: 0; margin: 0">Subtotal</h5>
                     </div>
                     <div style="float: right; width: 45%; margin-bottom: 0; text-align: right; ">
-                        <h5 style="margin: 0">$<var id="subtotal"></var></h5>
-                        <h6 style="margin: 0">$<var id="daily_sub"></var> x <var id="days"></var> days</h6>
+                        <h5 style="margin: 0">$<var class="variable" id="subtotal"></var></h5>
+                        <h6 style="margin: 0">$<var class="variable" id="daily_sub"></var> x <var class="variable" id="days"></var> days</h6>
                     </div>
                 </div>
                 <div style="overflow: hidden; margin-top: 0; margin-bottom: 0; ">
@@ -169,7 +173,7 @@
                         <h3 style="margin-bottom: 0;">Total</h3>
                     </div>
                     <div style="float: right; width: 45%;  text-align: right; ">
-                        <h3 style="margin-bottom: 0;">$<var id="total"></var></h3>
+                        <h3 style="margin-bottom: 0;">$<var class="variable" id="total"></var></h3>
                     </div>
                 </div>
 
@@ -233,7 +237,7 @@
                         <h3 style="margin-bottom: 0;">Total</h3>
                     </div>
                     <div style="float: right; width: 45%; margin-bottom: 0; text-align: right; ">
-                        <h3 style="margin-bottom: 20px;">$<var id="total2"></var></h3>
+                        <h3 style="margin-bottom: 20px;">$<var class="variable" id="total2"></var></h3>
                     </div>
                 </div>
                 <button style="color: white; font-size: 30px; padding-top: 10px; padding-bottom: 10px; margin-left: 10%; border-radius: 4px; background-color: #899fe8; border-color: transparent; width: 80%; ">Pay and book now</button>
