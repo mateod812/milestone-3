@@ -2,7 +2,29 @@ var carList;
 var cart;
 
 function loadMain() {
-    cart = new Cart();
+    if (!cart) {
+        cart = new Cart();
+        loadCart();
+    }
+}
+
+function loadHomePage() {
+    loadMain();
+    if (cart.getStartDate()) {
+        document.getElementById("start_date").value = cart.getStartDate();
+    }
+
+    if (cart.getEndDate()) {
+        document.getElementById("end_date").value = cart.getEndDate();
+    }   
+}
+function loadCheckOut() {
+    loadMain();
+    loadVehicles()
+    setCheckOutSummary()
+}
+
+function loadVehicles() {
     carList = new VehicleInventory();
 
     carList.addSedans(new Vehicle(civicArray));
@@ -11,22 +33,11 @@ function loadMain() {
 
     carList.addTrucks(new Vehicle(F150Array));
     carList.addTrucks(new Vehicle(ramArray));
-
-    loadCart();
 }
-
-function loadHomePage() {
-    loadMain();
-}
-function loadCheckOut() {
-    loadMain();
-    setCheckOutSummary()
-}
-
 
 function loadVehicleInv() {
     loadMain();
-
+    loadVehicles();
 
     carList.renderAll();
 
