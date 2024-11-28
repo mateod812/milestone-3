@@ -24,51 +24,53 @@
         <br/>
         <div id="filter_scroll_summary">
             <div id="filter_div">
-                <div id="price_filters">
-                    <label for="no_price_filter"> 
-                        <input type="radio" id="no_price_filter" name="price_filter" checked>
-                        No price filter
-                    </label>
-
-                    <label for="low_to_high"> 
-                        <input type="radio" id="low_to_high" name="price_filter" >
-                        Low to High
-                    </label>
-                    
-                    <label for="high_to_low"> 
-                        <input type="radio"  id="high_to_low" name="price_filter">    
-                        High to Low
-                    </label>
+                <div class="dropdown">
+                    <button onclick="priceDropdown()" class="dropbtn">Price Filters</button>
+                    <div id="priceDropdown" class="dropdown-content">
+                        <label for="low_to_high"> 
+                            <input type="radio" id="low_to_high" name="price_filter" >
+                            Low to High
+                        </label>
+                        <label for="high_to_low"> 
+                            <input type="radio"  id="high_to_low" name="price_filter">    
+                            High to Low
+                        </label>
+                    </div>
                 </div>
-                <div id="vehicle_type_filters">
+                <div class="dropdown">
+                    <button onclick="vehicleDropdown()" class="dropbtn">Vehicle Type</button>
+                    <div id="vehicleDropdown" class="dropdown-content">
+                        <div id="vehicle_type_filters">
 
-                    <label for="all_vehicles"> 
-                        <input type="radio" id="all_vehicles" name="vehicle_type_filters" checked>
-                        All Vehicles
-                    </label>
-    
-    
-                    <label for="sedans"> 
-                        <input type="radio" id="sedan" name="vehicle_type_filters">
-                        sedans
-                    </label>
-                    
-                    <label for="trucks"> 
-                        <input type="radio"  id="truck" name="vehicle_type_filters">    
-                        trucks
-                    </label>
+                            <label for="all_vehicles"> 
+                                <input type="radio" id="all_vehicles" name="vehicle_type_filters" checked>
+                                All Vehicles
+                            </label>
+            
+            
+                            <label for="sedans"> 
+                                <input type="radio" id="sedan" name="vehicle_type_filters">
+                                sedans
+                            </label>
+                            
+                            <label for="trucks"> 
+                                <input type="radio"  id="truck" name="vehicle_type_filters">    
+                                trucks
+                            </label>
+                        </div>
+                    </div>
                 </div>
-    
-    
-    
-                <div id="vehicle_option_filters">
-                    
+                <div class="dropdown">
+                    <button onclick="seatsDropdown()" class="dropbtn"># Of Seats</button>
+                    <div id="seatsDropdown" class="dropdown-content">
                     <label for="seats_slider"> 
                         <input type="range" min="2" max="8" value="4" id="seats_slider" name="vehicle_option_filters" >
                         <span id ="sliderValue"></span>
                         seats
                     </label>
+                    </div>
                 </div>
+                <button onclick="filterVehicles()" class="applyfiltersbtn">Apply Filters</button>
             </div>
 
             <div id="vehicle_scroll">

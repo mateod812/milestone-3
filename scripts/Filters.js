@@ -4,6 +4,18 @@ const filterState = {
     minSeats: null 
 };
 
+function priceDropdown() {
+    document.getElementById("priceDropdown").classList.toggle("show");
+}
+
+function vehicleDropdown() {
+    document.getElementById("vehicleDropdown").classList.toggle("show");
+}
+
+function seatsDropdown() {
+    document.getElementById("seatsDropdown").classList.toggle("show");
+}
+
 function apply_price_filters() {
     const price_checkbox = document.querySelectorAll('#price_filters input[type="radio"]');
 
