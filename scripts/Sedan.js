@@ -10,6 +10,7 @@ civicArray = [
     "yes",
     "no",
     "sedanImages/2024_Honda_Civic.jpg",
+    "sedan"
 ];
 corollaArray = [
     "2024",
@@ -23,6 +24,7 @@ corollaArray = [
     "yes",
     "no",
     "sedanImages/2024_Toyota_Corolla.jpg",
+    "sedan"
 ];
 jettaArray = [
     "2024",
@@ -36,4 +38,5 @@ jettaArray = [
     "yes",
     "no",
     "sedanImages/2024_Volkswagon_Jetta.jpg",
+    "sedan"
 ];

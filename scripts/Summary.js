@@ -28,7 +28,7 @@ function add_Car_Summary(carToAdd) {
 function remove_car_option(option) {
     summaryList = summaryList.filter(item => item[0] !== option[0]);
     console.log(option[0]);
-    create_summary_list(); 
+    create_summary_list();
 }
 
 

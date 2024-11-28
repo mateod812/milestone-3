@@ -45,6 +45,7 @@ class Vehicle {
 
         this.isRented = false;
         this.image = array[10];
+        this.vehicleType = array[11];
         this.ID = Vehicle.car_id;
         Vehicle.car_id++;
     }

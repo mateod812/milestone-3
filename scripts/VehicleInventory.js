@@ -181,5 +181,34 @@ class VehicleInventory {
         console.log(givenSeats);
         this.renderVehicles();
         this.renderedCarList = deepCopy;
+    } 
+    applyFilters(filterState) {
+        let filteredVehicles = [];
+        for (let type of this.vehicleList) {
+            filteredVehicles = filteredVehicles.concat(type);
+        }
+
+        if (filterState.vehicleType) {
+            filteredVehicles = filteredVehicles.filter(vehicle => vehicle.vehicleType === filterState.vehicleType);
+            console.log(filterState.vehicleType);
+        }
+
+        if (filterState.minSeats) {
+            filteredVehicles = filteredVehicles.filter(vehicle => vehicle.numSeats >= filterState.minSeats);
+        }
+
+        if (filterState.price === "low_to_high") {
+            filteredVehicles.sort((a,b) => a.price - b.price);
+        }
+        else if (filterState.price === "high_to_low") {
+            filteredVehicles.sort((a,b) => b.price - a.price);
+            console.log(filteredVehicles[0]);
+        }
+        console.log(filterState.price);
+        console.log(filterState.vehicleType);
+        console.log(filterState.minSeats);
+        this.renderedCarList = filteredVehicles;
+        this.renderVehicles();
+        attach_book_now_button();
     }
 }

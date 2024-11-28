@@ -27,14 +27,16 @@
                 <div class="dropdown">
                     <button onclick="priceDropdown()" class="dropbtn">Price Filters</button>
                     <div id="priceDropdown" class="dropdown-content">
-                        <label for="low_to_high"> 
-                            <input type="radio" id="low_to_high" name="price_filter" >
-                            Low to High
-                        </label>
-                        <label for="high_to_low"> 
-                            <input type="radio"  id="high_to_low" name="price_filter">    
-                            High to Low
-                        </label>
+                        <div id="price_filters">
+                            <label for="low_to_high"> 
+                                <input type="radio" id="low_to_high" name="price_filter" >
+                                Low to High
+                            </label>
+                            <label for="high_to_low"> 
+                                <input type="radio"  id="high_to_low" name="price_filter">    
+                                High to Low
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -70,7 +72,7 @@
                     </label>
                     </div>
                 </div>
-                <button onclick="filterVehicles()" class="applyfiltersbtn">Apply Filters</button>
+                <button onclick="applyFilters()" class="applyfiltersbtn" id="applyFiltersButton">Apply Filters</button>
             </div>
 
             <div id="vehicle_scroll">
