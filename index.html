@@ -6,66 +6,66 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <body id="main">
-        <br/>
+    <body id="main" onload="renderAllCars(), loadCart()" onunload="saveCart()">
+        <br />
         <div id="header_progress">
             <div id="progress_bar">
-                <img id="progress_car"; src = "companyImages/progress_car.png";>
-                <img id="progress_flag"; src= "companyImages/flag.png";>
+                <img id="progress_car" ; src="companyImages/progress_car.png" ;>
+                <img id="progress_flag" ; src="companyImages/flag.png" ;>
             </div>
         </div>
         <div id="header_navbar">
             <ul>
-                <li><a class = "active" href="#vehicles" onclick="moveToVehicles()">Vehicle Selection</a></li>
-                <li><a class = "active" href="#insurances" onclick="moveToInsurance()">Insurance Packages</a></li>
-                <li><a class = "active" href="#add-ons" onclick="moveToAddons()">Add-Ons</a></li>
+                <li><a class="active" href="#vehicles" onclick="moveToVehicles()">Vehicle Selection</a></li>
+                <li><a class="active" href="#insurances" onclick="moveToInsurance()">Insurance Packages</a></li>
+                <li><a class="active" href="#add-ons" onclick="moveToAddons()">Add-Ons</a></li>
             </ul>
         </div>
-        <br/>
+        <br />
         <div id="filter_scroll_summary">
             <div id="filter_div">
                 <div id="price_filters">
-                    <label for="no_price_filter"> 
+                    <label for="no_price_filter">
                         <input type="radio" id="no_price_filter" name="price_filter" checked>
                         No price filter
                     </label>
 
-                    <label for="low_to_high"> 
-                        <input type="radio" id="low_to_high" name="price_filter" >
+                    <label for="low_to_high">
+                        <input type="radio" id="low_to_high" name="price_filter">
                         Low to High
                     </label>
-                    
-                    <label for="high_to_low"> 
-                        <input type="radio"  id="high_to_low" name="price_filter">    
+
+                    <label for="high_to_low">
+                        <input type="radio" id="high_to_low" name="price_filter">
                         High to Low
                     </label>
                 </div>
                 <div id="vehicle_type_filters">
 
-                    <label for="all_vehicles"> 
+                    <label for="all_vehicles">
                         <input type="radio" id="all_vehicles" name="vehicle_type_filters" checked>
                         All Vehicles
                     </label>
-    
-    
-                    <label for="sedans"> 
+
+
+                    <label for="sedans">
                         <input type="radio" id="sedan" name="vehicle_type_filters">
                         sedans
                     </label>
-                    
-                    <label for="trucks"> 
-                        <input type="radio"  id="truck" name="vehicle_type_filters">    
+
+                    <label for="trucks">
+                        <input type="radio" id="truck" name="vehicle_type_filters">
                         trucks
                     </label>
                 </div>
-    
-    
-    
+
+
+
                 <div id="vehicle_option_filters">
-                    
-                    <label for="seats_slider"> 
-                        <input type="range" min="2" max="8" value="4" id="seats_slider" name="vehicle_option_filters" >
-                        <span id ="sliderValue"></span>
+
+                    <label for="seats_slider">
+                        <input type="range" min="2" max="8" value="4" id="seats_slider" name="vehicle_option_filters">
+                        <span id="sliderValue"></span>
                         seats
                     </label>
                 </div>
@@ -73,12 +73,12 @@
 
             <div id="vehicle_scroll">
                 <!-- cars go here, javascript to flip between cars/insurance/add-ons -->
-                <div id = "vehicle_container"></div>
+                <div id="vehicle_container"></div>
             </div>
             <div id="insurance_scroll">
                 <div id="insurance_options">
                     <h2>Insurance Packages</h2>
-                
+
                     <!-- Collision Damage Waiver -->
                     <div class="insurance_option">
                         <h3>Collision Damage Waiver (CDW)</h3>
@@ -86,7 +86,7 @@
                         <p><strong>Cost:</strong> <span class="insurance_cost">$20/day</span></p>
                         <button data-insurance="Collision Damage Waiver" data-cost="20">Select</button>
                     </div>
-                
+
                     <!-- Loss Damage Waiver -->
                     <div class="insurance_option">
                         <h3>Loss Damage Waiver (LDW)</h3>
@@ -94,7 +94,7 @@
                         <p><strong>Cost:</strong> <span class="insurance_cost">$25/day</span></p>
                         <button data-insurance="Loss Damage Waiver" data-cost="25">Select</button>
                     </div>
-                
+
                     <!-- Roadside Assistance Protection -->
                     <div class="insurance_option">
                         <h3>Roadside Assistance Protection</h3>
@@ -102,7 +102,7 @@
                         <p><strong>Cost:</strong> <span class="insurance_cost">$7/day</span></p>
                         <button data-insurance="Roadside Assistance Protection" data-cost="7">Select</button>
                     </div>
-                
+
                     <!-- Tire and Windshield Protection -->
                     <div class="insurance_option">
                         <h3>Tire and Windshield Protection</h3>
@@ -111,9 +111,9 @@
                         <button data-insurance="Tire and Windshield Protection" data-cost="8">Select</button>
                     </div>
                 </div>
-                
+
             </div>
-            
+
 
 
 
@@ -122,7 +122,7 @@
             <div id="addons_scroll">
                 <div id="addons_options">
                     <h2>Add-Ons</h2>
-                
+
                     <!-- GPS Navigation -->
                     <div class="addon_option">
                         <h3>GPS Navigation System</h3>
@@ -130,7 +130,7 @@
                         <p><strong>Cost:</strong> <span class="addon_cost">$10/day</span></p>
                         <button data-addon="GPS Navigation System" data-cost="10">Add</button>
                     </div>
-                
+
                     <!-- Child Safety Seat -->
                     <div class="addon_option">
                         <h3>Child Safety Seat</h3>
@@ -138,7 +138,7 @@
                         <p><strong>Cost:</strong> <span class="addon_cost">$15/day</span></p>
                         <button data-addon="Child Safety Seat" data-cost="15">Add</button>
                     </div>
-                
+
                     <!-- Additional Driver -->
                     <div class="addon_option">
                         <h3>Additional Driver</h3>
@@ -146,7 +146,7 @@
                         <p><strong>Cost:</strong> <span class="addon_cost">$20/day</span></p>
                         <button data-addon="Additional Driver" data-cost="20">Add</button>
                     </div>
-                
+
                     <!-- WiFi Hotspot -->
                     <div class="addon_option">
                         <h3>WiFi Hotspot</h3>
@@ -154,7 +154,7 @@
                         <p><strong>Cost:</strong> <span class="addon_cost">$12/day</span></p>
                         <button data-addon="WiFi Hotspot" data-cost="12">Add</button>
                     </div>
-                
+
                     <!-- Roof Rack -->
                     <div class="addon_option">
                         <h3>Roof Rack</h3>
@@ -162,7 +162,7 @@
                         <p><strong>Cost:</strong> <span class="addon_cost">$8/day</span></p>
                         <button data-addon="Roof Rack" data-cost="8">Add</button>
                     </div>
-                
+
                     <!-- Ski Rack -->
                     <div class="addon_option">
                         <h3>Ski Rack</h3>
@@ -170,7 +170,7 @@
                         <p><strong>Cost:</strong> <span class="addon_cost">$10/day</span></p>
                         <button data-addon="Ski Rack" data-cost="10">Add</button>
                     </div>
-                
+
                     <!-- Bike Rack -->
                     <div class="addon_option">
                         <h3>Bike Rack</h3>
@@ -178,14 +178,14 @@
                         <p><strong>Cost:</strong> <span class="addon_cost">$7/day</span></p>
                         <button data-addon="Bike Rack" data-cost="7">Add</button>
                     </div>
-                
+
                 </div>
             </div>
-            
 
 
 
-            
+
+
 
             <div id="summary_div">
                 <h2 id="summary_vehicle">Summary</h2>
@@ -207,14 +207,16 @@
         <script src="scripts/Truck.js"></script>
 
         <script src="scripts/Vehicle.js"></script>
+
+        <script src="scripts/Cart.js"></script>
         <script src="scripts/VehicleInventory.js"></script>
-        
+
         <script src="scripts/Main.js"></script>
-        
-        <script src="scripts/Summary.js" ></script>
-        <script src="scripts/BookNowButton.js" ></script>
-        <script src="scripts/Filters.js" ></script>
-        <script src="scripts/Insurance.js" ></script>
-        <script src="scripts/Addons.js" ></script>
+
+        <script src="scripts/Summary.js"></script>
+        <script src="scripts/BookNowButton.js"></script>
+        <script src="scripts/Filters.js"></script>
+        <script src="scripts/Insurance.js"></script>
+        <script src="scripts/Addons.js"></script>
     </body>
 </html>

@@ -17,5 +17,14 @@ const Ram1500 = new Vehicle(ramArray);
 carList.addTrucks(F150);
 carList.addTrucks(Ram1500);
 
+function renderAllCars() {
+    carList.renderAll();
+}
 
-carList.renderAll();
+function saveCart() {
+    document.cookie = cart.save();
+}
+function loadCart() {
+    cart.load(document.cookie);
+}
+
