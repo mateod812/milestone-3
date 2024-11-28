@@ -16,7 +16,7 @@ function addon_buttons(button) {
     let fuckMeMan = [];
 
 
-    fuckMeMan.push(option,cost);
+    fuckMeMan.push(option,cost,2);
     if (!addonOptions.includes(option)) {
         addonOptions.push(option);
         add_Car_Summary(fuckMeMan);
