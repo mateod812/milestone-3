@@ -38,6 +38,11 @@
             padding-right: 2.5%;
             padding-left: 2.5%;
             margin: 2%;
+            padding-bottom: 20px
+        }
+
+        .desc{
+            font-size:12px
         }
 
         .summary-bubble {
@@ -112,17 +117,17 @@
 
                 </div>
                 <hr />
-                <div style="overflow:hidden">
+                <div style="overflow:hidden;">
                     <div id="ioptions" class="summary-bubble" style="width: 90%;">
                         <h3 style="margin-top:0px">Insurance:</h3>
                         <div id="ioption">
-                            <div style="overflow: hidden; margin-top:20px">
+                            <div style="overflow: hidden; margin-bottom:20px">
                                 <div style="float: left; width: 80%; margin-top: 0">
-                                    <h4 style="margin-top:1%; margin-bottom:2%" id="ioption_name">Name</h4>
-                                    <var id="ioption_desc">Desc</var>
+                                    <h5 style="margin-top:1%; margin-bottom:2%" id="ioption_name">Name</h5>
+                                    <var class="desc" id="ioption_desc">Desc</var>
                                 </div>
                                 <div style="float: right; width: 20%; margin-top: 0;  text-align: right">
-                                    <h4 style="margin-top: 0;margin-bottom: 6px;">$<var id="ioption_cost">0</var>/day</h4>
+                                    <h5 style="margin-top: 0;margin-bottom: 6px;">$<var id="ioption_cost">0</var>/day</h5>
                                     <button id="ioption_button" style="margin-top: 0;height:30px; width: 30px; text-align: center">X</button>
                                 </div>
 
@@ -134,13 +139,13 @@
                     <div id="aoptions" class="summary-bubble" style="width: 90%">
                         <h3 style="margin-top:0px">Addons:</h3>
                         <div id="aoption">
-                            <div style="overflow: hidden; margin-top:20px">
+                            <div style="overflow: hidden; margin-bottom: 20px">
                                 <div style="float: left; width: 80%; margin-top: 0">
-                                    <h4 style="margin-top:1%; margin-bottom:2%" id="aoption_name">Name</h4>
-                                    <var id="aoption_desc">Desc</var>
+                                    <h5 style="margin-top:1%; margin-bottom:2%" id="aoption_name">Name</h5>
+                                    <var class="desc" id="aoption_desc">Desc</var>
                                 </div>
                                 <div style="float: right; width: 20%; margin-top: 0;  text-align: right">
-                                    <h4 style="margin-top: 0;margin-bottom: 6px;">$<var id="aoption_cost">0</var>/day</h4>
+                                    <h5 style="margin-top: 0;margin-bottom: 6px;">$<var id="aoption_cost">0</var>/day</h5>
                                     <button id="aoption_button" style="margin-top: 0;height:30px; width: 30px; text-align: center">X</button>
                                 </div>
 
@@ -149,14 +154,90 @@
 
                     </div>
                 </div>
-            </div>
-        <div class="info-bubble" id="info" data->
-            <h2>Your Info</h2>
-            <hr />
-            <p>
 
-            </p>
-        </div>
+                <div style="overflow:hidden;margin:0">
+                    <div style="float: left; width: 45%;margin-bottom: 0;">
+                        <h5 style="margin-bottom: 0; margin: 0">Subtotal</h5>
+                    </div>
+                    <div style="float: right; width: 45%; margin-bottom: 0; text-align: right; ">
+                        <h5 style="margin: 0">$<var id="subtotal"></var></h5>
+                        <h6 style="margin: 0">$<var id="daily_sub"></var> x <var id="days"></var> days</h6>
+                    </div>
+                </div>
+                <div style="overflow: hidden; margin-top: 0; margin-bottom: 0; ">
+                    <div style="float: left; width: 45%;">
+                        <h3 style="margin-bottom: 0;">Total</h3>
+                    </div>
+                    <div style="float: right; width: 45%;  text-align: right; ">
+                        <h3 style="margin-bottom: 0;">$<var id="total"></var></h3>
+                    </div>
+                </div>
+
+            </div>
+            <div class="info-bubble" id="info">
+                <h2>Your Info</h2>
+                <hr />
+                <div style="overflow:hidden">
+                    <div style="float: left; width: 45%;margin-bottom: 0;">
+                        <h4 style="margin-bottom: 0;">First Name</h4>
+                        <input style="width:100%" type="text" id="first_name" />
+                    </div>
+                    <div style="float: right; width:45%; margin-bottom:0">
+                        <h4 style="margin-bottom: 0;">Last Name</h4>
+                        <input style="width:100%" type="text" id="last_name" />
+                    </div>
+                </div>
+                <div style="width:80%; margin-bottom:0">
+                    <h4 style="margin-bottom: 0;">Email</h4>
+                    <input style="width:100%" type="email" id="email" />
+                    <h4 style="margin-bottom: 0;">Phone Number</h4>
+                    <input style="width:100%" type="number" id="phone_number" />
+                    <h4 style="margin-bottom: 0;">Address</h4>
+                    <input style="width:100%" type="text" id="address" />
+                    <h4 style="margin-bottom: 0;">Address Line 2</h4>
+                    <input style="width:100%" type="text" id="address2" />
+                </div>
+                <div style="overflow:hidden;">
+                    <div style="float: left; width: 35%;margin-bottom: 0;">
+                        <h4 style="margin-bottom: 0;">City</h4>
+                        <input style="width:100%" type="text" id="city" />
+                    </div>
+                    <div style="float: left; width: 25%; margin-bottom: 0; padding-left: 2%">
+                        <h4 style="margin-bottom: 0;">Province</h4>
+                        <input style="width:100%" type="text" id="province" />
+                    </div>
+                    <div style="float: left; width: 35%; margin-bottom: 0; padding-left: 2% ">
+                        <h4 style="margin-bottom: 0;">Postal Code</h4>
+                        <input style="width:100%" type="text" id="postal_code" />
+                    </div>
+                </div>
+                <div style="width:60%; margin-bottom:0">
+                    <h4 style="margin-bottom: 0;">Country</h4>
+                    <input style="width:100%" type="text" id="country" />
+                </div>
+                <hr />
+                <h3>Payment</h3>
+
+                <div style="width:80%; margin-bottom:0">
+                    <h4 style="margin-bottom: 0;">Card Number</h4>
+                    <input style="width:100%" type="number" id="credit_card" />
+                    <h4 style="margin-bottom: 0;">CVV</h4>
+                    <input style="width:100%" type="number" id="cvv" />
+                    <h4 style="margin-bottom: 0;">Expiry Date</h4>
+                    <input style="width:100%" type="text" id="expiry" />
+                </div>
+                <br />
+
+                <div style="overflow:hidden">
+                    <div style="float: left; width: 45%;margin-bottom: 0;">
+                        <h3 style="margin-bottom: 0;">Total</h3>
+                    </div>
+                    <div style="float: right; width: 45%; margin-bottom: 0; text-align: right; ">
+                        <h3 style="margin-bottom: 20px;">$<var id="total2"></var></h3>
+                    </div>
+                </div>
+                <button style="color: white; font-size: 30px; padding-top: 10px; padding-bottom: 10px; margin-left: 10%; border-radius: 4px; background-color: #899fe8; border-color: transparent; width: 80%; ">Pay and book now</button>
+            </div>
     </div>
 </div>
     
