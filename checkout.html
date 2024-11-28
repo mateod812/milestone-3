@@ -13,6 +13,8 @@
     <script src="scripts/Sedan.js"></script>
     <script src="scripts/Truck.js"></script>
     <script src="scripts/Vehicle.js"></script>
+    <script type="text/javascript" src="scripts/Addons.js"></script>
+    <script type="text/javascript" src="scripts/Insurance.js"></script>
     <script type="text/javascript" src="scripts/VehicleInventory.js"></script>
     <script type="text/javascript" src="scripts/Cart.js"></script>
     <script type="text/javascript" src="scripts/Main.js"></script>
@@ -20,9 +22,9 @@
 
     <style>
         .centered-page {
-            padding-left: 25%;
+            padding-left: 15%;
             text-align: center;
-            border: solid 4px;
+            border: solid 4px rgb(255 0 0);
             height: fit-content;
         }
 
@@ -36,6 +38,13 @@
             padding-right: 2.5%;
             padding-left: 2.5%;
             margin: 2%;
+        }
+
+        .summary-bubble {
+            margin: 2%;
+            height: fit-content;
+            width: 45%;
+            word-break: break-word;
         }
     </style>
 </head>
@@ -59,31 +68,97 @@
 
 
     <!--Not stolen-->
-    <div style="padding-left: 25%; height: fit-content; border: 4px solid;" >
-        <div style=" min-width: 300px; width: 66.6%; text-align: center; overflow: hidden; border:4px solid;">
+    <div style="padding-left: 20%; height: fit-content; border: 4px solid;" >
+        <div style=" min-width: 300px; width: 75%; text-align: center; overflow: hidden; ">
             
-            <h1 style="text-align:left">Checkout:</h1>
+            <h1 style="text-align:left; margin-top:5%">Checkout:</h1>
             <div class="info-bubble" id="summary">
                 <h2>Order Summary</h2>
                 <hr />
-                <p>
-                    <h3>Vehicle:</h3>
-                    <var id="vname">name</var>
-                    <br />
-                    <var id="vcolor">color</var>
-                    <br />
-                    <var id="vyear">year</var>
-                </p>
-            </div>
-            <div class="info-bubble" id="info" data->
-                <h2>Your Info</h2>
-                <hr />
-                <p>
+                <div style="overflow: hidden;">
+                    <div class="summary-bubble" style="float: left; width: 30%">
+                        <h3>Vehicle:</h3>
+                        <p id="vname">name</p>
+                        <!--
 
-                </p>
+            <p id="vcolor">color</p>
+            -->
+
+                        <p>
+                            <img src="companyImages/car-seat.png" height="15" width="15" />
+                            <var id="vseats"></var> Seats.
+                        </p>
+                        <p>
+                            <img src="companyImages/luggage.png" height="15" width="15" />
+                            <var id="vcargo"></var> Bags.
+                        </p>
+                    </div>
+                    <div class="summary-bubble" style="float: right; width:55%">
+                        <h3>Pickup Info:</h3>
+                        <p>
+                            Address: <var id="vaddress"></var>
+                        </p>
+
+                        <p>
+                            Start Date:
+                            <var id="vsdate"></var>
+                        </p>
+                        <p>
+                            Dropoff Date:
+                            <var id="vedate"></var>
+                        </p>
+                    </div>
+
+
+                </div>
+                <hr />
+                <div style="overflow:hidden">
+                    <div id="ioptions" class="summary-bubble" style="width: 90%;">
+                        <h3 style="margin-top:0px">Insurance:</h3>
+                        <div id="ioption">
+                            <div style="overflow: hidden; margin-top:20px">
+                                <div style="float: left; width: 80%; margin-top: 0">
+                                    <h4 style="margin-top:1%; margin-bottom:2%" id="ioption_name">Name</h4>
+                                    <var id="ioption_desc">Desc</var>
+                                </div>
+                                <div style="float: right; width: 20%; margin-top: 0;  text-align: right">
+                                    <h4 style="margin-top: 0;margin-bottom: 6px;">$<var id="ioption_cost">0</var>/day</h4>
+                                    <button id="ioption_button" style="margin-top: 0;height:30px; width: 30px; text-align: center">X</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr />
+                    <div id="aoptions" class="summary-bubble" style="width: 90%">
+                        <h3 style="margin-top:0px">Addons:</h3>
+                        <div id="aoption">
+                            <div style="overflow: hidden; margin-top:20px">
+                                <div style="float: left; width: 80%; margin-top: 0">
+                                    <h4 style="margin-top:1%; margin-bottom:2%" id="aoption_name">Name</h4>
+                                    <var id="aoption_desc">Desc</var>
+                                </div>
+                                <div style="float: right; width: 20%; margin-top: 0;  text-align: right">
+                                    <h4 style="margin-top: 0;margin-bottom: 6px;">$<var id="aoption_cost">0</var>/day</h4>
+                                    <button id="aoption_button" style="margin-top: 0;height:30px; width: 30px; text-align: center">X</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
+        <div class="info-bubble" id="info" data->
+            <h2>Your Info</h2>
+            <hr />
+            <p>
+
+            </p>
         </div>
     </div>
+</div>
     
 
     <!--stolen from home-->

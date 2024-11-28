@@ -6,6 +6,7 @@ class Cart {
         this.start = null
         this.end = null
         this.vehicleID = -1
+        this.address = ""
         this.insurance = []
         this.addons = []
     }
@@ -18,6 +19,12 @@ class Cart {
         this.addons = []
     }
 
+    getStartDate() {
+        return this.start;
+    }
+    getEndDate() {
+        return this.end;
+    }
     setStartDate(date) {
         this.start = date;
         this.save();
@@ -53,6 +60,13 @@ class Cart {
     addAddon(addonID) {
         this.addons.push(addonID);
     }
+    getAddress() {
+        return this.address;
+    }
+    setAddress(string) {
+        this.address = string;
+        this.save();
+    }
     hasAddon(addonID) {
         for (const id of this.addons) {
             if (id == addonID)
@@ -69,6 +83,7 @@ class Cart {
         sessionStorage.setItem("start", this.start);
         sessionStorage.setItem("end", this.end);
         sessionStorage.setItem("vehicle", this.vehicleID);
+        sessionStorage.setItem("address", this.address);
         let s = "";
         for (let a in this.addons) {
             s += this.addons[a] + "*"
@@ -84,6 +99,7 @@ class Cart {
     load() {
         this.start = sessionStorage.getItem("start")
         this.end = sessionStorage.getItem("end")
+        this.address = sessionStorage.getItem("address")
         this.vehicleID = parseInt(sessionStorage.getItem("vehicle"))
 
         let s1 = sessionStorage.getItem("insurance")
