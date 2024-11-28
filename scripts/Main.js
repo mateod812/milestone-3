@@ -18,15 +18,16 @@ carList.addTrucks(F150);
 carList.addTrucks(Ram1500);
 
 function loadMain() {
-    carList.renderAll();
     loadCart();
+    carList.renderAll();
     attach_book_now_button();
 }
 
 function saveCart() {
-    document.cookie = cart.save();
+    cart.save();
 }
 function loadCart() {
-    cart.load(document.cookie);
+    if (sessionStorage.getItem("vehicle"))
+        cart.load();
 }
 
