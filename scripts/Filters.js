@@ -33,6 +33,8 @@ document.querySelectorAll('#price_filters input[type="radio"]').forEach(price =>
 
 // Event listener for seats slider
 const slider = document.getElementById('seats_slider');
+const sliderValue = document.getElementById('sliderValue');
+sliderValue.textContent = filterState.minSeats;
 slider.addEventListener('input', event => {
     document.getElementById('sliderValue').textContent = event.target.value;
     filterState.minSeats = parseInt(event.target.value);

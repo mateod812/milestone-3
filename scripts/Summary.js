@@ -72,7 +72,7 @@ function create_summary_list() {
                 listTwoDiv.appendChild(sumItem);
             }
 
-            totalperDay += parseInt(type);
+            totalperDay += parseInt(summaryList[i][1]);
         }
     }
 
