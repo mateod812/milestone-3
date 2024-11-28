@@ -141,6 +141,19 @@ class VehicleInventory {
 
     }
 
+    //Gets a car from ID, probably, idk how this works but ctr-c - ctrl-v go brrrrr
+    fromId(ID) 
+    {
+        for (let i = 0; i < this.vehicleList.length; i++) {
+            for (let j = 0; j < this.vehicleList[i].length; j++) {
+                const car = this.vehicleList[i][j];
+                if (car.ID == ID) {
+                    return car
+                }
+            }
+        }
+    }
+
     bookCar(ID) {
         for (let i = 0; i < this.vehicleList.length; i++) {
             for (let j = 0; j < this.vehicleList[i].length; j++) {
@@ -149,6 +162,7 @@ class VehicleInventory {
                     console.log(`${car.year} ${car.make} ${car.model} is now rented`);
                     add_Car_Summary(car);
                     car.isRented = true;
+                    cart.setVehicle(cart, ID);
                 }
             }
         }
