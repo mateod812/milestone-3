@@ -16,7 +16,7 @@ function insurance_buttons(button) {
     let fuckMeMan = [];
 
 
-    fuckMeMan.push(option,cost);
+    fuckMeMan.push(option,cost,1);
     if (!insuranceOptions.includes(option)) {
         insuranceOptions.push(option);
         add_Car_Summary(fuckMeMan);

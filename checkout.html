@@ -1,0 +1,112 @@
+<!--Checkout page
+    Author: Ashton
+    -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <!--stolen from home-->
+    <title>Car Rental Site</title>
+    <link rel="stylesheet" href="./styles/style-landing.css">
+    <link rel="stylesheet" href="./styles/jquery-ui.css">
+
+    <script src="scripts/Sedan.js"></script>
+    <script src="scripts/Truck.js"></script>
+    <script src="scripts/Vehicle.js"></script>
+    <script type="text/javascript" src="scripts/VehicleInventory.js"></script>
+    <script type="text/javascript" src="scripts/Cart.js"></script>
+    <script type="text/javascript" src="scripts/Main.js"></script>
+    <script type="text/javascript" src="scripts/Checkout.js"></script>
+
+    <style>
+        .centered-page {
+            padding-left: 25%;
+            text-align: center;
+            border: solid 4px;
+            height: fit-content;
+        }
+
+        .info-bubble {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: solid 2px rgba(0, 0, 0,.3);
+            float: left;
+            width: 45%;
+            text-align: left;
+            padding-right: 2.5%;
+            padding-left: 2.5%;
+            margin: 2%;
+        }
+    </style>
+</head>
+
+<body onload="loadCheckOut()">
+
+    <!--stolen from home-->
+    <header>
+        <div class="header-row">
+            <a class="icon icon-header-logo" href="./home.html" target="_self"></a>
+            <a class="support-button" href="#">Support</a>
+        </div>
+    </header>
+
+    <!--stolen from home-->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Our Vehicles</a>
+        <a href="#">About Us</a>
+    </div>
+
+
+    <!--Not stolen-->
+    <div style="padding-left: 25%; height: fit-content; border: 4px solid;" >
+        <div style=" min-width: 300px; width: 66.6%; text-align: center; overflow: hidden; border:4px solid;">
+            
+            <h1 style="text-align:left">Checkout:</h1>
+            <div class="info-bubble" id="summary">
+                <h2>Order Summary</h2>
+                <hr />
+                <p>
+                    <h3>Vehicle:</h3>
+                    <var id="vname">name</var>
+                    <br />
+                    <var id="vcolor">color</var>
+                    <br />
+                    <var id="vyear">year</var>
+                </p>
+            </div>
+            <div class="info-bubble" id="info" data->
+                <h2>Your Info</h2>
+                <hr />
+                <p>
+
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
+    <!--stolen from home-->
+    <footer>
+        <div class="footer-social">
+            <ul class="footer-social_links">
+                <li>
+                    <a class="icon icon-footer-socials-circle" target="_blank" title="Instagram">
+                        Instagram
+                    </a>
+                </li>
+                <li>
+                    <a class="icon icon-footer-socials-circle" target="_blank" title="Twitter">
+                        Twitter
+                    </a>
+                </li>
+                <li>
+                    <a class="icon icon-footer-socials-circle" target="_blank" title="Facebook">
+                        Facebook
+                    </a>
+                </li>
+            </ul>
+    </footer>
+</body>
+
+</html>

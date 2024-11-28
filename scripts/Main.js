@@ -1,6 +1,6 @@
 const carList = new VehicleInventory();
 
-
+const cart = new Cart();
 
 const civic = new Vehicle(civicArray);
 const corolla = new Vehicle(corollaArray);
@@ -17,5 +17,16 @@ const Ram1500 = new Vehicle(ramArray);
 carList.addTrucks(F150);
 carList.addTrucks(Ram1500);
 
+function loadMain() {
+    carList.renderAll();
+    loadCart();
+    attach_book_now_button();
+}
 
-carList.renderAll();
+function saveCart() {
+    document.cookie = cart.save();
+}
+function loadCart() {
+    cart.load(document.cookie);
+}
+

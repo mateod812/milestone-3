@@ -50,6 +50,26 @@ class Vehicle {
         Vehicle.car_id++;
     }
 
+    getYear() {
+        return this.year;
+    }
+
+    getMake() {
+        return this.make;
+    }
+    getModel() {
+        return this.model;
+    }
+    getNumSeats() {
+        return this.numSeats;
+    }
+    getLuggageSpace() {
+        return this.luggageSpace;
+    }
+    getPrice() {
+        return this.price;
+    }
+
     getCarInfo() {
         return ` ${this.year} ${this.make} ${this.model} ${this.numSeats} ${this.isRented}`;
     }

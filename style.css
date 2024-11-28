@@ -493,3 +493,39 @@ ul {
 .addon_option button:hover {
     background-color: #218838;
 }
+
+
+#summary_info_div {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Arrange divs vertically */
+    gap: 20px; /* Add space between each div */
+    margin: 20px;
+    padding: 10px;
+}
+
+#vehicle_div, #insurance_div, #addon_div {
+    border-radius: 8px; /* Round the corners */
+    padding: 15px; /* Add padding inside the divs */
+}
+
+
+#vehicle_div::before {
+    content: "Vehicles";
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#insurance_div::before {
+    content: "Insurance";
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#addon_div::before {
+    content: "Add-ons";
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
