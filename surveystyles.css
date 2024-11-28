@@ -1,0 +1,290 @@
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Set html and body height to 100% for vertical centering */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;     /* Vertical centering */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f3e5; /* Beige background */
+    padding: 20px;
+}
+
+/* Survey container */
+.survey-container {
+    max-width: 1000px; /* Max width for the container */
+    width: 100%;
+    background: #ffffff; /* White background for contrast */
+    border: 3px solid #8b0000; /* Red border */
+    border-radius: 10px;
+    position: relative; /* For positioning child elements */
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    transition: height 0.3s ease; /* Smooth transition for height changes */
+}
+
+/* Survey steps */
+.survey-step {
+    display: none;
+    padding: 60px 40px 40px; /* Added padding */
+}
+
+.survey-step.active {
+    display: block;
+}
+
+/* Skip button at top right corner */
+.skip-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 25px;
+    border: none;
+    background: #8b0000; /* Red background */
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+    z-index: 10; /* Ensure the skip button stays on top */
+    font-size: 16px;
+}
+
+.skip-button:hover {
+    background: #a60000; /* Darker red on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Question styles */
+.question {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.question h2 {
+    margin-bottom: 10px;
+    color: #8b0000; /* Red text for headings */
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Intro step styles */
+.intro-content {
+    text-align: center;
+    color: #333;
+}
+
+.intro-content h1 {
+    color: #8b0000; /* Red text for the main heading */
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.intro-content p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Option styles */
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Increased gap for better spacing */
+    justify-content: center; /* Center options horizontally */
+}
+
+.option {
+    flex: 1 1 calc(25% - 40px); /* Adjusted to show more options per row */
+    background: #f2efe9; /* Slightly lighter background */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+    max-width: 220px;
+}
+
+.option:hover {
+    transform: translateY(-5px);
+    background: #e8e3d9;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.option.selected {
+    background: #8b0000;
+    color: #fff;
+    border-color: #8b0000;
+}
+
+/* Option text */
+.option span {
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Navigation buttons */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.navigation button {
+    padding: 12px 30px;
+    border: none;
+    background: #8b0000; /* Red background for buttons */
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 16px;
+}
+
+.navigation button:hover {
+    background: #a60000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Start button */
+.start-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #8b0000;
+    color: #fff;
+    border: none;
+    border-radius: 0 0 10px 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.start-button:hover {
+    background: #a60000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Graphics */
+.option img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Force images to have consistent height */
+.option img {
+    height: 100px;
+    object-fit: contain;
+}
+
+/* Input field styles */
+.options input[type="text"], .options select {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #8b0000;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #333;
+    transition: background 0.3s, border 0.3s;
+    cursor: pointer;
+}
+
+.options select:hover, .options input[type="text"]:hover {
+    background-color: #f2efe9;
+}
+
+.options select:focus, .options input[type="text"]:focus {
+    outline: none;
+    border-color: #a60000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .option {
+        flex: 1 1 calc(33.333% - 40px);
+    }
+}
+
+@media (max-width: 900px) {
+    .option {
+        flex: 1 1 calc(50% - 40px);
+    }
+}
+
+@media (max-width: 600px) {
+    .option {
+        flex: 1 1 calc(100% - 40px);
+    }
+
+    .intro-content h1 {
+        font-size: 32px;
+    }
+
+    .intro-content p {
+        font-size: 18px;
+    }
+
+    .question h2 {
+        font-size: 24px;
+    }
+
+    .navigation button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .navigation {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+}
+
+/* Completion step styles */
+#step-complete h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+#step-complete p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Animation for step transitions */
+.survey-step {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
