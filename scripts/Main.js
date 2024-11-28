@@ -1,6 +1,6 @@
 const carList = new VehicleInventory();
 
-
+const cart = new Cart();
 
 const civic = new Vehicle(civicArray);
 const corolla = new Vehicle(corollaArray);
