@@ -39,8 +39,7 @@ class Cart {
     }
 
     hasInsurance(insuranceID) {
-        for (let i in this.insurance) {
-            id = this.insurance[i]
+        for (const id of this.insurance) {
             if (id == insuranceID)
                 return true;
         }
@@ -55,8 +54,7 @@ class Cart {
         this.addons.push(addonID);
     }
     hasAddon(addonID) {
-        for (let i in this.addons) {
-            id = this.addons[i]
+        for (const id of this.addons) {
             if (id == addonID)
                 return true;
         }

@@ -7,10 +7,8 @@ const insurancePackages = []
 //insurancePackages[package.id] = package
 //id is nessesary for anything that needs to be serialised (basically everything)
 class InsurancePackage {
-    static ids = 0;
     constructor(name, desc, cost) {
-        this.id = this.ids;
-        this.ids++;
+        this.id = insurancePackages.length;
         this.name = name;
         this.desc = desc;
         this.cost = cost;
@@ -42,10 +40,10 @@ const taw = new InsurancePackage(
 
 function onPress(id) {
     //was the button previously pressed
+    console.log(id + " clicked")
     let pressed = cart.hasInsurance(id);
     let pk = insurancePackages[id];
     let button = document.getElementById("insurance_button_" + id);
-    let fuckMeMan = [pk.name, pk.cost, 1];
 
     if (!pressed) {
         cart.addInsurance(id);
@@ -63,8 +61,10 @@ function onPress(id) {
 }
 
 function makePackageLists() {
-    for (let id in insurancePackages) {
-        let pk = insurancePackages[id];
+    let iOptions = document.getElementById("insurance_options")
+    for (const pk of insurancePackages) {
+        const id = pk.id;
+        console.log(pk.name + " " + pk.id)
         //was the button previously pressed
         pressed = cart.hasInsurance(id);
 
@@ -109,7 +109,7 @@ function makePackageLists() {
         
         div.appendChild(button);
 
-        document.getElementById("insurance_options").appendChild(div);
+        iOptions.appendChild(div);
     }
 }
 

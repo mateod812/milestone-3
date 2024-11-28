@@ -6,10 +6,8 @@ const addonPackages = []
 //Data stucture for addons to reduce headacke
 //id is nessesary for anything that needs to be serialised (basically everything)
 class addonPackage {
-    static ids = 0;
     constructor(name, desc, cost) {
-        this.id = this.ids;
-        this.ids++;
+        this.id = addonPackages.length;
         this.name = name;
         this.desc = desc;
         this.cost = cost;
