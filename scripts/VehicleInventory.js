@@ -162,7 +162,7 @@ class VehicleInventory {
                     console.log(`${car.year} ${car.make} ${car.model} is now rented`);
                     add_Car_Summary(car);
                     car.isRented = true;
-                    cart.setVehicle(ID);
+                    cart.setVehicle(cart, ID);
                 }
             }
         }
