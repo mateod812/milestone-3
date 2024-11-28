@@ -1,5 +1,4 @@
 let selectedButton = null; // Variable to track the currently selected button
-attach_book_now_button()
 
 function attach_book_now_button() {
     const buttons = Array.from(document.getElementsByClassName('book_button'));

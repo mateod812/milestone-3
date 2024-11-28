@@ -6,7 +6,9 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <body id="main" onload="loadMain()" onunload="saveCart()">
+    
+
+    <body id="main" onload="loadVehicleInv()" >
         
         <br />
         <div id="header_progress">
@@ -83,38 +85,15 @@
             <div id="insurance_scroll">
                 <div id="insurance_options">
                     <h2>Insurance Packages</h2>
+                    <template id="insurance_package_template">
+                        <div class="insurance_option">
+                            <h3 id="insurance_name">Collision Damage Waiver (CDW)</h3>
+                            <p id="insurance_desc">Reduces your financial responsibility for damage to the rental car in case of an accident or collision. Deductibles may apply.</p>
+                            <p><strong>Cost:</strong> <span class="insurance_cost" id="insurance_cost">$20/day</span></p>
+                            <button data-insurance="Collision Damage Waiver" data-cost="20" id="insurance_button">Select</button>
+                        </div>
+                    </template>
 
-                    <!-- Collision Damage Waiver -->
-                    <div class="insurance_option">
-                        <h3>Collision Damage Waiver (CDW)</h3>
-                        <p>Reduces your financial responsibility for damage to the rental car in case of an accident or collision. Deductibles may apply.</p>
-                        <p><strong>Cost:</strong> <span class="insurance_cost">$20/day</span></p>
-                        <button data-insurance="Collision Damage Waiver" data-cost="20">Select</button>
-                    </div>
-
-                    <!-- Loss Damage Waiver -->
-                    <div class="insurance_option">
-                        <h3>Loss Damage Waiver (LDW)</h3>
-                        <p>Waives your liability for damage or theft of the rental vehicle, including loss of use fees.</p>
-                        <p><strong>Cost:</strong> <span class="insurance_cost">$25/day</span></p>
-                        <button data-insurance="Loss Damage Waiver" data-cost="25">Select</button>
-                    </div>
-
-                    <!-- Roadside Assistance Protection -->
-                    <div class="insurance_option">
-                        <h3>Roadside Assistance Protection</h3>
-                        <p>Covers roadside emergencies like towing, flat tires, battery jumps, or lockouts.</p>
-                        <p><strong>Cost:</strong> <span class="insurance_cost">$7/day</span></p>
-                        <button data-insurance="Roadside Assistance Protection" data-cost="7">Select</button>
-                    </div>
-
-                    <!-- Tire and Windshield Protection -->
-                    <div class="insurance_option">
-                        <h3>Tire and Windshield Protection</h3>
-                        <p>Covers specific damage to tires, wheels, and windshields.</p>
-                        <p><strong>Cost:</strong> <span class="insurance_cost">$8/day</span></p>
-                        <button data-insurance="Tire and Windshield Protection" data-cost="8">Select</button>
-                    </div>
                 </div>
 
             </div>
@@ -127,62 +106,6 @@
             <div id="addons_scroll">
                 <div id="addons_options">
                     <h2>Add-Ons</h2>
-
-                    <!-- GPS Navigation -->
-                    <div class="addon_option">
-                        <h3>GPS Navigation System</h3>
-                        <p>Get turn-by-turn directions and avoid getting lost during your trip.</p>
-                        <p><strong>Cost:</strong> <span class="addon_cost">$10/day</span></p>
-                        <button data-addon="GPS Navigation System" data-cost="10">Add</button>
-                    </div>
-
-                    <!-- Child Safety Seat -->
-                    <div class="addon_option">
-                        <h3>Child Safety Seat</h3>
-                        <p>Ensure safety for your child with a properly installed car seat.</p>
-                        <p><strong>Cost:</strong> <span class="addon_cost">$15/day</span></p>
-                        <button data-addon="Child Safety Seat" data-cost="15">Add</button>
-                    </div>
-
-                    <!-- Additional Driver -->
-                    <div class="addon_option">
-                        <h3>Additional Driver</h3>
-                        <p>Add an extra driver to share the driving responsibilities.</p>
-                        <p><strong>Cost:</strong> <span class="addon_cost">$20/day</span></p>
-                        <button data-addon="Additional Driver" data-cost="20">Add</button>
-                    </div>
-
-                    <!-- WiFi Hotspot -->
-                    <div class="addon_option">
-                        <h3>WiFi Hotspot</h3>
-                        <p>Stay connected on the go with a portable WiFi hotspot.</p>
-                        <p><strong>Cost:</strong> <span class="addon_cost">$12/day</span></p>
-                        <button data-addon="WiFi Hotspot" data-cost="12">Add</button>
-                    </div>
-
-                    <!-- Roof Rack -->
-                    <div class="addon_option">
-                        <h3>Roof Rack</h3>
-                        <p>Carry additional luggage, skis, or equipment with a roof rack.</p>
-                        <p><strong>Cost:</strong> <span class="addon_cost">$8/day</span></p>
-                        <button data-addon="Roof Rack" data-cost="8">Add</button>
-                    </div>
-
-                    <!-- Ski Rack -->
-                    <div class="addon_option">
-                        <h3>Ski Rack</h3>
-                        <p>Transport your skis securely with a dedicated ski rack.</p>
-                        <p><strong>Cost:</strong> <span class="addon_cost">$10/day</span></p>
-                        <button data-addon="Ski Rack" data-cost="10">Add</button>
-                    </div>
-
-                    <!-- Bike Rack -->
-                    <div class="addon_option">
-                        <h3>Bike Rack</h3>
-                        <p>Take your bike along for the ride with a convenient bike rack.</p>
-                        <p><strong>Cost:</strong> <span class="addon_cost">$7/day</span></p>
-                        <button data-addon="Bike Rack" data-cost="7">Add</button>
-                    </div>
 
                 </div>
             </div>

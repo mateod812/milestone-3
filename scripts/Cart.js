@@ -5,70 +5,121 @@ class Cart {
     constructor() {
         this.start = null
         this.end = null
-        this.vehicle = 1
-        this.insurance = null
+        this.vehicleID = -1
+        this.address = ""
+        this.insurance = []
         this.addons = []
     }
-    setStartDate(cart, date) {
-        cart.start = date;
+
+    clear() {
+        this.start = null
+        this.end = null
+        this.vehicleID = -1
+        this.insurance = []
+        this.addons = []
     }
-    setEndDate(cart, date) {
-        cart.end = date;
+
+    getStartDate() {
+        return this.start;
     }
-    setVehicle(cart, vehicle) {
-        cart.vehicle = vehicle;
+    getEndDate() {
+        return this.end;
     }
-    setInsurance(cart, insurance) {
-        cart.insurance = insurance;
+    setStartDate(date) {
+        this.start = date;
+        this.save();
     }
-    addAddon(cart, addonID) {
-        cart.addons.push(addonID);
+    setEndDate(date) {
+        this.end = date;
+        this.save();
     }
-    removeAddon(cart, addonID) {
-        cart.addons = cart.addons.filter((v) => !addonID == v);
+    setVehicle(vehicleID) {
+        console.log(vehicleID + " vehicleAdded")
+        this.vehicleID = vehicleID;
+        this.save();
+    }
+    addInsurance(insuranceID) {
+        this.insurance.push(insuranceID);
+    }
+    getVehicleID() {
+        return this.vehicleID
+    }
+
+    hasInsurance(insuranceID) {
+        for (const id of this.insurance) {
+            if (id == insuranceID)
+                return true;
+        }
+        return false;
+    }
+
+    removeInsurance(insuranceID) {
+        this.insurance.splice(this.insurance.indexOf(insuranceID), 1);
+        this.save();
+    }
+    addAddon(addonID) {
+        this.addons.push(addonID);
+    }
+    getAddress() {
+        return this.address;
+    }
+    setAddress(string) {
+        this.address = string;
+        this.save();
+    }
+    hasAddon(addonID) {
+        for (const id of this.addons) {
+            if (id == addonID)
+                return true;
+        }
+        return false;
+    }
+    removeAddon(addonID) {
+        this.addons.splice(this.addons.indexOf(addonID), 1);
+        this.save();
     }
 
     save() {
-        let s = this.start + "&" + this.setEndDate + "&" + this.vehicle + "&" + this.insurance + "&"
-        for (a in this.addons) {
-            s += a.addonID + "*"
+        sessionStorage.setItem("start", this.start);
+        sessionStorage.setItem("end", this.end);
+        sessionStorage.setItem("vehicle", this.vehicleID);
+        sessionStorage.setItem("address", this.address);
+        let s = "";
+        for (let a in this.addons) {
+            s += this.addons[a] + "*"
         }
+        sessionStorage.setItem("addons", s);
+        let s2 = "";
+        for (let a in this.insurance) {
+            s2 += this.insurance[a] + "*"
+        }
+        sessionStorage.setItem("insurance", s2);
     }
-    load(string) {
-        if (string.length <= 0) {
-            return;
-        }
+
+    load() {
+        this.start = sessionStorage.getItem("start")
+        this.end = sessionStorage.getItem("end")
+        this.address = sessionStorage.getItem("address")
+        this.vehicleID = parseInt(sessionStorage.getItem("vehicle"))
+
+        let s1 = sessionStorage.getItem("insurance")
+        let end = s1.indexOf("*");
         let last = 0;
-        let end = string.indexOf("&")
-        let s1 = string.substr(last, end - 1)
-        this.setStartDate(s1)
-        last = end + 1;
-        string = string.substr(last, string.length)
-        
-        end = string.indexOf("&")
-        s1 = string.substr(last, end - 1)
-        this.setEndDate(s1)
-        last = end + 1;
-        string = string.substr(last, string.length)
-
-        end = string.indexOf("&")
-        s1 = string.substr(last, end - 1)
-        this.setVehicle(parseInt(s1))
-        last = end + 1;
-        string = string.substr(last, string.length)
-
-        end = string.indexOf("&")
-        s1 = string.substr(last, end - 1)
-        this.setInsurance(parseInt(s1))
-        last = end + 1;
-        string = string.substr(last, string.length)
-
-        while (string.indexOf("*") < string.length) {
-            end = string.indexOf("*")
-            s1 = string.substr(last, end - 1)
-            this.addAddon(parseInt(s1))
+        while (end < s1.length && end > 0) {
+            this.addInsurance(parseInt(s1.substring(last, end)))
+            console.log(s1.substring(last, end) + "  " + s1)
             last = end + 1;
-            string = string.substr(last, string.length)
+            end = s1.indexOf("*", end + 1)
+        }
+
+        let s2 = sessionStorage.getItem("addons")
+        let end2 = s1.indexOf("*");
+        let last2 = 0;
+        while (end2 < s2.length && end2 > 0) {
+            this.addAddon(parseInt(s2.substring(last2, end2)))
+            console.log(s2.substring(last2, end2) + "  " + s2)
+            last2 = end2 + 1;
+            end2 = s2.indexOf("*", end2 + 1)
         }
     }
 

@@ -160,9 +160,11 @@ class VehicleInventory {
                 const car = this.vehicleList[i][j];
                 if (car.ID == ID) {
                     console.log(`${car.year} ${car.make} ${car.model} is now rented`);
-                    add_Car_Summary(car);
+                   // add_Car_Summary(car);
                     car.isRented = true;
-                    cart.setVehicle(cart, ID);
+                    cart.setVehicle(ID);
+                    cart.save();
+                    create_summary_list()
                 }
             }
         }
