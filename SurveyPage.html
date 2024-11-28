@@ -189,14 +189,33 @@
             border-radius: 5px;
         }
 
+        /* Force images to have consistent height */
+        .option img {
+            height: 100px;
+            object-fit: contain;
+        }
+
         /* Input field styles */
-        .options input[type="text"] {
+        .options input[type="text"], .options select {
             width: 100%;
             padding: 15px;
             font-size: 16px;
             border: 2px solid #8b0000;
             border-radius: 5px;
             margin-bottom: 20px;
+            background-color: #f9f3e5;
+            color: #333;
+            transition: background 0.3s, border 0.3s;
+            cursor: pointer;
+        }
+
+        .options select:hover {
+            background-color: #e0d9c8;
+        }
+
+        .options select:focus {
+            outline: none;
+            border-color: #a60000;
         }
 
         /* Responsive adjustments */
@@ -341,16 +360,18 @@
         </div>
     </div>
 
-    <!-- Question 4 -->
+    <!-- Question 4 (Updated) -->
     <div class="survey-step" id="step-4">
         <div class="question">
             <h2>4. Which transmission type do you prefer?</h2>
         </div>
         <div class="options">
             <div class="option" onclick="selectOption(this, 'transmission', 'Automatic')">
+                <img src="surveyimages/automatic.png" alt="Automatic">
                 <span>Automatic</span>
             </div>
             <div class="option" onclick="selectOption(this, 'transmission', 'Manual')">
+                <img src="surveyimages/manual.png" alt="Manual">
                 <span>Manual</span>
             </div>
             <div class="option" onclick="selectOption(this, 'transmission', 'No Preference')">
@@ -363,22 +384,26 @@
         </div>
     </div>
 
-    <!-- Question 5 -->
+    <!-- Question 5 (Updated) -->
     <div class="survey-step" id="step-5">
         <div class="question">
             <h2>5. What fuel type do you prefer?</h2>
         </div>
         <div class="options">
             <div class="option" onclick="selectOption(this, 'fuel', 'Gasoline')">
+                <img src="surveyimages/gasoline.png" alt="Gasoline">
                 <span>Gasoline</span>
             </div>
             <div class="option" onclick="selectOption(this, 'fuel', 'Diesel')">
+                <img src="surveyimages/diesel.png" alt="Diesel">
                 <span>Diesel</span>
             </div>
             <div class="option" onclick="selectOption(this, 'fuel', 'Electric')">
+                <img src="surveyimages/electric.png" alt="Electric">
                 <span>Electric</span>
             </div>
             <div class="option" onclick="selectOption(this, 'fuel', 'Hybrid')">
+                <img src="surveyimages/hybrid.png" alt="Hybrid">
                 <span>Hybrid</span>
             </div>
             <div class="option" onclick="selectOption(this, 'fuel', 'No Preference')">
@@ -391,34 +416,42 @@
         </div>
     </div>
 
-    <!-- Question 6 -->
+    <!-- Question 6 (Updated) -->
     <div class="survey-step" id="step-6">
         <div class="question">
             <h2>6. Which special features are important to you? (Select all that apply)</h2>
         </div>
         <div class="options">
             <div class="option" onclick="toggleOption(this, 'features', 'GPS Navigation')">
+                <img src="surveyimages/gps.png" alt="GPS Navigation">
                 <span>GPS Navigation</span>
             </div>
             <div class="option" onclick="toggleOption(this, 'features', 'Bluetooth Connectivity')">
+                <img src="surveyimages/bluetooth.png" alt="Bluetooth Connectivity">
                 <span>Bluetooth Connectivity</span>
             </div>
             <div class="option" onclick="toggleOption(this, 'features', 'Child Seat')">
+                <img src="surveyimages/childseat.png" alt="Child Seat">
                 <span>Child Seat</span>
             </div>
             <div class="option" onclick="toggleOption(this, 'features', 'Heated Seats')">
+                <img src="surveyimages/heatedseat.png" alt="Heated Seats">
                 <span>Heated Seats</span>
             </div>
             <div class="option" onclick="toggleOption(this, 'features', 'Sunroof/Moonroof')">
+                <img src="surveyimages/sunroof.png" alt="Sunroof/Moonroof">
                 <span>Sunroof/Moonroof</span>
             </div>
             <div class="option" onclick="toggleOption(this, 'features', 'All-Wheel Drive')">
+                <img src="surveyimages/allwheeldrive.png" alt="All-Wheel Drive">
                 <span>All-Wheel Drive</span>
             </div>
             <div class="option" onclick="toggleOption(this, 'features', 'Backup Camera')">
+                <img src="surveyimages/backupcamera.png" alt="Backup Camera">
                 <span>Backup Camera</span>
             </div>
             <div class="option" onclick="toggleOption(this, 'features', 'Cruise Control')">
+                <img src="surveyimages/cruisecontrol.png" alt="Cruise Control">
                 <span>Cruise Control</span>
             </div>
         </div>
@@ -456,19 +489,22 @@
         </div>
     </div>
 
-    <!-- Question 8 -->
+    <!-- Question 8 (Updated) -->
     <div class="survey-step" id="step-8">
         <div class="question">
             <h2>8. Do you need any accessibility features?</h2>
         </div>
         <div class="options">
             <div class="option" onclick="selectOption(this, 'accessibility', 'Wheelchair Accessibility')">
+                <img src="surveyimages/wheelchair.png" alt="Wheelchair Accessibility">
                 <span>Wheelchair Accessibility</span>
             </div>
             <div class="option" onclick="selectOption(this, 'accessibility', 'Hand Controls')">
+                <img src="surveyimages/handcontrol.png" alt="Hand Controls">
                 <span>Hand Controls</span>
             </div>
             <div class="option" onclick="selectOption(this, 'accessibility', 'Elderly Assistance Features')">
+                <img src="surveyimages/elderlyassistance.png" alt="Elderly Assistance Features">
                 <span>Elderly Assistance Features</span>
             </div>
             <div class="option" onclick="selectOption(this, 'accessibility', 'No Accessibility Features Needed')">
@@ -505,17 +541,49 @@
         </div>
         <div class="navigation">
             <button class="back-button" onclick="prevStep()">Back</button>
-            <button class="next-button" onclick="nextStep()">Finish</button>
+            <button class="next-button" onclick="nextStep()">Next</button>
         </div>
     </div>
 
-    <!-- Question 10 -->
+    <!-- Question 10 (Dropdown) -->
     <div class="survey-step" id="step-10">
         <div class="question">
-            <h2>10. Do you have a preferred car brand or model?</h2>
-        </div>
-        <div class="options">
-            <input type="text" id="preferredBrand" placeholder="Enter brand or model" oninput="saveInput('preferredBrand', this.value)">
+            <h2>10. What is your preferred car brand or model?</h2>
+            <p>Select a brand from the dropdown menu below:</p>
+            <div class="options">
+                <select id="preferredBrand" onchange="saveInput('preferredBrand', this.value)">
+                    <option value="" disabled selected>Select a brand</option>
+                    <!-- List of brands -->
+                    <option value="Toyota">Toyota</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Subaru">Subaru</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Jaguar">Jaguar</option>
+                    <option value="Land Rover">Land Rover</option>
+                    <option value="Porsche">Porsche</option>
+                    <option value="Volvo">Volvo</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Dodge">Dodge</option>
+                    <option value="Chrysler">Chrysler</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                    <option value="Infiniti">Infiniti</option>
+                    <option value="Acura">Acura</option>
+                    <option value="Mini">Mini</option>
+                    <option value="Buick">Buick</option>
+                    <option value="Cadillac">Cadillac</option>
+                </select>
+            </div>
         </div>
         <div class="navigation">
             <button class="back-button" onclick="prevStep()">Back</button>
