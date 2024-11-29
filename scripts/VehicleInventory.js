@@ -234,13 +234,6 @@ class VehicleInventory {
             filteredVehicles = filteredVehicles.filter(vehicle => vehicle.numSeats >= filterState.minSeats);
         }
 
-        if (filterState.price === "low_to_high") {
-            filteredVehicles.sort((a,b) => a.price - b.price);
-        }
-        else if (filterState.price === "high_to_low") {
-            filteredVehicles.sort((a,b) => b.price - a.price);
-            console.log(filteredVehicles[0]);
-        }
 
         if (filterState.budget) {
             filteredVehicles = filteredVehicles.filter(vehicle => vehicle.price <= filterState.budget);
