@@ -33,6 +33,18 @@ function loadHomePage() {
 function loadCheckOut() {
     loadMain();
     loadVehicles()
+    if (!cart.getAddress()) {
+    //    window.location.replace("./home.html");
+    }
+    if (!cart.getStartDate()) {
+        window.location.replace("./home.html");
+    }
+    if (!cart.getEndDate()) {
+        window.location.replace("./home.html");
+    }
+    if (cart.getVehicle() < 0) {
+        window.location.replace("./index.html");
+    }
     setCheckOutSummary()
 }
 
