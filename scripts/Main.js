@@ -4,13 +4,17 @@ var cart;
 //Date Selector Configuration values
 CalendarConfig = {
     enableTime: true,
-    
     altInput: true,
     altFormat: "M j, Y, h:iK",
-
     minuteIncrement: 30,
-
     position: "auto center",
+
+    minTime: "9:00",
+    maxTime: "17:30",
+    defaultHour: 9,
+    defaultMinute: 0,
+
+    minDate: "today",
 }
 
 function loadMain() {
