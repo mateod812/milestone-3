@@ -13,6 +13,12 @@ function buttonInsuranceRemovePress(id) {
     cart.removeInsurance(id);
 }
 
+function payNowButton(event) {
+    event.preventDefault();
+    cart.clear();
+    window.location.replace("./thankyou.html");
+}
+
 function setCheckOutSummary() {
     let total = 0;
     if (cart.getVehicleID() >= 0) {
