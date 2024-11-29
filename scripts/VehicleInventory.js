@@ -24,6 +24,12 @@ class VehicleInventory {
     addTrucks(truck) {
         this.vehicleList[VehicleTypes.TRUCK].push(truck);
     }
+    addMidSUV(suv) {
+        this.vehicleList[VehicleTypes.MID_SIZE_SUV].push(suv);
+    }
+    addFullSUV(suv) {
+        this.vehicleList[VehicleTypes.FULL_SIZE_SUV].push(suv);
+    }
 
     printSedans() {
         for (
@@ -190,6 +196,20 @@ class VehicleInventory {
         console.log(this.renderedCarList);
         this.renderVehicles();
     }
+
+    filterMidSUV() {
+        this.renderedCarList = this.vehicleList[VehicleTypes.MID_SIZE_SUV];
+        console.log(this.renderedCarList);
+        this.renderVehicles();
+    }
+
+    filterFullSUV() {
+        this.renderedCarList = this.vehicleList[VehicleTypes.FULL_SIZE_SUV];
+        console.log(this.renderedCarList);
+        this.renderVehicles();
+    }
+
+
 
     filterMinSeats(givenSeats) {
         const deepCopy = structuredClone(this.renderedCarList);

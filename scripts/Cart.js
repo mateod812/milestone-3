@@ -11,6 +11,27 @@ class Cart {
         this.addons = []
     }
 
+    getDailyCost() {
+        let price = 0;
+        for (let a of this.addons) {
+            price += addonPackages[a].cost;
+        }
+        for (let i of this.insurance) {
+            price += insurancePackages[i].cost;
+        }
+        if (this.vehicleID >= 0) {
+            price += parseFloat(carList.fromId(this.vehicleID).getPrice())
+        }
+        return price;
+    }
+
+    getDays() {
+        let startdate = new Date(this.start);
+        let enddate = new Date(this.end);
+        let dif = Math.round((enddate.getTime() - startdate.getTime()) / (1000 * 3600 * 24));
+        return dif;
+    }
+
     clear() {
         this.start = null
         this.end = null

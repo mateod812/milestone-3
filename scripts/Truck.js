@@ -9,7 +9,7 @@ F150Array = [
     "yes",
     "yes",
     "yes",
-    "truckImages/2024_Dodge_Ram1500.jpg",
+    "truckImages/2024_Ford_F150.jpg",
     "truck"
 ];
 
@@ -25,5 +25,52 @@ ramArray = [
     "yes",
     "yes",
     "truckImages/2024_Dodge_Ram1500.jpg",
+    "truck"
+];
+
+
+cargoArray = [
+    "2024",
+    "Dodge",
+    "Ram ProMaster",
+    "2",
+    "10",
+    "105",
+    "yes",
+    "yes",
+    "yes",
+    "yes",
+    "truckImages/2024_Dodge_RamProMaster.jpg",
+    "truck"
+];
+
+
+silveradoArray = [
+    "2024",
+    "Chevrolet",
+    "Silverado 1500",
+    "6",
+    "5",
+    "112",
+    "yes",
+    "yes",
+    "yes",
+    "yes",
+    "truckImages/2024_Chevy_Silverado1500.jpg",
+    "truck"
+];
+
+tundraArray = [
+    "2024",
+    "Toyota",
+    "Tundra",
+    "6",
+    "5",
+    "113",
+    "yes",
+    "yes",
+    "yes",
+    "yes",
+    "truckImages/2024_Toyota_Tundra.jpg",
     "truck"
 ];
