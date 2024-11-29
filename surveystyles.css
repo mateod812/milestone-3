@@ -17,7 +17,10 @@
     background: #ffffff; /* White background for contrast */
     border: 3px solid #8b0000; /* Red border */
     border-radius: 10px;
-    position: relative; /* For positioning child elements */
+    position: absolute; /* For positioning child elements */
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -70%);
     overflow: hidden;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     margin: 20px;
