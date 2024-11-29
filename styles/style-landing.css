@@ -38,7 +38,7 @@ body {
   
 }
 
-#locations:invalid{
+.locations:invalid{
   color:#33333388;
 }
 
