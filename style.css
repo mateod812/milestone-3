@@ -96,7 +96,7 @@ body {
     width: 60%;
     max-width: 60%;
     height: 650px;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 
     overflow: auto;
@@ -142,7 +142,7 @@ body {
 }
 
 #vehicle_item {
-    width: 500px;
+    min-width: 525px;
     height: 500px;
     display: inline-block;
     margin: 15px;
