@@ -102,6 +102,9 @@ const filters = [
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    createVehicleTypeFilters('vehicle_type_filters', filters, 'all');
-    filter_event_listener();
+    if (typeof carList !== 'undefined') {
+        carList.applyFilters(filterState);
+    } else {
+        console.warn('carList is not defined.');
+    }
 });
