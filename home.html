@@ -277,7 +277,18 @@
     <script src="./scripts/flatpickr.js"></script>
     <script src="surveyscript.js"></script>
     <script src="./scripts/Review.js"></script>
+    <script>
 
+        window.onclick = function (event) {
+        const modal = document.getElementById('surveyModal');
+        if (event.target === modal) {
+            closeSurvey();
+        }
+    }
+
+
+
+    </script>
 </body>
 
 </html>
