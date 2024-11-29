@@ -65,6 +65,8 @@ class VehicleInventory {
             const button = document.createElement("button");
             button.className = "book_button";
             button.textContent = "Book Now";
+            button.style.color = "white";
+
             button.setAttribute("data-id", car.ID);
 
             const seats = document.createElement("img");

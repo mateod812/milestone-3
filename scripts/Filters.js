@@ -8,47 +8,47 @@ let filterState = {
 
 function preApplyfilters() {
     const surveyResult = JSON.parse(sessionStorage.getItem("surveyResult"));
+    if  (surveyResult != null) {
 
-    if (surveyResult.carType == "Sedan") {
-        filterState.vehicleType = "sedan"
-    } else if (surveyResult.carType == "Van") {
-        filterState.vehicleType = "truck"
-    } else if (surveyResult.carType == "Truck") {
-        filterState.vehicleType = "truck"
-    } else if (surveyResult.carType == "full_SUV") {
-        filterState.vehicleType = "large_SUV"
-    } else if (surveyResult.carType == "mid_SUV") {
-        filterState.vehicleType = "mid_size_SUV"
+        if (surveyResult.carType == "Sedan") {
+            filterState.vehicleType = "sedan"
+        } else if (surveyResult.carType == "Van") {
+            filterState.vehicleType = "truck"
+        } else if (surveyResult.carType == "Truck") {
+            filterState.vehicleType = "truck"
+        } else if (surveyResult.carType == "full_SUV") {
+            filterState.vehicleType = "large_SUV"
+        } else if (surveyResult.carType == "mid_SUV") {
+            filterState.vehicleType = "mid_size_SUV"
+        }
+        
+        if(surveyResult.passengers == "1-2") {
+            filterState.minSeats = 2;
+        } else if (surveyResult.passengers == "4-5") {
+            filterState.minSeats = 4;
+        }else if (surveyResult.passengers == "6-8") {
+            filterState.minSeats = 6;
+        }
+        
+        if(surveyResult.passengers == "1-2") {
+            filterState.minSeats = 2;
+        } else if (surveyResult.passengers == "4-5") {
+            filterState.minSeats = 4;
+        }else if (surveyResult.passengers == "6-8") {
+            filterState.minSeats = 6;
+        }
+        
+        if(surveyResult.budget == "Less than $50") {
+            filterState.budget = 50;
+        } else if (surveyResult.budget == "$50 - $100") {
+            filterState.budget = 100;
+        }else if (surveyResult.passengers == "$101 - $150") {
+            filterState.budget = 150;
+        }else if (surveyResult.passengers == "$151 - $200") {
+            filterState.budget = 200;
+        }
     }
 
-    if(surveyResult.passengers == "1-2") {
-        filterState.minSeats = 2;
-    } else if (surveyResult.passengers == "4-5") {
-        filterState.minSeats = 4;
-    }else if (surveyResult.passengers == "6-8") {
-        filterState.minSeats = 6;
-    }
-
-    if(surveyResult.passengers == "1-2") {
-        filterState.minSeats = 2;
-    } else if (surveyResult.passengers == "4-5") {
-        filterState.minSeats = 4;
-    }else if (surveyResult.passengers == "6-8") {
-        filterState.minSeats = 6;
-    }
-
-    if(surveyResult.budget == "Less than $50") {
-        filterState.budget = 50;
-    } else if (surveyResult.budget == "$50 - $100") {
-        filterState.budget = 100;
-    }else if (surveyResult.passengers == "$101 - $150") {
-        filterState.budget = 150;
-    }else if (surveyResult.passengers == "$151 - $200") {
-        filterState.budget = 200;
-    }
-
-
-    console.log(surveyResult);
 }
 
 
