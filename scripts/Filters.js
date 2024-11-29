@@ -108,6 +108,14 @@ function filter_event_listener() {
         carList.applyFilters(filterState);
     });
 
+    document.getElementById('resetFiltersButton').addEventListener('click', () => {
+        filterState.price = null;
+        filterState.vehicleType = null;
+        filterState.minSeats = 2;
+        filterState.budget = 200;
+        carList.applyFilters(filterState);
+    })
+
 }
 
 
