@@ -4,12 +4,10 @@
 <head>
     <title>Car Rental Site</title>
     <link rel="stylesheet" href="./styles/style-landing.css">
-    <link rel="stylesheet" href="./styles/jquery-ui.css">
 
-    <!--Dependencies for Datepicker Widget-->
-    <script src="./scripts/jquery-3.7.1.js"></script>
-    <script src="./scripts/jquery-ui.js"></script>
-
+    <!--Flatpickr Dependencies for Date/Time Selectors-->
+    <link rel="stylesheet" href="./styles/flatpickr.min.css">
+    
 
     <script src="scripts/Sedan.js"></script>
     <script src="scripts/Truck.js"></script>
@@ -19,129 +17,125 @@
     <script src="scripts/VehicleInventory.js"></script>
     <script src="scripts/Cart.js"></script>
     <script src="scripts/Main.js"></script>
-
-    <!--Function to call Datepicker from JQuery-->
-    <script>
-        $(function () {
-            $("#datepicker").datepicker();
-        });
-    </script>
-
-
 </head>
 
+<body onload="loadHomePage()">
 
-    <body onload="loadHomePage()">
-
-        <header>
-            <div class="header-row">
-                <a class="icon icon-header-logo" href="./home.html" target="_self"></a>
-                <a class="support-button" href="#">Support</a>
-            </div>
-        </header>
-
-        <div class="navbar">
-            <a href="#">Home</a>
-            <a href="#">Our Vehicles</a>
-            <a href="#">About Us</a>
+    <header>
+        <div class="header-row">
+            <a class="icon icon-header-logo" href="./home.html" target="_self"></a>
+            <a class="support-button" href="#">Support</a>
         </div>
+    </header>
 
-        <div class="locationdatetime_form">
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Our Vehicles</a>
+        <a href="#">About Us</a>
+    </div>
 
-            <form class="datetime-selectors">
+    <div class="locationdatetime_form">
 
-                <ul class="datetime-selectors_list">
+        <form class="datetime-selectors">
 
-                    <li>
-                        <label for="locations">Choose a location:</label>
-                        <select name="locations" id="locations" required>
-                            <option value="">Not Selected</option>
-                            <option value="wpgW">Winnipeg West</option>
-                            <option value="wpgE">Winnipeg East</option>
-                            <option value="wpgN">Winnipeg North</option>
-                            <option value="wpgS">Winnipeg South</option>
-                        </select>
-                    </li>
+            <ul class="datetime-selectors_list">
 
-                <label for="pickup-date">Pickup Date:</label>
-                <input onclick="setMaxDate()" id="start_date" type="date" name="pickupdate" min="2024-11-29" max="2025-11-29" required>
+                <!--LOCATION-->
+                <li>
+                    <label for="locations">Choose a location:</label>
+                    <select name="locations" id="locations" required>
+                        <option value="">Not Selected</option>
+                        <option value="wpgW">Winnipeg West</option>
+                        <option value="wpgE">Winnipeg East</option>
+                        <option value="wpgN">Winnipeg North</option>
+                        <option value="wpgS">Winnipeg South</option>
+                    </select>
+                </li>
 
-                <label for="return-date">Return Date:</label>
-                <input onclick="setMinDate()" id="end_date" type="date" name="returndate" min="2024-11-29" max="2025-11-29" required>
+                <!--PICKUP DATE-->
+                <li>
+                    <input onclick="setMaxDate()" id="start_date" type="datetime-local" name="pickupdate" min="2024-11-29" max="2025-11-29" placeholder="Choose a pickup date" required>
+                </li>
 
-                <a href="./index.html" target="_self" onclick="saveDates()">Find your perfect vehicle</a>
-                
-            </form>
-            
-            <a class="submit-button" href="./index.html" target="_self">Find your perfect vehicle</a>
-        </div>
+                <!--RETURN DATE-->
+                <li>
+                    <input onclick="setMinDate()" id="end_date" type="datetime-local" name="returndate" min="2024-11-29" max="2025-11-29" placeholder="Choose a return date" required>
+                </li>
+            </ul>
 
-
+        </form>
+        <a class="submit-button" href="./index.html" target="_self" onclick="saveDates()">Find your perfect vehicle</a>
         
-        <div class="container">
-            
-            <div class="testimonials">
-                <h1>See what customers are saying</h1>
-                <ul class="testimonials_list">
+    </div>
 
-                    <li>
-                        <img src="./styles/icon-set/server-icon.png" alt="Ian Spellman">
-                        <blockquote>
-                            <p>Oh man my life got so crazy once I started using this website.</p>
-                        </blockquote>
-                        <h3>Ian Spellman</h3>
-                        <h4>Spellcorp Inc.</h4>
-                    </li>
+    
+    
+    <div class="container">
+        <div class="testimonials">
+            <h1>See what customers are saying</h1>
+            <ul class="testimonials_list">
 
-                    <li>
-                        <img src="./styles/icon-set/server-icon.png" alt="Italian Trulli">
-                        <blockquote>
-                            <p>Oh man my life got so crazy once I started using this website.</p>
-                        </blockquote>
-                        <h3>Ian Spellman</h3>
-                        <h4>Spellcorp Inc.</h4>
-                    </li>
+                <li>
+                    <img src="./styles/icon-set/server-icon.png" alt="Ian Spellman">
+                    <blockquote>
+                        <p>Oh man my life got so crazy once I started using this website.</p>
+                    </blockquote>
+                    <h3>Ian Spellman</h3>
+                    <h4>Spellcorp Inc.</h4>
+                </li>
 
-                    <li>
-                        <img src="./styles/icon-set/server-icon.png" alt="Italian Trulli">
-                        <blockquote>
-                            <p>Oh man my life got so crazy once I started using this website.</p>
-                        </blockquote>
-                        <h3>Ian Spellman</h3>
-                        <h4>Spellcorp Inc.</h4>
-                    </li>
+                <li>
+                    <img src="./styles/icon-set/server-icon.png" alt="Ian Spellman">
+                    <blockquote>
+                        <p>Oh man my life got so crazy once I started using this website.</p>
+                    </blockquote>
+                    <h3>Ian Spellman</h3>
+                    <h4>Spellcorp Inc.</h4>
+                </li>
 
-                </ul>
-            </div>
-            
-            <div class="review-section">
-                <h1>Have something to Say?</h1>
-                <button class="review-button">Write a Review</button>
-            </div>
-            
+                <li>
+                    <img src="./styles/icon-set/server-icon.png" alt="Ian Spellman">
+                    <blockquote>
+                        <p>Oh man my life got so crazy once I started using this website.</p>
+                    </blockquote>
+                    <h3>Ian Spellman</h3>
+                    <h4>Spellcorp Inc.</h4>
+                </li>
+
+            </ul>
         </div>
+        
+        <div class="review-section">
+            <h1>Have something to Say?</h1>
+            <button class="review-button">Write a Review</button>
+        </div>
+        
+    </div>
 
-        <footer>
-            <div class="footer-social">
-                <ul class="footer-social_links">
-                    <li>
-                        <a class="icon icon-footer-socials-circle" target="_blank" title="Instagram">
-                            Instagram
-                        </a>
-                    </li>
-                    <li>
-                        <a class="icon icon-footer-socials-circle" target="_blank" title="Twitter">
-                            Twitter
-                        </a>
-                    </li>
-                    <li>
-                        <a class="icon icon-footer-socials-circle" target="_blank" title="Facebook">
-                            Facebook
-                        </a>
-                    </li>
-                </ul>
-        </footer> 
+    <footer>
+        <div class="footer-social">
+            <ul class="footer-social_links">
+                <li>
+                    <a class="icon icon-footer-socials-circle" target="_blank" title="Instagram">
+                        Instagram
+                    </a>
+                </li>
+                <li>
+                    <a class="icon icon-footer-socials-circle" target="_blank" title="Twitter">
+                        Twitter
+                    </a>
+                </li>
+                <li>
+                    <a class="icon icon-footer-socials-circle" target="_blank" title="Facebook">
+                        Facebook
+                    </a>
+                </li>
+            </ul>
+    </footer> 
 
-    </body>
+
+    <!--Flatpickr Script Dependencies-->
+    <script src="./scripts/flatpickr.js"></script>
+</body>
 
 </html>

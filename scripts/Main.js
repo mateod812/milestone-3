@@ -1,6 +1,15 @@
 var carList;
 var cart;
 
+//Date Selector Configuration values
+config = {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    
+    altInput: true,
+    altFormat: "F j, Y",
+}
+
 function loadMain() {
     if (!cart) {
         cart = new Cart();
@@ -17,6 +26,9 @@ function loadHomePage() {
     if (cart.getEndDate()) {
         document.getElementById("end_date").value = cart.getEndDate();
     }   
+
+    //Initialize Date Picker with config settings.
+    flatpickr("input[type=datetime-local]", config);
 }
 function loadCheckOut() {
     loadMain();
