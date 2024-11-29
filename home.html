@@ -92,18 +92,19 @@
                         <img src="surveyimages/sedan.png" alt="Sedan">
                         <span>Sedan</span>
                     </div>
-                    <div class="option" onclick="selectOption(this, 'carType', 'SUV')">
+                    <div class="option" onclick="selectOption(this, 'carType', 'mid_SUV')">
                         <img src="surveyimages/suv.png" alt="SUV">
-                        <span>SUV</span>
+                        <span>Mid sized SUV</span>
                     </div>
 
-                    <div class="option" onclick="selectOption(this, 'carType', 'Van')">
-                        <img src="surveyimages/van.png" alt="Van">
-                        <span>Van</span>
+                    <div class="option" onclick="selectOption(this, 'carType', 'full_SUV')">
+                        <img src="surveyimages/suv.png" alt="SUV">
+                        <span>Full sized SUV</span>
                     </div>
+
                     <div class="option" onclick="selectOption(this, 'carType', 'Truck')">
                         <img src="surveyimages/truck.png" alt="Truck">
-                        <span>Truck</span>
+                        <span>Truck/Van</span>
                     </div>
                     
                 </div>
@@ -122,16 +123,13 @@
                         <span>Less than $50</span>
                     </div>
                     <div class="option" onclick="selectOption(this, 'budget', '$50 - $100')">
-                        <span>$50 - $100</span>
+                        <span>Less than $100</span>
                     </div>
                     <div class="option" onclick="selectOption(this, 'budget', '$101 - $150')">
-                        <span>$101 - $150</span>
+                        <span>Less than $150</span>
                     </div>
                     <div class="option" onclick="selectOption(this, 'budget', '$151 - $200')">
-                        <span>$151 - $200</span>
-                    </div>
-                    <div class="option" onclick="selectOption(this, 'budget', 'Over $200')">
-                        <span>Over $200</span>
+                        <span>Less than $200</span>
                     </div>
                 </div>
                 <div class="navigation">
@@ -154,9 +152,7 @@
                     <div class="option" onclick="selectOption(this, 'passengers', '6-8')">
                         <span>6-8</span>
                     </div>
-                    <div class="option" onclick="selectOption(this, 'passengers', '9 or more')">
-                        <span>9 or more</span>
-                    </div>
+
                 </div>
                 <div class="navigation">
                     <button class="back-button" onclick="prevStep()">Back</button>
