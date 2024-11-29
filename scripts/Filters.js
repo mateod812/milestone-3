@@ -1,7 +1,8 @@
 const filterState = {
     price: null, 
     vehicleType: null, 
-    minSeats: 2 
+    minSeats: 2, 
+    budget: 150
 };
 
 function priceDropdown() {
@@ -14,6 +15,10 @@ function vehicleDropdown() {
 
 function seatsDropdown() {
     document.getElementById("seatsDropdown").classList.toggle("show");
+}
+
+function budgetDropdown() {
+    document.getElementById("budgetDropdown").classList.toggle("show");
 }
 
 // Event listener for vehicle type radio buttons
@@ -39,6 +44,14 @@ sliderValue.textContent = filterState.minSeats;
 slider.addEventListener('input', event => {
     document.getElementById('sliderValue').textContent = event.target.value;
     filterState.minSeats = parseInt(event.target.value);
+});
+
+const slider2 = document.getElementById('budget_slider');
+const budgetValue = document.getElementById('budgetValue');
+budgetValue.textContent = filterState.budget;
+slider2.addEventListener('input', event => {
+    document.getElementById('budgetValue').textContent = event.target.value;
+    filterState.budget = parseInt(event.target.value);
 });
 
 // "Apply Filters" button functionality

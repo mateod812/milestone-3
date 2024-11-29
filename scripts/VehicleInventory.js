@@ -240,9 +240,11 @@ class VehicleInventory {
             filteredVehicles.sort((a,b) => b.price - a.price);
             console.log(filteredVehicles[0]);
         }
-        console.log(filterState.price);
-        console.log(filterState.vehicleType);
-        console.log(filterState.minSeats);
+
+        if (filterState.budget) {
+            filteredVehicles = filteredVehicles.filter(vehicle => vehicle.price <= filterState.budget);
+        }
+
         this.renderedCarList = filteredVehicles;
         this.renderVehicles();
         attach_book_now_button();

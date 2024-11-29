@@ -87,6 +87,17 @@
                     </label>
                     </div>
                 </div>
+                <div class="dropdown">
+                    <button onclick="budgetDropdown()" class="dropbtn">Budget</button>
+                    <div id="budgetDropdown" class="dropdown-content">
+                        <label for="budget_slider">
+                            <input type="range" min="0" max="300" value="150" id="budget_slider" name="vehicle_option_filters">
+                            <span id="budgetValue"></span>
+                            $ per day
+                        </label>
+                    </div>
+                </div>
+
                 <button onclick="applyFilters()" class="applyfiltersbtn" id="applyFiltersButton">Apply Filters</button>
             </div>
 
