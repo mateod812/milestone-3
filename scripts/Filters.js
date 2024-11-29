@@ -25,6 +25,10 @@ function seatsDropdown() {
     document.getElementById("seatsDropdown").classList.toggle("show");
 }
 
+function budgetDropdown() {
+    document.getElementById("budgetDropdown").classList.toggle("show");
+}
+
 function filter_event_listener() {
 
     document.querySelectorAll('#vehicle_type_filters input[type="radio"]').forEach(type => {
@@ -50,6 +54,14 @@ function filter_event_listener() {
         filterState.minSeats = parseInt(event.target.value);
     });
     
+    const slider2 = document.getElementById('budget_slider');
+    const budgetValue = document.getElementById('budgetValue');
+    budgetValue.textContent = filterState.budget;
+    slider2.addEventListener('input', event => {
+        document.getElementById('budgetValue').textContent = event.target.value;
+        filterState.budget = parseInt(event.target.value);
+    });
+
     // "Apply Filters" button functionality
     document.getElementById('applyFiltersButton').addEventListener('click', () => {
         carList.applyFilters(filterState);

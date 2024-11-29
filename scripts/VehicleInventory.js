@@ -239,10 +239,12 @@ class VehicleInventory {
         }
         else if (filterState.price === "high_to_low") {
             filteredVehicles.sort((a,b) => b.price - a.price);
-
+            console.log(filteredVehicles[0]);
         }
 
-
+        if (filterState.budget) {
+            filteredVehicles = filteredVehicles.filter(vehicle => vehicle.price <= filterState.budget);
+        }
 
         this.renderedCarList = filteredVehicles;
         this.renderVehicles();
