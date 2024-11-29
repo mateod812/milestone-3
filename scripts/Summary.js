@@ -59,73 +59,114 @@ function create_summary_list() {
     if (vid >= 0) {
         const sumItem = document.createElement("h4");
         let element = carList.fromId(vid);
-        sumItem.textContent = `${element.year} ${element.make} ${element.model} ---------- $${element.price}/day`;
+        sumItem.style.width = "80%";
+        sumItem.style.float = "left";
+        sumItem.textContent = `${element.year} ${element.make} ${element.model}`;
         vehicleDiv.appendChild(sumItem);
-        totalperDay += parseInt(element.price);
+
+        const price = document.createElement("h4");
+        price.style.width = "20%"
+        price.style.float = "left"
+        price.textContent = "$" + element.price;
+        vehicleDiv.appendChild(price);
+    } else {
+        const sumItem = document.createElement("h4");
+        sumItem.style.width = "80%"
+        sumItem.style.float = "left"
+        sumItem.textContent = "No Vehicle Selected";
+        vehicleDiv.appendChild(sumItem);
     }
+
+    //spacer between sections
+    let hr = document.createElement("hr");
+    vehicleDiv.appendChild(hr);
+
     /**
      * generating insurance stuff
      * 
      */
-    for (let i in cart.insurance) {
-        if (i > 0) {
-            let hr = document.createElement("hr");
-            listOneDiv.appendChild(hr);
+    if(cart.insurance.length > 0) {
+        for (let i in cart.insurance) {
+            let pk = insurancePackages[cart.insurance[i]]
+            const d1 = document.createElement("div")
+         //   d1.style.border = "solid 4px rgba(0,0,0,.3)";
+            d1.style.overflow = "hidden"
+    
+            const sumItem = document.createElement("h4");
+            sumItem.style.width = "80%"
+            sumItem.style.float = "left"
+            sumItem.textContent = pk.name
+    
+            const price = document.createElement("h4");
+            price.style.width = "20%"
+            price.style.float = "left"
+            price.textContent = "$" + pk.cost
+    
+            totalperDay += pk.cost;
+            d1.appendChild(sumItem);
+            d1.appendChild(price);
+            
+            listOneDiv.appendChild(d1);
         }
-        let pk = insurancePackages[cart.insurance[i]]
-        const d1 = document.createElement("div")
-     //   d1.style.border = "solid 4px rgba(0,0,0,.3)";
-        d1.style.overflow = "hidden"
-
-        const sumItem = document.createElement("h4");
-        sumItem.style.width = "80%"
-        sumItem.style.float = "left"
-        sumItem.textContent = pk.name
-
-        const price = document.createElement("h4");
-        price.style.width = "20%"
-        price.style.float = "left"
-        price.textContent = "$" + pk.cost
-
-        totalperDay += pk.cost;
-        d1.appendChild(sumItem)
-        d1.appendChild(price)
-        
-        listOneDiv.appendChild(d1);
     }
+    else {
+            const sumItem = document.createElement("h4");
+            sumItem.style.width = "80%"
+            sumItem.style.float = "left"
+            sumItem.textContent = "None";
+            listOneDiv.appendChild(sumItem);
+    }
+
+    
+
+    //spacer between sections
+    hr = document.createElement("hr");
+    listOneDiv.appendChild(hr);
+
+    
+
     /**
      * generating addon stuff
      * 
      */
-    for (let i in cart.addons) {
-        if (i > 0) {
-            let hr = document.createElement("hr");
-            listTwoDiv.appendChild(hr);
+    if(cart.addons.length > 0) {
+        for (let i in cart.addons) {
+            let pk = addonPackages[cart.addons[i]]
+            const d1 = document.createElement("div")
+            //   d1.style.border = "solid 4px rgba(0,0,0,.3)";
+            d1.style.overflow = "hidden"
+    
+            const sumItem = document.createElement("h4");
+            sumItem.style.width = "80%"
+            sumItem.style.float = "left"
+            sumItem.textContent = pk.name
+    
+            const price = document.createElement("h4");
+            price.style.width = "20%"
+            price.style.float = "left"
+            price.textContent = "$" + pk.cost
+    
+            totalperDay += pk.cost;
+            d1.appendChild(sumItem)
+            d1.appendChild(price)
+    
+            listTwoDiv.appendChild(d1);
         }
-        let pk = addonPackages[cart.addons[i]]
-        const d1 = document.createElement("div")
-        //   d1.style.border = "solid 4px rgba(0,0,0,.3)";
-        d1.style.overflow = "hidden"
-
+    }
+    else {
         const sumItem = document.createElement("h4");
         sumItem.style.width = "80%"
         sumItem.style.float = "left"
-        sumItem.textContent = pk.name
-
-        const price = document.createElement("h4");
-        price.style.width = "20%"
-        price.style.float = "left"
-        price.textContent = "$" + pk.cost
-
-        totalperDay += pk.cost;
-        d1.appendChild(sumItem)
-        d1.appendChild(price)
-
-        listTwoDiv.appendChild(d1);
+        sumItem.textContent = "None";
+        listTwoDiv.appendChild(sumItem);
     }
 
+    
 
 
+    //spacer between sections
+    hr = document.createElement("hr");
+    listTwoDiv.appendChild(hr);
 
     // Append the three divs to the main container
     container.appendChild(vehicleDiv);
@@ -134,5 +175,5 @@ function create_summary_list() {
 
     // Update the total value
     const containerTotal = document.getElementById("total_value");
-    containerTotal.textContent = `$${totalperDay} per Day`;
+    containerTotal.textContent = `$${totalperDay} / day`;
 }
