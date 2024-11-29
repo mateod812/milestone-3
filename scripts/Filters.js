@@ -114,6 +114,7 @@ function filter_event_listener() {
         filterState.minSeats = 2;
         filterState.budget = 200;
         carList.applyFilters(filterState);
+        
     })
 
 }
