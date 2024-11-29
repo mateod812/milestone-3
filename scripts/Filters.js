@@ -261,10 +261,10 @@ function create_filter_sliders() {
 
 
 function create_filters(filters) {
+    preApplyfilters();
     create_price_filter_label();
     createVehicleTypeFilters(filters);
     create_filter_sliders();
-    preApplyfilters();
     filter_event_listener();
 
 }
