@@ -172,9 +172,9 @@ body {
 }
 
 .book_button {
-    background-color: #800000;
+    background-color: brown;
     border: none;
-    color: #800000;
+    color: brown;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -194,7 +194,7 @@ body {
 }
 
 .book_button:hover {
-    background-color: #F2E8C6;
+    background-color: #333;
 }
 
 #vehicle_name {
@@ -278,7 +278,7 @@ ul {
     margin-top: 10px;
     margin-bottom: 10px;
     overflow: hidden;
-    background-color: #DAD4B5;
+    background-color: brown;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 
     border-radius: 25px;
@@ -294,7 +294,7 @@ ul {
   
   li a {
     display: block;
-    color: #800000;
+    color: white;
     text-align: center;
     font-size: 110%;
     padding: 14px 16px;
@@ -302,7 +302,7 @@ ul {
   }
   
   li a:hover {
-    background-color: #F2E8C6;
+    background-color: #333;
   }
 
 #filter_div {
@@ -384,7 +384,7 @@ ul {
 }
 
 .dropbtn {
-    background-color: #800000;
+    background-color: brown;
     color: white;
     padding: 18px;
     font-size: 16px;
@@ -392,8 +392,8 @@ ul {
     cursor: pointer;
 }
 
-.dropbtn:hover, .dropbtn:focus {
-    background-color: red;
+.dropbtn:hover {
+    background-color: #333;
 }
 
 .dropdown {
@@ -411,7 +411,7 @@ ul {
 }
 
 .applyfiltersbtn {
-    background-color: #28a745;
+    background-color: brown;
     color: white;
     border: none;
     padding: 15px 32px;
@@ -430,11 +430,11 @@ ul {
 }
 
 .applyfiltersbtn:hover {
-    background-color: #4CAF50;
+    background-color: #333;
 }
 
 .resetfiltersbtn {
-    background-color: #28a745;
+    background-color: brown;
     color: white;
     border: none;
     padding: 15px 32px;
@@ -452,7 +452,7 @@ ul {
 }
 
 .resetfiltersbtn:hover {
-    background-color: #4CAF50;
+    background-color: #333;
 }
 
 
