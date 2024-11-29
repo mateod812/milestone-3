@@ -15,7 +15,7 @@
     max-width: 1000px; /* Max width for the container */
     width: 100%;
     background: #ffffff; /* White background for contrast */
-    border: 3px solid #8b0000; /* Red border */
+    border: 3px solid #e95555; /* Red border */
     border-radius: 10px;
 
     overflow: hidden;
@@ -39,6 +39,10 @@
     padding: 60px 40px 40px; /* Added padding */
 }
 
+.survey-step h1 {
+    color: #e95555;
+}
+
 .survey-step.active {
     display: block;
 }
@@ -50,7 +54,7 @@
     right: 20px;
     padding: 10px 25px;
     border: none;
-    background: #8b0000; /* Red background */
+    background: #e95555; /* Red background */
     color: #fff;
     border-radius: 30px;
     cursor: pointer;
@@ -61,7 +65,6 @@
 }
 
 .skip-button:hover {
-    background: #a60000; /* Darker red on hover */
     transform: translateY(-2px); /* Slight upward movement on hover */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -74,7 +77,7 @@
 
 .question h2 {
     margin-bottom: 10px;
-    color: #8b0000; /* Red text for headings */
+    color: #e95555; /* Red text for headings */
     font-size: 28px;
     font-weight: 600;
 }
@@ -86,7 +89,7 @@
 }
 
 .intro-content h1 {
-    color: #8b0000; /* Red text for the main heading */
+    color: #e95555; /* Red text for the main heading */
     font-size: 42px;
     margin-bottom: 20px;
     font-weight: 600;
@@ -126,9 +129,9 @@
 }
 
 .option.selected {
-    background: #8b0000;
+    background: #e95555;
     color: #fff;
-    border-color: #8b0000;
+    border-color: #e95555;
 }
 
 /* Option text */
@@ -150,7 +153,7 @@
 .navigation button {
     padding: 12px 30px;
     border: none;
-    background: #8b0000; /* Red background for buttons */
+    background: #e95555; /* Red background for buttons */
     color: #fff;
     border-radius: 30px;
     cursor: pointer;
@@ -160,7 +163,6 @@
 }
 
 .navigation button:hover {
-    background: #a60000;
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -170,18 +172,17 @@
     display: block;
     width: 100%;
     padding: 15px;
-    background: #8b0000;
+    background: #e95555;
     color: #fff;
     border: none;
     border-radius: 0 0 10px 10px;
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
-    transition: background 0.3s, transform 0.3s;
+    transition: 0.3s;
 }
 
 .start-button:hover {
-    background: #a60000;
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -205,12 +206,12 @@
     width: 100%;
     padding: 15px;
     font-size: 16px;
-    border: 2px solid #8b0000;
+    border: 2px solid #e95555;
     border-radius: 5px;
     margin-bottom: 20px;
     background-color: #fff;
     color: #333;
-    transition: background 0.3s, border 0.3s;
+    transition: 0.3s;
     cursor: pointer;
 }
 
@@ -220,7 +221,7 @@
 
 .options select:focus, .options input[type="text"]:focus {
     outline: none;
-    border-color: #a60000;
+    border-color: #e95555;
 }
 
 /* Responsive adjustments */
