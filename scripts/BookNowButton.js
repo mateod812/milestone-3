@@ -24,11 +24,11 @@ function book_now(event, buttons) {
 
     for (let button of buttons) {
         button.textContent = "Book Now";
-        button.style.backgroundColor = "#DAD4B5";
+        button.style.backgroundColor = "brown";
     }
 
     buttonClicked.textContent = "Selected";
-    buttonClicked.style.backgroundColor = "white";
+    buttonClicked.style.backgroundColor = "#333";
 
     selectedButton = buttonClicked;
     carList.bookCar(car_ID);

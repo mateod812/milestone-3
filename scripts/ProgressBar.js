@@ -7,6 +7,8 @@ function moveToInsurance() {
     addonsDiv.style.display = "none";
     insuranceDiv.style.display = "inline-block";
     image.classList = "move_insurance";
+    insuranceDiv.style.color = "#333";
+
 }
 
 function moveToAddons() {
@@ -30,3 +32,16 @@ function moveToVehicles() {
     insuranceDiv.style.display = "none";
     image.classList = "move_vehicles";
 }
+
+
+/* 
+Reds:
+  Header - brown;
+  Buttons - #e95555;
+White:
+  Background - white;
+Gray:
+  Dark Gray - #333;
+  Light Gray - #f1f1f1;
+
+*/
