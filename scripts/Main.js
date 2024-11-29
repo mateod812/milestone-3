@@ -78,9 +78,29 @@ function loadVehicles() {
     carList.addSedans(new Vehicle(civicArray));
     carList.addSedans(new Vehicle(corollaArray));
     carList.addSedans(new Vehicle(jettaArray));
+    carList.addSedans(new Vehicle(altimaArray));
 
     carList.addTrucks(new Vehicle(F150Array));
     carList.addTrucks(new Vehicle(ramArray));
+    carList.addTrucks(new Vehicle(cargoArray));
+    carList.addTrucks(new Vehicle(silveradoArray));
+    carList.addTrucks(new Vehicle(tundraArray));
+
+
+    carList.addMidSUV(new Vehicle(rav4Array));
+    carList.addMidSUV(new Vehicle(crvArray));
+    carList.addMidSUV(new Vehicle(rogueArray));
+    carList.addMidSUV(new Vehicle(foresterArray));
+
+
+    carList.addFullSUV(new Vehicle(expeditionArray));
+    carList.addFullSUV(new Vehicle(tahoeArray));
+    carList.addFullSUV(new Vehicle(sequoiaArray));
+    carList.addFullSUV(new Vehicle(suburbanArray));
+
+
+
+
 }
 
 function loadVehicleInv() {
