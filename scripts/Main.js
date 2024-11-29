@@ -37,10 +37,36 @@ function loadHomePage() {
     //Initialize Date Picker with config settings.
     flatpickr("input[type=datetime-local]", CalendarConfig);
 }
+
+function goToCheckout() {
+    if (/*cart.getAddress() &&*/ cart.getStartDate() && cart.getEndDate() && cart.getVehicleID() >= 0) {
+        window.location.replace("./checkout.html");
+    }
+}
+
 function loadCheckOut() {
     loadMain();
     loadVehicles()
+    if (!cart.getAddress()) {
+        //    window.location.replace("./home.html");
+    }
+    if (!cart.getStartDate()) {
+        window.location.replace("./home.html");
+    }
+    if (!cart.getEndDate()) {
+        window.location.replace("./home.html");
+    }
+    if (cart.getVehicleID() < 0) {
+        window.location.replace("./index.html");
+    }
     setCheckOutSummary()
+}
+
+function findVehicleButtion() {
+    saveDates();
+    if (/*cart.getAddress() &&*/ cart.getStartDate() && cart.getEndDate()) {
+        window.location.replace("./index.html");
+    }
 }
 
 function loadVehicles() {
@@ -57,6 +83,16 @@ function loadVehicles() {
 function loadVehicleInv() {
     loadMain();
     loadVehicles();
+
+    if (!cart.getAddress()) {
+        //    window.location.replace("./home.html");
+    }
+    if (!cart.getStartDate()) {
+        window.location.replace("./home.html");
+    }
+    if (!cart.getEndDate()) {
+        window.location.replace("./home.html");
+    }
 
     carList.renderAll();
 
