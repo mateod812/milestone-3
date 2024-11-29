@@ -26,11 +26,7 @@ const css = new addonPackage(
     "Ensure safety for your child with a properly installed car seat.",
     15
 )
-const ad = new addonPackage(
-    "Additional Driver",
-    "Add an extra driver to share the driving responsibilities.",
-    20
-)
+
 const wh = new addonPackage(
     "WiFi Hotspot",
     "Stay connected on the go with a portable WiFi hotspot.",
@@ -41,16 +37,8 @@ const rr = new addonPackage(
     "Carry additional luggage, skis, or equipment with a roof rack.",
     8
 )
-const sr = new addonPackage(
-    "Ski Rack",
-    "Transport your skis securely with a dedicated ski rack.",
-    10
-)
-const br = new addonPackage(
-    "Bike Rack",
-    "Take your bike along for the ride with a convenient bike rack.",
-    7
-)
+
+
 
 
 function onAddonPress(id) {
