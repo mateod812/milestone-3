@@ -8,35 +8,111 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    height: 30%;
-    max-width: 5000px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-  }
+}
 
-  textarea {
-    resize: none;
-  }
+h2 {
+  text-align: center;
+}
+
+.modal-content {
+  text-align: left;
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  max-height: 55%;
+  max-width: 5000px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+input {
+  width: 60%;
+  margin-top: 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(0,0,0,.4);
+  background-color: white;
+  font-size:14px;
+  padding:10px;
+}
+
+label {
+  display: inline-block;
+  width: 30%;
+  text-align: right;
+}
+
+#review-button-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#review-submit-button {
+  display: inline-block;
+  font-size: 18px;
+  width: 150px;
+  height: 48px;
+  text-decoration: none;
+  padding: 12px 0px;
+  margin: 20px;
+  background-color: #e95555;
+  color:rgb(255, 255, 255);
+  text-align: center;
+  border-style: none;
+  border-radius: 8px;
+  box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.253);
+}
+
+#review-submit-button:hover {
+  transform: scale(1.1);
+  color: white;
+  transition: 0.4s;
+}
+
+#reviewform-msg-div {
+  min-height: 100px;
+  max-height: 200px;
+}
+
+#reviewform-msg-div label {
+  color: white;
+}
+
+textarea {
+  margin-top: 10px;
+  resize: none;
+  height: 150px;
+  width: 60%;
+  margin-top: 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(0,0,0,.4);
+  background-color: white;
+  font-size:14px;
+  padding:10px;
+}
+
+select {
+  margin-top: 10px;
+  width: 60%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
   
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-  }
-  
+
+.inputBox {
+
+}
