@@ -63,12 +63,9 @@ function saveInput(questionKey, value) {
     surveyData[questionKey] = value;
 }
 
-function skipSurvey() {
-    window.location.href = "car-options.html";
-}
+
 
 function submitSurvey() {
-    window.location.href = "car-options.html";
     sessionStorage.setItem("surveyResult", JSON.stringify(surveyData));
 }
 

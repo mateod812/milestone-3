@@ -153,13 +153,6 @@ function createVehicleTypeFilters(containerId, filters) {
     });
 }
 
-// Example usage
-const filters = [
-    { id: 'all_vehicles', value: 'all', label: 'All Vehicles' },
-    { id: 'sedan', value: 'sedan', label: 'Sedans' },
-    { id: 'truck', value: 'truck', label: 'Trucks' },
-    { id: 'mid_size_SUV', value: 'mid_size_SUV', label: 'Mid Sized SUV' },
-    { id: 'large_SUV', value: 'large_SUV', label: 'Full Sized SUV' }
-];
+
 
 

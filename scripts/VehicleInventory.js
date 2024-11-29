@@ -221,7 +221,7 @@ class VehicleInventory {
         this.renderedCarList = deepCopy;
     } 
     applyFilters(filterState) {
-        console.log("bruh")
+
         let filteredVehicles = [];
         for (let type of this.vehicleList) {
             filteredVehicles = filteredVehicles.concat(type);
@@ -239,6 +239,15 @@ class VehicleInventory {
 
         if (filterState.budget) {
             filteredVehicles = filteredVehicles.filter(vehicle => vehicle.price <= filterState.budget);
+        }
+
+
+        if (filterState.price === "low_to_high") {
+            filteredVehicles.sort((a,b) => a.price - b.price);
+        }
+        else if (filterState.price === "high_to_low") {
+            filteredVehicles.sort((a,b) => b.price - a.price);
+            console.log(filteredVehicles[0]);
         }
 
         this.renderedCarList = filteredVehicles;

@@ -183,6 +183,13 @@ function closeSurvey() {
 
 
 
+function skipSurvey() {
+    sessionStorage.setItem("surveyResult", null);
+    window.location.href='index.html';
+}
+
+
+
 
 // 
 // window.onclick = function (event) {
