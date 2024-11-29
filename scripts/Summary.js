@@ -175,5 +175,5 @@ function create_summary_list() {
 
     // Update the total value
     const containerTotal = document.getElementById("total_value");
-    containerTotal.textContent = `$${totalperDay} per Day`;
+    containerTotal.textContent = `$${totalperDay} / day`;
 }

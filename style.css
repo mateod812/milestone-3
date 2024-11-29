@@ -359,12 +359,23 @@ ul {
     border-color: #888888;
 }
 
-#summary_vehicle_total {
-    margin-top: auto; 
-    text-align: left; 
-    border-width: 2px;
+
+
+#total_container {
+    display: flex;
+    margin: auto;
+    width: 100%;
     border-style: hidden hidden solid hidden;
     border-color: #888888;
+}
+
+#summary_vehicle_total {
+    width:30%;
+    color: #333;
+}
+
+#total_value {
+    width:70%;
 }
 
 #summary_vehicle_current {
