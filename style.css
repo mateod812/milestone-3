@@ -488,7 +488,7 @@ ul {
 }
 
 .insurance_option button {
-    background-color: #4CAF50;
+    background-color: brown;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -497,7 +497,7 @@ ul {
 }
 
 .insurance_option button:hover {
-    background-color: #45a049;
+    background-color: #333;
 }
 
 
@@ -518,7 +518,7 @@ ul {
 }
 
 .addon_option button {
-    background-color: #28a745;
+    background-color: brown;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -527,7 +527,7 @@ ul {
 }
 
 .addon_option button:hover {
-    background-color: #218838;
+    background-color: #333;
 }
 
 

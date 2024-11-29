@@ -62,12 +62,12 @@ function onAddonPress(id) {
     if (!pressed) {
         cart.addAddon(id);
         button.innerHTML = "Selected";
-        button.style.color = "black"; // Change text color to black
-        button.style.backgroundColor = "white";
+        button.style.color = "white"; // Change text color to black
+        button.style.backgroundColor = "#333";
     } else {
         cart.removeAddon(id);
         button.textContent = "Select";
-        button.style.backgroundColor = "#4CAF50";
+        button.style.backgroundColor = "brown";
         button.style.color = "White"; // Change text color to black
     }
     cart.save();

@@ -48,12 +48,12 @@ function onPress(id) {
     if (!pressed) {
         cart.addInsurance(id);
         button.innerHTML = "Selected";
-        button.style.color = "black"; // Change text color to black
-        button.style.backgroundColor = "white";
+        button.style.color = "White"; // Change text color to black
+        button.style.backgroundColor = "#333";
     } else {
         cart.removeInsurance(id);
         button.textContent = "Select";
-        button.style.backgroundColor = "#4CAF50";
+        button.style.backgroundColor = "brown";
         button.style.color = "White"; // Change text color to black
     }
 
