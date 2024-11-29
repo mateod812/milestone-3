@@ -154,7 +154,13 @@ body {
     border-width: 2px;
     border-style: solid;
     border-color: #800000;
+    transition: 0.25s;
 }
+
+#vehicle_item:hover {
+    transform: scale(1.05);
+}
+
 
 #vehicle_img {
     display: block;
