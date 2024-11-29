@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./styles/flatpickr.min.css">
     <link rel="stylesheet" href="./styles/flatpickr_theme.css">
     <link rel="stylesheet" href="./surveystyles.css">
+    <link rel="stylesheet" href="./review-style.css">
 
     <script src="scripts/Sedan.js"></script>
     <script src="scripts/Truck.js"></script>
@@ -215,10 +216,38 @@
         
         <div class="review-section">
             <h1>Have something to Say?</h1>
-            <a href="./wip.html" target="_self">
-                <button class="review-button">Write a Review</button>
-            </a>
+            <button id="writeReviewBtn" class="review-button">Write a Review</button>
         </div>
+
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Write a Review</h2>
+            <form id="reviewForm">
+            <label for="reviewName">Name:</label>
+            <input type="text" id="reviewName" name="reviewName" placeholder="Your Name" required>
+            
+            <label for="reviewEmail">Email:</label>
+            <input type="email" id="reviewEmail" name="reviewEmail" placeholder="Your Email" required>
+            
+            <label for="reviewMessage">Review:</label>
+            <textarea id="reviewMessage" name="reviewMessage" placeholder="Write your review here..." required></textarea>
+            
+            <label for="reviewRating">Rating:</label>
+            <select id="reviewRating" name="reviewRating" required>
+                <option value="" disabled selected>Select a rating</option>
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Good</option>
+                <option value="3">3 - Average</option>
+                <option value="2">2 - Poor</option>
+                <option value="1">1 - Terrible</option>
+            </select>
+            
+            <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
         
     </div>
 
@@ -247,6 +276,7 @@
     <!--Flatpickr Script Dependencies-->
     <script src="./scripts/flatpickr.js"></script>
     <script src="surveyscript.js"></script>
+    <script src="./scripts/Review.js"></script>
 
 </body>
 

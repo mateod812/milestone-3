@@ -181,6 +181,10 @@ function openSurvey() {
     document.getElementById('surveyModal').style.display = 'block';
 }
 
+function openReviews() {
+    document.getElementById('reviewSection').style.display = 'block';
+}
+
 function closeSurvey() {
     document.getElementById('surveyModal').style.display = 'none';
 }
