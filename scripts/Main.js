@@ -41,6 +41,12 @@ function loadHomePage() {
     endPickr = new flatpickr("input[id=end_date]", CalendarConfig);
     startPickr.set("onClose", setMinDate);
     endPickr.set("onClose", setMaxDate);
+    if (cart.getStartDate()) {
+        startPickr.value = cart.getStartDate();
+    }
+    if (cart.getEndDate()) {
+        endPickr.value = cart.getEndDate();
+    }
 }
 
 function goToCheckout() {
