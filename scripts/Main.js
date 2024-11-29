@@ -2,12 +2,15 @@ var carList;
 var cart;
 
 //Date Selector Configuration values
-config = {
+CalendarConfig = {
     enableTime: true,
-    dateFormat: "Y-m-d H:i",
     
     altInput: true,
-    altFormat: "F j, Y",
+    altFormat: "M j, Y, h:iK",
+
+    minuteIncrement: 30,
+
+    position: "auto center",
 }
 
 function loadMain() {
@@ -28,7 +31,7 @@ function loadHomePage() {
     }   
 
     //Initialize Date Picker with config settings.
-    flatpickr("input[type=datetime-local]", config);
+    flatpickr("input[type=datetime-local]", CalendarConfig);
 }
 function loadCheckOut() {
     loadMain();
