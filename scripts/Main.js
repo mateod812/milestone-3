@@ -200,9 +200,4 @@ function skipSurvey() {
 
 
 // 
-// window.onclick = function (event) {
-//     const modal = document.getElementById('surveyModal');
-//     if (event.target === modal) {
-//         closeSurvey();
-//     }
-// }
+
