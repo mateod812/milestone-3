@@ -219,6 +219,7 @@ class VehicleInventory {
         this.renderedCarList = deepCopy;
     } 
     applyFilters(filterState) {
+        console.log("bruh")
         let filteredVehicles = [];
         for (let type of this.vehicleList) {
             filteredVehicles = filteredVehicles.concat(type);
