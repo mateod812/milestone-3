@@ -248,6 +248,13 @@ class VehicleInventory {
 
         this.renderedCarList = filteredVehicles;
         this.renderVehicles();
+        if (filteredVehicles.length === 0) {
+            const container = document.getElementById("vehicle_container");
+            const no_vehicles = document.createElement("h1");
+            no_vehicles.id = "no_vehicles";
+            no_vehicles.textContent = `There are no vehicles that meet these filters.`;
+            container.appendChild(no_vehicles);
+        }
         attach_book_now_button();
     }
 }
