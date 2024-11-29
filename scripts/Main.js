@@ -119,7 +119,7 @@ function closeSurvey() {
 }
 
 
-preApplyfilters();
+
 
 // 
 // window.onclick = function (event) {
