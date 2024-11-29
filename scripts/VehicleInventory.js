@@ -38,7 +38,7 @@ class VehicleInventory {
             index++
         ) {
             const element = this.vehicleList[VehicleTypes.SEDAN][index];
-            console.log(element);
+
         }
     }
 
@@ -165,7 +165,7 @@ class VehicleInventory {
             for (let j = 0; j < this.vehicleList[i].length; j++) {
                 const car = this.vehicleList[i][j];
                 if (car.ID == ID) {
-                    console.log(`${car.year} ${car.make} ${car.model} is now rented`);
+
                    // add_Car_Summary(car);
                     car.isRented = true;
                     cart.setVehicle(ID);
@@ -187,25 +187,25 @@ class VehicleInventory {
 
     filterTrucks() {
         this.renderedCarList = this.vehicleList[VehicleTypes.TRUCK];
-        console.log(this.renderedCarList);
+
         this.renderVehicles();
     }
 
     filterSedans() {
         this.renderedCarList = this.vehicleList[VehicleTypes.SEDAN];
-        console.log(this.renderedCarList);
+
         this.renderVehicles();
     }
 
     filterMidSUV() {
         this.renderedCarList = this.vehicleList[VehicleTypes.MID_SIZE_SUV];
-        console.log(this.renderedCarList);
+
         this.renderVehicles();
     }
 
     filterFullSUV() {
         this.renderedCarList = this.vehicleList[VehicleTypes.FULL_SIZE_SUV];
-        console.log(this.renderedCarList);
+
         this.renderVehicles();
     }
 
@@ -214,7 +214,7 @@ class VehicleInventory {
     filterMinSeats(givenSeats) {
         const deepCopy = structuredClone(this.renderedCarList);
         this.renderedCarList = this.renderedCarList.filter(car => car.numSeats >= givenSeats);
-        console.log(givenSeats);
+
         this.renderVehicles();
         this.renderedCarList = deepCopy;
     } 
@@ -226,7 +226,7 @@ class VehicleInventory {
 
         if (filterState.vehicleType) {
             filteredVehicles = filteredVehicles.filter(vehicle => vehicle.vehicleType === filterState.vehicleType);
-            console.log(filterState.vehicleType);
+
         }
 
         if (filterState.minSeats) {
@@ -238,11 +238,11 @@ class VehicleInventory {
         }
         else if (filterState.price === "high_to_low") {
             filteredVehicles.sort((a,b) => b.price - a.price);
-            console.log(filteredVehicles[0]);
+
         }
-        console.log(filterState.price);
-        console.log(filterState.vehicleType);
-        console.log(filterState.minSeats);
+
+
+
         this.renderedCarList = filteredVehicles;
         this.renderVehicles();
         attach_book_now_button();

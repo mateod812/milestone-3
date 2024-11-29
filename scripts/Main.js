@@ -88,6 +88,7 @@ function saveDates() {
     cart.setStartDate(start.value)
     const end = document.getElementById("end_date");
     cart.setEndDate(end.value)
+    console.log("saveDates()");
 }
 
 function setMinDate() {
@@ -109,3 +110,21 @@ function loadCart() {
         cart.load();
 }
 
+function openSurvey() {
+    document.getElementById('surveyModal').style.display = 'block';
+}
+
+function closeSurvey() {
+    document.getElementById('surveyModal').style.display = 'none';
+}
+
+
+preApplyfilters();
+
+// 
+// window.onclick = function (event) {
+//     const modal = document.getElementById('surveyModal');
+//     if (event.target === modal) {
+//         closeSurvey();
+//     }
+// }

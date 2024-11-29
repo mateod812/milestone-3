@@ -2,7 +2,6 @@ let summaryList = [];
 
 
 function add_Car_Summary(carToAdd) {
-    console.log(carToAdd + "hrrrlo");
     if (!summaryList.includes(carToAdd)) {
         if (carToAdd instanceof Vehicle) {
             remove_other_cars();
@@ -37,6 +36,7 @@ function remove_other_cars() {
 
 
 function create_summary_list() {
+
     let totalperDay = 0;
 
     // Clear the main container
@@ -59,7 +59,6 @@ function create_summary_list() {
     if (vid >= 0) {
         const sumItem = document.createElement("h4");
         let element = carList.fromId(vid);
-        console.log(element + "bruh");
         sumItem.textContent = `${element.year} ${element.make} ${element.model} ---------- $${element.price}/day`;
         vehicleDiv.appendChild(sumItem);
         totalperDay += parseInt(element.price);
@@ -126,30 +125,7 @@ function create_summary_list() {
     }
 
 
-    /*
-    for (let i = 0; i < summaryList.length; i++) {
-        let element = summaryList[i];
-        const sumItem = document.createElement("h4");
 
-        if (element instanceof Vehicle) {
-            sumItem.textContent = `${element.year} ${element.make} ${element.model} ---------- $${element.price}/day`;
-            vehicleDiv.appendChild(sumItem);
-            totalperDay += parseInt(element.price);
-        } else {
-            
-            const type  = summaryList[i][2];
-
-            sumItem.textContent = summaryList[i][0];
-
-            if (type == 1) {
-                listOneDiv.appendChild(sumItem);
-            } else if (type == 2) {
-          //      listTwoDiv.appendChild(sumItem);
-            }
-
-            totalperDay += parseInt(summaryList[i][1]);
-        }
-    }*/
 
     // Append the three divs to the main container
     container.appendChild(vehicleDiv);

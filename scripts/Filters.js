@@ -4,6 +4,15 @@ const filterState = {
     minSeats: 2 
 };
 
+
+function preApplyfilters() {
+    const surveyResult = JSON.parse(sessionStorage.getItem("surveyResult"));
+    filterState.vehicleType = "sedan";
+}
+
+
+
+
 function priceDropdown() {
     document.getElementById("priceDropdown").classList.toggle("show");
 }
@@ -28,7 +37,6 @@ document.querySelectorAll('#vehicle_type_filters input[type="radio"]').forEach(t
 document.querySelectorAll('#price_filters input[type="radio"]').forEach(price => {
     price.addEventListener('change', event => {
         filterState.price = event.target.id;
-        console.log(filterState.price);
     });
 });
 
@@ -44,5 +52,5 @@ slider.addEventListener('input', event => {
 // "Apply Filters" button functionality
 document.getElementById('applyFiltersButton').addEventListener('click', () => {
     carList.applyFilters(filterState);
-    console.log(filterState);
+    preApplyfilters();
 });
