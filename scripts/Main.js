@@ -1,6 +1,7 @@
 var carList;
 var cart;
-
+var startPickr;
+var endPickr;
 //Date Selector Configuration values
 CalendarConfig = {
     enableTime: true,
@@ -13,7 +14,6 @@ CalendarConfig = {
     maxTime: "17:30",
     defaultHour: 9,
     defaultMinute: 0,
-
     minDate: "today",
 }
 
@@ -35,7 +35,12 @@ function loadHomePage() {
     }   
 
     //Initialize Date Picker with config settings.
-    flatpickr("input[type=datetime-local]", CalendarConfig);
+   // flatpickr("input[type=datetime-local]", CalendarConfig);
+
+    startPickr = new flatpickr("input[id=start_date]", CalendarConfig);
+    endPickr = new flatpickr("input[id=end_date]", CalendarConfig);
+    startPickr.set("onClose", setMinDate);
+    endPickr.set("onClose", setMaxDate);
 }
 
 function goToCheckout() {
@@ -134,14 +139,10 @@ function saveDates() {
 }
 
 function setMinDate() {
-    const start = document.getElementById("start_date");
-    const end = document.getElementById("end_date");
-    end.setAttribute("min", start.value);
+    endPickr.set("minDate", startPickr.selectedDates[0].getTime() + 1 * 8.64e+7);
 }
 function setMaxDate() {
-    const start = document.getElementById("start_date");
-    const end = document.getElementById("end_date");
-    start.setAttribute("max", end.value);
+    startPickr.set("maxDate", endPickr.selectedDates[0].getTime() - 1 * 8.64e+7);
 }
 
 function saveCart() {
