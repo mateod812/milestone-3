@@ -145,10 +145,8 @@ function loadVehicleInv() {
     create_summary_list();
 
 
-
-    
-    createVehicleTypeFilters(filters, 'all');
-    filter_event_listener();
+    create_filters(filters);
+    // filter_event_listener();
     carList.applyFilters(filterState);
 
 }

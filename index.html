@@ -44,18 +44,11 @@
                 <div class="dropdown">
                     <button onclick="priceDropdown()" class="dropbtn">Price Filters</button>
                     <div id="priceDropdown" class="dropdown-content">
-                        <div id="price_filters">
-                            <label for="low_to_high"> 
-                                <input type="radio" id="low_to_high" name="price_filter" >
-                                Low to High
-                            </label>
-                            <label for="high_to_low"> 
-                                <input type="radio"  id="high_to_low" name="price_filter">    
-                                High to Low
-                            </label>
-                        </div>
+                        <div id="price_filters"> </div>
                     </div>
                 </div>
+
+
                 <div class="dropdown">
                     <button onclick="vehicleDropdown()" class="dropbtn">Vehicle Type</button>
                     <div id="vehicleDropdown" class="dropdown-content">
@@ -68,21 +61,15 @@
                 <div class="dropdown">
                     <button onclick="seatsDropdown()" class="dropbtn"># Of Seats</button>
                     <div id="seatsDropdown" class="dropdown-content">
-                    <label for="seats_slider"> 
-                        <input type="range" min="2" max="8" value="4" id="seats_slider" name="vehicle_option_filters" >
-                        <span id ="sliderValue"></span>
-                        seats
-                    </label>
+                    
                     </div>
                 </div>
+
+
                 <div class="dropdown">
                     <button onclick="budgetDropdown()" class="dropbtn">Budget</button>
                     <div id="budgetDropdown" class="dropdown-content">
-                        <label for="budget_slider">
-                            <input type="range" min="0" max="300" value="150" id="budget_slider" name="vehicle_option_filters">
-                            <span id="budgetValue"></span>
-                            $ per day
-                        </label>
+                        
                     </div>
                 </div>
                 
