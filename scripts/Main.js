@@ -14,7 +14,9 @@ CalendarConfig = {
     maxTime: "17:30",
     defaultHour: 9,
     defaultMinute: 0,
-    minDate: "today",
+    minDate: 'today',
+
+    disable: ["2024-12-25", "2025-01-01"],
 }
 
 function loadMain() {
@@ -41,6 +43,7 @@ function loadHomePage() {
     endPickr = new flatpickr("input[id=end_date]", CalendarConfig);
     startPickr.set("onClose", setMinDate);
     endPickr.set("onClose", setMaxDate);
+    endPickr.set("minDate", new Date(new Date().getTime() + 1 * 8.64e+7));
     if (cart.getStartDate()) {
         startPickr.value = cart.getStartDate();
     }

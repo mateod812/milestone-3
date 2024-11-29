@@ -44,12 +44,14 @@
                 <!--LOCATION-->
                 <li>
                     <label for="locations">Location</label>
-                    <select name="locations" id="locations" required>
-                        <option value="">Choose a Location</option>
-                        <option value="wpgW">Winnipeg West</option>
-                        <option value="wpgE">Winnipeg East</option>
-                        <option value="wpgN">Winnipeg North</option>
-                        <option value="wpgS">Winnipeg South</option>
+                    <select name="locations" id="locations" 
+                    pattern="[1-4]"
+                    required>
+                        <option value="" disabled selected hidden>Choose a Location</option>
+                        <option value="0">Winnipeg West</option>
+                        <option value="1">Winnipeg East</option>
+                        <option value="2">Winnipeg North</option>
+                        <option value="3">Winnipeg South</option>
                     </select>
                 </li>
 
