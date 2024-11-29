@@ -60,7 +60,7 @@ body {
   width: 33.333%;
 }
 
-#locations {
+.locations {
   height:100%;
   width:100%;
   border-radius: 0;
@@ -69,6 +69,26 @@ body {
   text-align: center;
   font-size: 1.5rem;
   color: #333;
+}
+
+.locations:hover {
+  cursor: pointer;
+}
+
+.start_date:hover {
+  cursor: pointer;
+}
+
+.end_date:hover {
+  cursor: pointer;
+}
+
+.review-button:hover {
+  cursor:pointer;
+}
+
+.home-button:hover {
+  cursor:pointer;
 }
 
 .submit-button {
@@ -88,6 +108,7 @@ body {
 .submit-button:hover {
   transition: 0.4s;
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .form-control.input {
