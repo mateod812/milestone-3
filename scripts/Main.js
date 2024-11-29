@@ -19,6 +19,15 @@ CalendarConfig = {
     disable: ["2024-12-25", "2025-01-01"],
 }
 
+
+const filters = [
+    { id: 'all_vehicles', value: 'all', label: 'All Vehicles' },
+    { id: 'sedan', value: 'sedan', label: 'Sedans' },
+    { id: 'truck', value: 'truck', label: 'Trucks' },
+    { id: 'mid_size_SUV', value: 'mid_size_SUV', label: 'Mid Sized SUV' },
+    { id: 'large_SUV', value: 'large_SUV', label: 'Full Sized SUV' }
+];
+
 function loadMain() {
     if (!cart) {
         cart = new Cart();
@@ -139,16 +148,8 @@ function loadVehicleInv() {
     create_summary_list();
 
 
-
-    const filters = [
-        { id: 'all_vehicles', value: 'all', label: 'All Vehicles' },
-        { id: 'sedan', value: 'sedan', label: 'Sedans' },
-        { id: 'truck', value: 'truck', label: 'Trucks' },
-        { id: 'mid_size_SUV', value: 'mid_size_SUV', label: 'Mid Sized SUV' },
-        { id: 'large_SUV', value: 'large_SUV', label: 'Full Sized SUV' }
-    ];
-    createVehicleTypeFilters('vehicle_type_filters', filters, 'all');
-    filter_event_listener();
+    create_filters(filters);
+    // filter_event_listener();
     carList.applyFilters(filterState);
 
 }
