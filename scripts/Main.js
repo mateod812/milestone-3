@@ -1,5 +1,5 @@
-var carList;
-var cart;
+let carList;
+let  cart;
 
 //Date Selector Configuration values
 CalendarConfig = {

@@ -54,13 +54,13 @@ function filter_event_listener() {
     document.getElementById('applyFiltersButton').addEventListener('click', () => {
         carList.applyFilters(filterState);
     });
+
 }
 
 
 
 function createVehicleTypeFilters(containerId, filters) {
     preApplyfilters();
-    console.log(filterState)
     const container = document.getElementById(containerId);
     
     container.innerHTML = ''; 
@@ -78,9 +78,6 @@ function createVehicleTypeFilters(containerId, filters) {
         if (filterState.vehicleType !== null) {
             if (filterState.vehicleType  == filter.id) {
                 input.checked = true;
-            } else {
-                console.log(filterState.vehicleType + " " + filter.id)
-
             }
         }
         
@@ -102,7 +99,9 @@ const filters = [
     { id: 'mid_size_SUV', value: 'mid_size_SUV', label: 'Mid Sized SUV' },
     { id: 'large_SUV', value: 'large_SUV', label: 'Full Sized SUV' }
 ];
-filter_event_listener();
-createVehicleTypeFilters('vehicle_type_filters', filters, 'all');
-carList.applyFilters(filterState);
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    createVehicleTypeFilters('vehicle_type_filters', filters, 'all');
+    filter_event_listener();
+});
