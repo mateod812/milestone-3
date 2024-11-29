@@ -43,7 +43,17 @@
             padding-bottom: 20px;
             background-color:rgba(0,0,0,.03)
         }
+        .remove-button {
+            border-radius: 5px;
+            border:none;
+            background-color: #e66960;
+            margin-top: 0; 
+            height: 30px; 
+            width: 30px; 
+            text-align: center; 
+            font-size:100%;
 
+        }
         .desc {
             font-size: 12px;
             font-style: normal;
@@ -145,7 +155,7 @@
                                 </div>
                                 <div style="float: right; width: 20%; margin-top: 0;  text-align: right">
                                     <h5 style="margin-top: 0;margin-bottom: 6px;">$<var class="variable" id="ioption_cost">0</var>/day</h5>
-                                    <button id="ioption_button" style="margin-top: 0;height:30px; width: 30px; text-align: center">X</button>
+                                    <button id="ioption_button"class="remove-button">X</button>
                                 </div>
 
                             </div>
@@ -163,7 +173,7 @@
                                 </div>
                                 <div style="float: right; width: 20%; margin-top: 0;  text-align: right">
                                     <h5 style="margin-top: 0;margin-bottom: 6px;">$<var class="variable" id="aoption_cost">0</var>/day</h5>
-                                    <button id="aoption_button" style="margin-top: 0;height:30px; width: 30px; text-align: center">X</button>
+                                    <button id="aoption_button"class="remove-button">X</button>
                                 </div>
 
                             </div>
@@ -232,7 +242,7 @@
                     <br />
                     <label for="address2">Address Line 2</label>
                     <input class="inputBox" name="address2" style="width:100%" type="text" id="address2"
-                           placeholder="123 Dafoe Rd." />
+                           placeholder="" />
                     <br />
                     <br />
                     <div style="width:100%; margin-bottom:0">
