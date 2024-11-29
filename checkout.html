@@ -40,9 +40,20 @@
             padding-right: 2.5%;
             padding-left: 2.5%;
             margin: 2%;
-            padding-bottom: 20px
+            padding-bottom: 20px;
+            background-color:rgba(0,0,0,.03)
         }
+        .remove-button {
+            border-radius: 5px;
+            border:none;
+            background-color: #e66960;
+            margin-top: 0; 
+            height: 30px; 
+            width: 30px; 
+            text-align: center; 
+            font-size:100%;
 
+        }
         .desc {
             font-size: 12px;
             font-style: normal;
@@ -58,6 +69,15 @@
         .variable {
             font-style: normal;
         }
+
+        .inputBox {
+            border-radius: 7px;
+            border: 1px solid rgba(0,0,0,.4);
+            background-color: white;
+            font-size:14px;
+            padding:10px;
+        }
+
     </style>
 </head>
 
@@ -80,7 +100,7 @@
 
 
     <!--Not stolen-->
-    <div style="padding-left: 20%; height: fit-content; border: 4px solid;" >
+    <div style="padding-left: 20%; height: fit-content;" >
         <div style=" min-width: 300px; width: 75%; text-align: center; overflow: hidden; ">
             
             <h1 style="text-align:left; margin-top:5%">Checkout:</h1>
@@ -135,7 +155,7 @@
                                 </div>
                                 <div style="float: right; width: 20%; margin-top: 0;  text-align: right">
                                     <h5 style="margin-top: 0;margin-bottom: 6px;">$<var class="variable" id="ioption_cost">0</var>/day</h5>
-                                    <button id="ioption_button" style="margin-top: 0;height:30px; width: 30px; text-align: center">X</button>
+                                    <button id="ioption_button"class="remove-button">X</button>
                                 </div>
 
                             </div>
@@ -153,7 +173,7 @@
                                 </div>
                                 <div style="float: right; width: 20%; margin-top: 0;  text-align: right">
                                     <h5 style="margin-top: 0;margin-bottom: 6px;">$<var class="variable" id="aoption_cost">0</var>/day</h5>
-                                    <button id="aoption_button" style="margin-top: 0;height:30px; width: 30px; text-align: center">X</button>
+                                    <button id="aoption_button"class="remove-button">X</button>
                                 </div>
 
                             </div>
@@ -182,68 +202,133 @@
 
             </div>
             <div class="info-bubble" id="info">
-                <h2>Your Info</h2>
-                <hr />
-                <div style="overflow:hidden">
+                <form id="payment_form" autocomplete="on" name="payment_form">
+                    <h2>Billing Info</h2>
+
+                    <hr />
                     <div style="float: left; width: 45%;margin-bottom: 0;">
-                        <h4 style="margin-bottom: 0;">First Name</h4>
-                        <input style="width:100%" type="text" id="first_name" />
+                        <label for="first_name">First Name</label>
+                        <input class="inputBox" name="fname" placeholder="John" style="width:100%" type="text" id="first_name"
+                            pattern="[a-zA-Z ]{1,}" required />
+                        <br />
+                        <br />
                     </div>
-                    <div style="float: right; width:45%; margin-bottom:0">
-                        <h4 style="margin-bottom: 0;">Last Name</h4>
-                        <input style="width:100%" type="text" id="last_name" />
+                    <div style="float: right; width:45%;">
+                        <label for="last_name">Last Name</label>
+                        <input class="inputBox" name="lname" placeholder="Doe" style="width:100%" type="text" id="last_name"
+                            pattern="[a-zA-Z ]{1,}" required />
+                        <br />
+                        <br />
                     </div>
-                </div>
-                <div style="width:80%; margin-bottom:0">
-                    <h4 style="margin-bottom: 0;">Email</h4>
-                    <input style="width:100%" type="email" id="email" />
-                    <h4 style="margin-bottom: 0;">Phone Number</h4>
-                    <input style="width:100%" type="number" id="phone_number" />
-                    <h4 style="margin-bottom: 0;">Address</h4>
-                    <input style="width:100%" type="text" id="address" />
-                    <h4 style="margin-bottom: 0;">Address Line 2</h4>
-                    <input style="width:100%" type="text" id="address2" />
-                </div>
-                <div style="overflow:hidden;">
-                    <div style="float: left; width: 35%;margin-bottom: 0;">
-                        <h4 style="margin-bottom: 0;">City</h4>
-                        <input style="width:100%" type="text" id="city" />
+                    <div style="float: left; width: 45%;margin-bottom: 0;">
+                        <label for="email">Email</label>
+                        <input class="inputBox" name="email" placeholder="johndoe@gmail.com" style="width:100%" type="email" id="email" required />
+                        <br />
+                        <br />
                     </div>
-                    <div style="float: left; width: 25%; margin-bottom: 0; padding-left: 2%">
-                        <h4 style="margin-bottom: 0;">Province</h4>
-                        <input style="width:100%" type="text" id="province" />
+                    <div style="float: right; width:45%;">
+                        <label for="phone_number">Phone Number</label>
+                        <input class="inputBox" name="phone" style="width:100%" placeholder="123-456-7890" type="tel" id="phone_number"
+                               pattern="[0-9]{0,1}[\-]{0,1}[\( ]{0,1}[0-9]{3}[\) ]{0,1}[ \-]{0,1}[0-9]{3}[ \-]{0,1}[0-9]{4}"
+                               required />
+                        <br />
+                        <br />
+                    </div>
+                    <label for="address">Address</label>
+                    <input class="inputBox" name="address" style="width:100%" type="text" id="address"
+                           placeholder="123 Dafoe Rd."
+                           required />
+                    <br />
+                    <br />
+                    <label for="address2">Address Line 2</label>
+                    <input class="inputBox" name="address2" style="width:100%" type="text" id="address2"
+                           placeholder="" />
+                    <br />
+                    <br />
+                    <div style="width:100%; margin-bottom:0">
+                        <label for="country" style="margin-bottom: 0;">Country</label>
+                        <input class="inputBox" style="width:100%" name="country" type="text" id="country"
+                            pattern="[a-zA-Z ]{1,}"
+                            placeholder="Canada"
+                            required />
+                    </div>
+                    <br />
+                    <div style="float: left; width: 45%;margin-bottom: 0;">
+                        <label for="city" style="margin-bottom: 0;">City</label>
+                        <input class="inputBox" style="width:100%" name="city" type="text" id="city"
+                            pattern="[a-zA-Z ]{1,}"
+                               placeholder="Winnipeg"
+                               required />
+                        <br />
+                        <br />
+                    </div>
+                    <div style="float: left; width: 20%; margin-bottom: 0; padding-left: 2%">
+                        <label for="province" style="margin-bottom: 0;">State</label>
+                        <input class="inputBox" style="width:100%" name="province" type="text" id="province"
+                            pattern="[a-zA-Z ]{1,}"
+                               placeholder="MB"
+                               required />
+                        <br />
+                        <br />
                     </div>
                     <div style="float: left; width: 35%; margin-bottom: 0; padding-left: 2% ">
-                        <h4 style="margin-bottom: 0;">Postal Code</h4>
-                        <input style="width:100%" type="text" id="postal_code" />
+                        <label for="postal_code" style="margin-bottom: 0;">Postal Code</label>
+                        <input class="inputBox" style="width:100%" name="postal_code" type="text" id="postal_code"
+                               placeholder="R4G0G9"
+                               pattern="[a-zA-Z][0-9][a-zA-Z][\- ]{0,1}[0-9][a-zA-Z][0-9]"
+                               required />
+                        <br />
+                        <br />
                     </div>
-                </div>
-                <div style="width:60%; margin-bottom:0">
-                    <h4 style="margin-bottom: 0;">Country</h4>
-                    <input style="width:100%" type="text" id="country" />
-                </div>
-                <hr />
-                <h3>Payment</h3>
+                    <hr />
+                    <h3>Payment</h3>
 
-                <div style="width:80%; margin-bottom:0">
-                    <h4 style="margin-bottom: 0;">Card Number</h4>
-                    <input style="width:100%" type="number" id="credit_card" />
-                    <h4 style="margin-bottom: 0;">CVV</h4>
-                    <input style="width:100%" type="number" id="cvv" />
-                    <h4 style="margin-bottom: 0;">Expiry Date</h4>
-                    <input style="width:100%" type="text" id="expiry" />
-                </div>
-                <br />
+                    <label for="nameoncard">Name on Card</label>
+                    <input class="inputBox" name="nameoncard" style="width:100%" type="text" id="nameoncard"
+                           placeholder="John H Doe"
+                           pattern="[a-zA-Z ]{1,}"
+                           required />
+                    <br />
+                    <br />
+                    <div style="float: left; width: 45%; margin-bottom: 0;">
+                        <label for="credit_card" style="margin-bottom: 0;">Card Number</label>
+                        <input class="inputBox" style="width:100%" name="card_number" type="text" id="credit_card"
+                               placeholder="4111 1111 1111 1111"
+                               pattern="[0-9]{4}[ \-]{0,1}[0-9]{4}[ \-]{0,1}[0-9]{4}[ \-]{0,1}[0-9]{4}"
+                               required />
+                        <br />
+                        <br />
+                    </div>
+                    <div style="float: left; width: 20%; margin-bottom: 0; margin-left: 2%">
+                        <label for="cvv" style="margin-bottom: 0;">CVV</label>
+                        <input class="inputBox" style="width:100%" name="cvv" type="text" id="cvv"
+                               placeholder="123"
+                               pattern="[0-9]{3}"
+                               required />
+                        <br />
+                        <br />
+                    </div>
+                    <div style="float: left; width: 30%; margin-bottom: 0; margin-left:2%">
+                        <label for="expiry" style="margin-bottom: 0;">Expiry Date</label>
+                        <input class="inputBox" style="width:100%" name="expiry" type="text" id="expiry"
+                               placeholder="MM/DD"
+                               pattern="[0-9]{1,2}[ ]{0,1}[\/]{1}[ ]{0,1}[0-9]{1,2}"
+                               required />
+                        <br />
+                        <br />
+                    </div>
+                    <br />
 
-                <div style="overflow:hidden">
                     <div style="float: left; width: 45%;margin-bottom: 0;">
                         <h3 style="margin-bottom: 0;">Total</h3>
                     </div>
                     <div style="float: right; width: 45%; margin-bottom: 0; text-align: right; ">
                         <h3 style="margin-bottom: 20px;">$<var class="variable" id="total2"></var></h3>
                     </div>
-                </div>
-                <button style="color: white; font-size: 30px; padding-top: 10px; padding-bottom: 10px; margin-left: 10%; border-radius: 4px; background-color: #899fe8; border-color: transparent; width: 80%; ">Pay and book now</button>
+
+                    <button type="submit"  style="color: white; font-size: 30px; padding-top: 10px; padding-bottom: 10px; margin-left: 10%; border-radius: 4px; background-color: #899fe8; border-color: transparent; width: 80%; ">Pay and book now</button>
+                </form>
+                
             </div>
     </div>
 </div>

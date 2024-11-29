@@ -42,9 +42,9 @@
 
                 <!--LOCATION-->
                 <li>
-                    <label for="locations">Choose a location:</label>
+                    <label for="locations">Location</label>
                     <select name="locations" id="locations" required>
-                        <option value="">Not Selected</option>
+                        <option value="">Choose a Location</option>
                         <option value="wpgW">Winnipeg West</option>
                         <option value="wpgE">Winnipeg East</option>
                         <option value="wpgN">Winnipeg North</option>
@@ -54,11 +54,13 @@
 
                 <!--PICKUP DATE-->
                 <li>
+                    <label for="start-date">Pickup Date</label>
                     <input onclick="setMaxDate()" id="start_date" type="datetime-local" name="pickupdate" min="2024-11-29" max="2025-11-29" placeholder="Choose a pickup date" required>
                 </li>
 
                 <!--RETURN DATE-->
                 <li>
+                    <label for="end_date">Return Date</label>
                     <input onclick="setMinDate()" id="end_date" type="datetime-local" name="returndate" min="2024-11-29" max="2025-11-29" placeholder="Choose a return date" required>
                 </li>
             </ul>

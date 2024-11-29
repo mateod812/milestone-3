@@ -25,6 +25,12 @@ function updatePrices() {
     document.getElementById("total2").textContent = total * dif
 }
 
+function payNowButton(event) {
+    event.preventDefault();
+    cart.clear();
+    window.location.replace("./thankyou.html");
+}
+
 function setCheckOutSummary() {
     if (cart.getVehicleID() >= 0) {
         vehicle = carList.fromId(cart.getVehicleID());

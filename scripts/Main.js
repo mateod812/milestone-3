@@ -39,6 +39,7 @@ function loadHomePage() {
 }
 
 function goToCheckout() {
+    cart.save();
     if (/*cart.getAddress() &&*/ cart.getStartDate() && cart.getEndDate() && cart.getVehicleID() >= 0) {
         window.location.replace("./checkout.html");
     }
@@ -59,6 +60,8 @@ function loadCheckOut() {
     if (cart.getVehicleID() < 0) {
         window.location.replace("./index.html");
     }
+    var form = document.getElementById("payment_form");
+    form.addEventListener('submit', payNowButton);
     setCheckOutSummary()
 }
 

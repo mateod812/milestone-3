@@ -17,9 +17,10 @@ body {
 .locationdatetime_form {
   padding: 5vh 5vw;
   text-align: center;
-  background: #d66d27;
+  background: #f1f1f1;
   color: white;
   min-height: 60vh;
+  padding-top: 5%;
 }
 
 /* Increase the font size of the heading */
@@ -28,9 +29,11 @@ body {
 }
 
 .datetime-selectors {
-  background-color: red;
+  background-color: rgb(255, 255, 255);
   min-width: 75vw;
-  height: 75px;
+  height: 100px;
+  box-shadow: 0px 20px 5px 5px rgba(0, 0, 0, 0.253);
+  margin-bottom: 100px;
 }
 
 .datetime-selectors_list {
@@ -42,19 +45,43 @@ body {
   justify-content: space-around;
   list-style: none;
   padding-left: 0;  
-  
 }
 
 .datetime-selectors_list li{
   display: block;
-  background-color: rgb(127, 155, 155);
+  background-color: #333;
   min-width: 300px;
   width: 33.333%;
-  border: 1px solid black;
+}
+
+#locations {
+  height:100%;
+  width:100%;
+  border-radius: 0;
+  background-color: white;
+
+  text-align: center;
+  font-size: 1.5rem;
+  color: #33333388;
 }
 
 .submit-button {
-  background-color: antiquewhite;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: #e95555;
+  min-width: 250px;
+  min-height: 75px;
+  max-width: 250px;
+  max-height: 75px;
+  color: white;
+  border-style: none;
+  border-radius: 8px;
+  box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.253);
+}
+
+.submit-button:hover {
+  transition: 0.4s;
+  transform: scale(1.1);
 }
 
 .form-control.input {
@@ -63,6 +90,7 @@ body {
   height: 100%;
   font-size: 1.5rem;
   text-align: center;
+  color: #333;
 }
 
 /* Column container */
@@ -88,9 +116,8 @@ body {
 @media screen and (max-width: 1000px) {
 
   .datetime-selectors {
-    background-color: red;
     min-width: 75vw;
-    height: 150px;
+    height: 201px;
   }
 
   .datetime-selectors_list {
@@ -101,7 +128,7 @@ body {
   .datetime-selectors_list li{
     height:50px;
     width: 100%;
-    background-color: aqua;
+    background-color: #333;
   }
 
   .locationdatetime_form {
