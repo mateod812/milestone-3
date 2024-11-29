@@ -44,25 +44,6 @@ function loadVehicles() {
     carList.addMidSUV(new Vehicle(rogueArray));
     carList.addMidSUV(new Vehicle(foresterArray));
 
-    /*
-    //example
-
-    carList.addMidSUV(new Vehicle([
-        "2024",
-        "Honda",
-        "CR-V",
-        "5",
-        "4",
-        "118",
-        "yes",
-        "yes",
-        "yes",
-        "yes",
-        "suvImages/2024_Honda_CRV.jpg",
-        "mid_size_SUV"
-    ]));
-    */
-
 
     carList.addFullSUV(new Vehicle(expeditionArray));
     carList.addFullSUV(new Vehicle(tahoeArray));

@@ -2,7 +2,7 @@ let summaryList = [];
 
 
 function add_Car_Summary(carToAdd) {
-    console.log(carToAdd);
+    console.log(carToAdd + "hrrrlo");
     if (!summaryList.includes(carToAdd)) {
         if (carToAdd instanceof Vehicle) {
             remove_other_cars();
@@ -56,9 +56,10 @@ function create_summary_list() {
 
     //vehicle stuff
     let vid = cart.getVehicleID();
-    if (vid > 0) {
+    if (vid >= 0) {
         const sumItem = document.createElement("h4");
         let element = carList.fromId(vid);
+        console.log(element + "bruh");
         sumItem.textContent = `${element.year} ${element.make} ${element.model} ---------- $${element.price}/day`;
         vehicleDiv.appendChild(sumItem);
         totalperDay += parseInt(element.price);
