@@ -367,6 +367,7 @@ ul {
     width: 100%;
     border-style: hidden hidden solid hidden;
     border-color: #888888;
+    overflow-y: hidden;
 }
 
 #summary_vehicle_total {
