@@ -42,7 +42,6 @@ function selectOption(element, questionKey, value) {
     element.classList.add('selected');
     surveyData[questionKey] = value;
 
-    console.log(surveyData);
 }
 
 function toggleOption(element, questionKey, value) {
@@ -58,12 +57,10 @@ function toggleOption(element, questionKey, value) {
         surveyData[questionKey] = surveyData[questionKey].filter(item => item !== value);
     }
 
-    console.log(surveyData);
 }
 
 function saveInput(questionKey, value) {
     surveyData[questionKey] = value;
-    console.log(surveyData);
 }
 
 function skipSurvey() {
@@ -71,8 +68,8 @@ function skipSurvey() {
 }
 
 function submitSurvey() {
-    console.log("Survey completed:", surveyData);
     window.location.href = "car-options.html";
+    sessionStorage.setItem("surveyResult", JSON.stringify(surveyData));
 }
 
 updateSurveyHeight();

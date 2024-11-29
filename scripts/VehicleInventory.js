@@ -38,7 +38,7 @@ class VehicleInventory {
             index++
         ) {
             const element = this.vehicleList[VehicleTypes.SEDAN][index];
-            console.log(element);
+
         }
     }
 
@@ -165,7 +165,7 @@ class VehicleInventory {
             for (let j = 0; j < this.vehicleList[i].length; j++) {
                 const car = this.vehicleList[i][j];
                 if (car.ID == ID) {
-                    console.log(`${car.year} ${car.make} ${car.model} is now rented`);
+
                    // add_Car_Summary(car);
                     car.isRented = true;
                     cart.setVehicle(ID);
@@ -187,25 +187,25 @@ class VehicleInventory {
 
     filterTrucks() {
         this.renderedCarList = this.vehicleList[VehicleTypes.TRUCK];
-        console.log(this.renderedCarList);
+
         this.renderVehicles();
     }
 
     filterSedans() {
         this.renderedCarList = this.vehicleList[VehicleTypes.SEDAN];
-        console.log(this.renderedCarList);
+
         this.renderVehicles();
     }
 
     filterMidSUV() {
         this.renderedCarList = this.vehicleList[VehicleTypes.MID_SIZE_SUV];
-        console.log(this.renderedCarList);
+
         this.renderVehicles();
     }
 
     filterFullSUV() {
         this.renderedCarList = this.vehicleList[VehicleTypes.FULL_SIZE_SUV];
-        console.log(this.renderedCarList);
+
         this.renderVehicles();
     }
 
@@ -214,11 +214,12 @@ class VehicleInventory {
     filterMinSeats(givenSeats) {
         const deepCopy = structuredClone(this.renderedCarList);
         this.renderedCarList = this.renderedCarList.filter(car => car.numSeats >= givenSeats);
-        console.log(givenSeats);
+
         this.renderVehicles();
         this.renderedCarList = deepCopy;
     } 
     applyFilters(filterState) {
+        console.log("bruh")
         let filteredVehicles = [];
         for (let type of this.vehicleList) {
             filteredVehicles = filteredVehicles.concat(type);
@@ -226,20 +227,13 @@ class VehicleInventory {
 
         if (filterState.vehicleType) {
             filteredVehicles = filteredVehicles.filter(vehicle => vehicle.vehicleType === filterState.vehicleType);
-            console.log(filterState.vehicleType);
+
         }
 
         if (filterState.minSeats) {
             filteredVehicles = filteredVehicles.filter(vehicle => vehicle.numSeats >= filterState.minSeats);
         }
 
-        if (filterState.price === "low_to_high") {
-            filteredVehicles.sort((a,b) => a.price - b.price);
-        }
-        else if (filterState.price === "high_to_low") {
-            filteredVehicles.sort((a,b) => b.price - a.price);
-            console.log(filteredVehicles[0]);
-        }
 
         if (filterState.budget) {
             filteredVehicles = filteredVehicles.filter(vehicle => vehicle.price <= filterState.budget);
@@ -247,6 +241,13 @@ class VehicleInventory {
 
         this.renderedCarList = filteredVehicles;
         this.renderVehicles();
+        if (filteredVehicles.length === 0) {
+            const container = document.getElementById("vehicle_container");
+            const no_vehicles = document.createElement("h1");
+            no_vehicles.id = "no_vehicles";
+            no_vehicles.textContent = `There are no vehicles that meet these filters.`;
+            container.appendChild(no_vehicles);
+        }
         attach_book_now_button();
     }
 }

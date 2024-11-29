@@ -1,5 +1,8 @@
 #main {
     background-color: #DAD4B5;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 #filter_scroll_summary {
@@ -93,7 +96,8 @@ body {
     width: 60%;
     max-width: 60%;
     height: 650px;
-    padding: 20px;
+    padding: 10px;
+    text-align: center;
 
     overflow: auto;
     scrollbar-width: none;
@@ -138,8 +142,8 @@ body {
 }
 
 #vehicle_item {
-    width: 525px;
-    height: 525px;
+    min-width: 525px;
+    height: 500px;
     display: inline-block;
     margin: 15px;
     position: relative;
@@ -426,6 +430,28 @@ ul {
 }
 
 .applyfiltersbtn:hover {
+    background-color: #4CAF50;
+}
+
+.resetfiltersbtn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    position: absolute;
+
+    bottom: 100px;
+
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.resetfiltersbtn:hover {
     background-color: #4CAF50;
 }
 

@@ -8,6 +8,7 @@
     <!--Flatpickr Dependencies for Date/Time Selectors-->
     <link rel="stylesheet" href="./styles/flatpickr.min.css">
     <link rel="stylesheet" href="./styles/flatpickr_theme.css">
+    <link rel="stylesheet" href="./surveystyles.css">
 
     <script src="scripts/Sedan.js"></script>
     <script src="scripts/Truck.js"></script>
@@ -66,10 +67,116 @@
             </ul>
 
         </form>
-        <button class="submit-button" onclick="findVehicleButtion()">Find your perfect vehicle</button>
-        
+        <button class="submit-button" onclick="saveDates(),openSurvey()">Find your perfect vehicle</button>
     </div>
     
+    <div id="surveyModal" class="modal">
+        <div class="survey-container" id="surveyContainer">
+            <span class="close" onclick="closeSurvey()">&times;</span>
+            <button class="skip-button" onclick="window.location.href='index.html'">Skip Survey</button>
+    
+            <div class="survey-step active" id="step-intro">
+                <div class="intro-content">
+                    <h1>Discover Your Ideal Rental Car</h1>
+                    <p>Embark on a journey to find the perfect vehicle tailored to your needs. Let's get started!</p>
+                </div>
+                <button class="start-button" onclick="nextStep()">Start Survey</button>
+            </div>
+
+
+            <div class="survey-step" id="step-1">
+                <div class="question">
+                    <h2>1. What type of car are you looking for?</h2>
+                </div>
+                <div class="options">
+                    <!-- Option elements with surveyimages -->
+                    <div class="option" onclick="selectOption(this, 'carType', 'Sedan')">
+                        <img src="surveyimages/sedan.png" alt="Sedan">
+                        <span>Sedan</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'carType', 'mid_SUV')">
+                        <img src="surveyimages/suv.png" alt="SUV">
+                        <span>Mid sized SUV</span>
+                    </div>
+
+                    <div class="option" onclick="selectOption(this, 'carType', 'full_SUV')">
+                        <img src="surveyimages/suv.png" alt="SUV">
+                        <span>Full sized SUV</span>
+                    </div>
+
+                    <div class="option" onclick="selectOption(this, 'carType', 'Truck')">
+                        <img src="surveyimages/truck.png" alt="Truck">
+                        <span>Truck/Van</span>
+                    </div>
+                    
+                </div>
+                <div class="navigation">
+                    <button class="back-button" onclick="prevStep()">Back</button>
+                    <button class="next-button" onclick="nextStep()">Next</button>
+                </div>
+            </div>
+
+            <div class="survey-step" id="step-2">
+                <div class="question">
+                    <h2>2. What is your budget per day for renting a car?</h2>
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this, 'budget', 'Less than $50')">
+                        <span>Less than $50</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'budget', '$50 - $100')">
+                        <span>Less than $100</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'budget', '$101 - $150')">
+                        <span>Less than $150</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'budget', '$151 - $200')">
+                        <span>Less than $200</span>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="back-button" onclick="prevStep()">Back</button>
+                    <button class="next-button" onclick="nextStep()">Next</button>
+                </div>
+            </div>
+
+            <div class="survey-step" id="step-3">
+                <div class="question">
+                    <h2>3. How many passengers will be traveling?</h2>
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this, 'passengers', '1-2')">
+                        <span>1-2</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'passengers', '3-5')">
+                        <span>3-5</span>
+                    </div>
+                    <div class="option" onclick="selectOption(this, 'passengers', '6-8')">
+                        <span>6-8</span>
+                    </div>
+
+                </div>
+                <div class="navigation">
+                    <button class="back-button" onclick="prevStep()">Back</button>
+                    <button class="next-button" onclick="nextStep()">Next</button>
+                </div>
+            </div>
+
+            <div class="survey-step" id="step-complete">
+                <h1 style="color: #8b0000;">Thank You!</h1>
+                <p>Your preferences have been recorded.</p>
+                <button class="start-button" onclick="submitSurvey(),window.location.href='index.html'">View Car Options</button>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+    
+
+
     <div class="container">
         <div class="testimonials">
             <h1>See what customers are saying</h1>
@@ -135,6 +242,8 @@
 
     <!--Flatpickr Script Dependencies-->
     <script src="./scripts/flatpickr.js"></script>
+    <script src="surveyscript.js"></script>
+
 </body>
 
 </html>

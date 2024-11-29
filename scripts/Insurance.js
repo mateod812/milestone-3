@@ -40,7 +40,7 @@ const taw = new InsurancePackage(
 
 function onPress(id) {
     //was the button previously pressed
-    console.log(id + " clicked")
+
     let pressed = cart.hasInsurance(id);
     let pk = insurancePackages[id];
     let button = document.getElementById("insurance_button_" + id);
@@ -56,7 +56,7 @@ function onPress(id) {
         button.style.backgroundColor = "#4CAF50";
         button.style.color = "White"; // Change text color to black
     }
-    console.log(cart.insurance);
+
     create_summary_list();
 }
 
@@ -64,7 +64,7 @@ function makePackageLists() {
     let iOptions = document.getElementById("insurance_options")
     for (const pk of insurancePackages) {
         const id = pk.id;
-        console.log(pk.name + " " + pk.id)
+
         //was the button previously pressed
         pressed = cart.hasInsurance(id);
 

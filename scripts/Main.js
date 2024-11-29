@@ -135,6 +135,19 @@ function loadVehicleInv() {
     makeAddonLists();
     create_summary_list();
 
+
+
+    const filters = [
+        { id: 'all_vehicles', value: 'all', label: 'All Vehicles' },
+        { id: 'sedan', value: 'sedan', label: 'Sedans' },
+        { id: 'truck', value: 'truck', label: 'Trucks' },
+        { id: 'mid_size_SUV', value: 'mid_size_SUV', label: 'Mid Sized SUV' },
+        { id: 'large_SUV', value: 'large_SUV', label: 'Full Sized SUV' }
+    ];
+    createVehicleTypeFilters('vehicle_type_filters', filters, 'all');
+    filter_event_listener();
+    carList.applyFilters(filterState);
+
 }
 
 function saveDates() {
@@ -142,6 +155,7 @@ function saveDates() {
     cart.setStartDate(start.value)
     const end = document.getElementById("end_date");
     cart.setEndDate(end.value)
+    console.log("saveDates()");
 }
 
 function setMinDate() {
@@ -159,3 +173,21 @@ function loadCart() {
         cart.load();
 }
 
+function openSurvey() {
+    document.getElementById('surveyModal').style.display = 'block';
+}
+
+function closeSurvey() {
+    document.getElementById('surveyModal').style.display = 'none';
+}
+
+
+
+
+// 
+// window.onclick = function (event) {
+//     const modal = document.getElementById('surveyModal');
+//     if (event.target === modal) {
+//         closeSurvey();
+//     }
+// }
