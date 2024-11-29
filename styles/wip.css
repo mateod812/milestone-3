@@ -1,3 +1,8 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
 h1 {
     font-size: 40px;
     color: #333;
@@ -6,6 +11,15 @@ h1 {
 .construction-symbol {
     width: 11rem;
     height: 8rem;
+}
+
+.locationdatetime_form {
+    padding: 5vh 5vw;
+    text-align: center;
+    background: #f1f1f1;
+    color: white;
+    min-height: 60vh;
+    padding-top: 5%;
 }
 
 .home-button {
