@@ -7,14 +7,25 @@ function setLastName() {
 function buttonAddonRemovePress(id) {
     document.getElementById("aoption_" + id).remove();
     cart.removeAddon(id);
+    updatePrices();
 }
 function buttonInsuranceRemovePress(id) {
     document.getElementById("ioption_" + id).remove();
     cart.removeInsurance(id);
+    updatePrices();
+}
+
+function updatePrices() {
+    let total = cart.getDailyCost();
+    let dif = cart.getDays();
+    document.getElementById("subtotal").textContent = total * dif
+    document.getElementById("daily_sub").textContent = total
+    document.getElementById("days").textContent = dif
+    document.getElementById("total").textContent = total * dif
+    document.getElementById("total2").textContent = total * dif
 }
 
 function setCheckOutSummary() {
-    let total = 0;
     if (cart.getVehicleID() >= 0) {
         vehicle = carList.fromId(cart.getVehicleID());
         document.getElementById("vname").textContent = vehicle.getMake() + "  " + vehicle.getModel();
@@ -24,12 +35,10 @@ function setCheckOutSummary() {
         document.getElementById("vaddress").textContent = cart.getAddress();
         document.getElementById("vsdate").textContent = cart.getStartDate();
         document.getElementById("vedate").textContent = cart.getEndDate();
-        total = parseFloat(vehicle.getPrice());
         let Itemplate = document.getElementById("ioption");
         for (const id of cart.insurance) {
 
             let pk = insurancePackages[id];
-            total += pk.cost
             document.getElementById("ioption_name").textContent = pk.name;
             document.getElementById("ioption_desc").textContent = pk.desc;
             document.getElementById("ioption_cost").textContent = pk.cost;
@@ -47,7 +56,6 @@ function setCheckOutSummary() {
         for (const id of cart.addons) {
 
             let pk = addonPackages[id];
-            total += pk.cost
             document.getElementById("aoption_name").textContent = pk.name;
             document.getElementById("aoption_desc").textContent = pk.desc;
             document.getElementById("aoption_cost").textContent = pk.cost;
@@ -68,13 +76,6 @@ function setCheckOutSummary() {
     if (sessionStorage.getItem("last")) {
         document.getElementById("last_name").textContent = sessionStorage.getItem("first");
     }
-    let startdate = new Date(cart.getStartDate());
-    let enddate = new Date(cart.getEndDate());
-    let dif = Math.round((enddate.getTime() - startdate.getTime()) / (1000 * 3600 * 24));
-    document.getElementById("subtotal").textContent = total * dif
-    document.getElementById("daily_sub").textContent = total
-    document.getElementById("days").textContent = dif
-    document.getElementById("total").textContent = total * dif
-    document.getElementById("total2").textContent = total * dif
+    updatePrices();
 
 }
