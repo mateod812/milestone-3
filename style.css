@@ -319,7 +319,6 @@ ul {
     height: 650px;
     padding: 20px;
     margin-right: 20px;
-
     border-radius: 25px;
     border-width: 2px;
     border-style: solid;
@@ -362,9 +361,6 @@ ul {
     border-width: 2px;
     border-style: hidden hidden solid hidden;
 }
-
-
-
 
 #summary_vehicle_current {
     margin-top: 1vh;
@@ -436,7 +432,7 @@ ul {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 86%;
+    width: 88%;
     padding-top: 0.5rem;
     min-height: 3rem;
     max-height: 3rem;
@@ -460,7 +456,7 @@ ul {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 86%;
+    width: 88%;
     min-height: 2rem;
     max-height: 3rem;
     margin-top: 10px;
