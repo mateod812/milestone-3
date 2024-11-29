@@ -106,6 +106,7 @@ function filter_event_listener() {
     // "Apply Filters" button functionality
     document.getElementById('applyFiltersButton').addEventListener('click', () => {
         carList.applyFilters(filterState);
+        console.log("dodes this fucking run")
     });
 
     document.getElementById('resetFiltersButton').addEventListener('click', () => {
@@ -113,17 +114,18 @@ function filter_event_listener() {
         filterState.vehicleType = null;
         filterState.minSeats = 2;
         filterState.budget = 200;
+        createVehicleTypeFilters(filters);
         carList.applyFilters(filterState);
-        
+        filter_event_listener();
     })
 
 }
 
 
 
-function createVehicleTypeFilters(containerId, filters) {
+function createVehicleTypeFilters(filters) {
     preApplyfilters();
-    const container = document.getElementById(containerId);
+    const container = document.getElementById("vehicle_type_filters");
     
     container.innerHTML = ''; 
     
@@ -139,6 +141,10 @@ function createVehicleTypeFilters(containerId, filters) {
         
         if (filterState.vehicleType !== null) {
             if (filterState.vehicleType  == filter.id) {
+                input.checked = true;
+            }
+        } else {
+            if (filter.id == "all_vehicles") {
                 input.checked = true;
             }
         }
