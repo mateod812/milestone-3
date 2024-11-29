@@ -20,6 +20,7 @@ function seatsDropdown() {
 document.querySelectorAll('#vehicle_type_filters input[type="radio"]').forEach(type => {
     type.addEventListener('change', event => {
         filterState.vehicleType = event.target.id === "all_vehicles" ? null : event.target.id;
+        
     });
 });
 
@@ -43,4 +44,5 @@ slider.addEventListener('input', event => {
 // "Apply Filters" button functionality
 document.getElementById('applyFiltersButton').addEventListener('click', () => {
     carList.applyFilters(filterState);
+    console.log(filterState);
 });

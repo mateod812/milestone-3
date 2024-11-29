@@ -40,3 +40,18 @@ jettaArray = [
     "sedanImages/2024_Volkswagon_Jetta.jpg",
     "sedan"
 ];
+
+altimaArray = [
+    "2024",
+    "Nissan",
+    "Altima",
+    "5",
+    "5",
+    "100",
+    "yes",
+    "yes",
+    "yes",
+    "no",
+    "sedanImages/2024_Nissan_Altima.jpg",
+    "sedan"
+];
