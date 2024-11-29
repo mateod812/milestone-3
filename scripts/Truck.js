@@ -9,7 +9,7 @@ F150Array = [
     "yes",
     "yes",
     "yes",
-    "truckImages/2024_Dodge_Ram1500.jpg",
+    "truckImages/2024_Ford_F150.jpg",
     "truck"
 ];
 
