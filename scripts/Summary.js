@@ -58,7 +58,9 @@ function create_summary_list() {
     let vid = cart.getVehicleID();
     if (vid >= 0) {
         const sumItem = document.createElement("h4");
+        
         let element = carList.fromId(vid);
+        totalperDay += Number(element.price);
         sumItem.style.width = "80%";
         sumItem.style.float = "left";
         sumItem.textContent = `${element.year} ${element.make} ${element.model}`;
