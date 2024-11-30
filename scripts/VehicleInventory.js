@@ -66,6 +66,10 @@ class VehicleInventory {
             button.className = "book_button";
             button.textContent = "Book Now";
             button.style.color = "white";
+            if (cart.getVehicleID() == car.ID) {
+                button.textContent = "Selected";
+                button.style.backgroundColor = "#333";
+            }
 
             button.setAttribute("data-id", car.ID);
 
