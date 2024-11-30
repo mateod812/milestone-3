@@ -204,8 +204,9 @@ body {
 
 #vehicle_name {
     position: absolute;
-    padding-left: 110px;
-    margin-top: -20px;
+    padding-left: 10px;
+    margin-top: -50px;
+    width: 60%;
 }
 
 #seats_img {
@@ -213,15 +214,15 @@ body {
     max-width:50px;
     max-height:50px;
     margin-left: 375px;
-    margin-top: -250px;
+    margin-top: -215px;
 }
 
 #num_seats {
     display: block;
     max-width:50px;
     max-height:50px;
-    margin-left: 450px;
-    margin-top: -45px;
+    margin-left: 425px;
+    margin-top: -50px;
     font-size: 50px;
 }
 
@@ -236,43 +237,56 @@ body {
     display: block;
     max-width:50px;
     max-height:50px;
-    margin-left: 450px;
-    margin-top: -45px;
+    margin-left: 425px;
+    margin-top: -50px;
     font-size: 50px;
 }
 
 #price_cost {
     display: block;
-    max-width:50px;
+    max-width:200px;
     max-height:50px;
-    margin-left: 365px;
+    margin-left: 315px;
+    margin-right: 15px;
     margin-top: 10px;
     font-size: 40px;
+    position:absolute;
+    top: 69%;
 }
 
 #additional_features {
+    color: #333;
     margin-left: 35px;
-    margin-top: 35px;
+    margin-top: 75px;
+    text-align: left;
 }
 
 #bluetooth {
+    color: #888888;
     margin-left: 35px;
     margin-top: -20px;
+    text-align: left;
 }
 
 #ac {
+    color: #888888;
     margin-left: 35px;
     margin-top: -15px;
+    text-align: left;
 }
 
 #cruise {
+    color: #888888;
     margin-left: 35px;
     margin-top: -15px;
+    text-align: left;
 }
 
 #carplay {
+    color: #888888;
     margin-left: 35px;
     margin-top: -15px;
+    text-align: left;
 }
 
 ul {
