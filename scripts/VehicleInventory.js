@@ -73,6 +73,7 @@ class VehicleInventory {
 
             button.setAttribute("data-id", car.ID);
 
+
             const seats = document.createElement("img");
             seats.id = "seats_img";
             seats.src = "companyImages/car-seat.png";

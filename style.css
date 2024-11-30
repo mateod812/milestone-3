@@ -150,11 +150,16 @@ body {
     padding-left: 10px;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 
-    border-radius: 25px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #800000;
     transition: 0.25s;
+
+    
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+#vehicle_date {
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
 }
 
 #vehicle_item:hover {
@@ -171,10 +176,7 @@ body {
     margin: 25px;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 
-    border-radius: 25px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #800000;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
 }
 
 .book_button {
@@ -193,9 +195,7 @@ body {
     left: 10px;
     right: 10px;
 
-    border-radius: 25px;
-    border-width: 2px;
-    border-style: solid;
+    border-radius: 13px;
     border-color: #800000;
 }
 
