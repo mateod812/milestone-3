@@ -188,7 +188,8 @@ body {
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 
     position: absolute;
-    bottom: 10px;
+    top: 80%;
+    margin-bottom:10px;
     right: 10px;
 
     width:50%;
