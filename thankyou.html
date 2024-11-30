@@ -63,27 +63,39 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Write a Review</h2>
-            <form id="reviewForm">
-            <label for="reviewName">Name:</label>
-            <input type="text" id="reviewName" name="reviewName" placeholder="Your Name" required>
-            
-            <label for="reviewEmail">Email:</label>
-            <input type="email" id="reviewEmail" name="reviewEmail" placeholder="Your Email" required>
-            
-            <label for="reviewMessage">Review:</label>
-            <textarea id="reviewMessage" name="reviewMessage" placeholder="Write your review here..." required></textarea>
-            
-            <label for="reviewRating">Rating:</label>
-            <select id="reviewRating" name="reviewRating" required>
-                <option value="" disabled selected>Select a rating</option>
-                <option value="5">5 - Excellent</option>
-                <option value="4">4 - Good</option>
-                <option value="3">3 - Average</option>
-                <option value="2">2 - Poor</option>
-                <option value="1">1 - Terrible</option>
-            </select>
-            
-            <button type="submit">Submit Review</button>
+                <form id="reviewForm">
+
+                <div id="reviewform-name-div">
+                    <label for="reviewName">Name:</label>
+                    <input type="text" id="reviewName" name="reviewName" placeholder="Your Name" required>
+                </div>
+                
+                <div id="reviewform-email-div">
+                    <label for="reviewEmail">Email:</label>
+                    <input type="email" id="reviewEmail" name="reviewEmail" placeholder="Your Email" required>
+                </div>
+                
+                <div id="reviewform-msg-div">
+                    <label for="reviewMessage">Review:</label>
+                    <textarea id="reviewMessage" name="reviewMessage" placeholder="Write your review here..." required></textarea>
+                </div>
+                
+                <div id="reviewform-rating-div">
+                    <label for="reviewRating">Rating:</label>
+                    <select id="reviewRating" name="reviewRating" required>
+                        <option value="" disabled selected>Select a rating</option>
+                        <option value="5">5 - Excellent</option>
+                        <option value="4">4 - Good</option>
+                        <option value="3">3 - Average</option>
+                        <option value="2">2 - Poor</option>
+                        <option value="1">1 - Terrible</option>
+                    </select>
+                </div>
+                <div id="review-button-container">
+                    <button id="review-submit-button" type="submit">Submit Review</button>
+                </div>
+                
+                
             </form>
         </div>
     </div>
