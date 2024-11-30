@@ -59,11 +59,14 @@ function loadHomePage() {
     if (cart.getEndDate()) {
         endPickr.value = cart.getEndDate();
     }
+    if (cart.getAddress()) {
+        document.getElementById("address_picker").value = cart.getAddress();
+    }
 }
 
 function goToCheckout() {
     cart.save();
-    if (/*cart.getAddress() &&*/ cart.getStartDate() && cart.getEndDate() && cart.getVehicleID() >= 0) {
+    if (cart.getAddress() && cart.getStartDate() && cart.getEndDate() && cart.getVehicleID() >= 0) {
         window.location.replace("./checkout.html");
     }
 }
@@ -72,7 +75,7 @@ function loadCheckOut() {
     loadMain();
     loadVehicles()
     if (!cart.getAddress()) {
-        //    window.location.replace("./home.html");
+        window.location.replace("./home.html");
     }
     if (!cart.getStartDate()) {
         window.location.replace("./home.html");
@@ -90,7 +93,7 @@ function loadCheckOut() {
 
 function findVehicleButtion() {
     saveDates();
-    if (/*cart.getAddress() &&*/ cart.getStartDate() && cart.getEndDate()) {
+    if (cart.getAddress() && cart.getStartDate() && cart.getEndDate()) {
         window.location.replace("./index.html");
     }
 }
@@ -131,7 +134,7 @@ function loadVehicleInv() {
     loadVehicles();
 
     if (!cart.getAddress()) {
-        //    window.location.replace("./home.html");
+        window.location.replace("./home.html");
     }
     if (!cart.getStartDate()) {
         window.location.replace("./home.html");
@@ -159,7 +162,8 @@ function saveDates() {
     cart.setStartDate(start.value)
     const end = document.getElementById("end_date");
     cart.setEndDate(end.value)
-    console.log("saveDates()");
+    const address = document.getElementById("address_picker");
+    cart.setAddress(address.value)
 }
 
 function setMinDate() {
