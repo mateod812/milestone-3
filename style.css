@@ -47,14 +47,14 @@ body {
 
 #progress_bar {
     width: 60%;
-    height: 50px;
+    height: 90px;
     padding: 18px;
     margin: auto;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 
+
     background-image: url("companyImages/road.png");
     position: relative;
-
     border-radius: 25px;
     border-width: 2px;
     border-style: solid;
@@ -84,6 +84,7 @@ body {
 #progress_flag {
     max-width:75px;
     max-height:75px;
+
     position: absolute;
 
     right: -60px;
@@ -289,7 +290,7 @@ body {
     text-align: left;
 }
 
-ul {
+.ul1 {
     list-style-type: none;
     padding: 0;
     width: 60%;
@@ -306,12 +307,12 @@ ul {
     border-color: #800000;
   }
   
-  li {
+  .li1 {
     float: left;
     width: 33.333%;
   }
   
-  li a {
+  .li1 a {
     display: block;
     color: white;
     text-align: center;
@@ -320,7 +321,7 @@ ul {
     text-decoration: none;
   }
   
-  li a:hover {
+  .li1 a:hover {
     background-color: #333;
   }
 
