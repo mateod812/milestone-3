@@ -2,6 +2,7 @@
 
 The best possible car rental interface.
 
+To run our high-fidelity vertical prototype, simply open the “home.html” file from our submission folder in Google Chrome.
 
 ### Attributions
 
