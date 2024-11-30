@@ -15,7 +15,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border: solid 2px rgba(0, 0, 0,.3);
             float: left;
-            width: 45%;
+            width: 50%;
             text-align: left;
             padding-right: 2.5%;
             padding-left: 2.5%;
@@ -27,58 +27,65 @@
     </style>
 </head>
 
-    <body style="display: flex; flex-direction: column; min-height: 100vh">
+<body style="display: flex; flex-direction: column; min-height: 100vh">
 
-        <!--stolen from home-->
-        <header>
-            <div class="header-row">
-                <a class="icon icon-header-logo" href="./home.html" target="_self"></a>
-                <a class="support-button" href="./wip.html">Support</a>
-            </div>
-        </header>
-
-        <!--stolen from home-->
-        <div class="navbar">
-            <a href="./home.html">Home</a>
-            <a href="./wip.html">Our Vehicles</a>
-            <a href="./wip.html">About Us</a>
+    <!--stolen from home-->
+    <header>
+        <div class="header-row">
+            <a class="icon icon-header-logo" href="./home.html" target="_self"></a>
+            <a class="support-button" href="./wip.html">Support</a>
         </div>
+    </header>
 
-        <div style="overflow:hidden">
-            <div class="info-bubble" style="margin-left:25%; font: arial; text-align: center;">
-                <h1>Thank you for your purchase.</h1>
-                A reciept will be emailed to you along with details of when and where you can pick up your vehicle.
-                <br />
-                If you experience any issues please contact our customer support.
-            </div>
-        </div>
+    <!--stolen from home-->
+    <div class="navbar">
+        <a href="./home.html">Home</a>
+        <a href="./wip.html">Our Vehicles</a>
+        <a href="./wip.html">About Us</a>
+    </div>
 
-        <div class="review-section">
-            <h1>Have something to Say?</h1>
-            <button id="writeReviewBtn" class="review-button">Write a Review</button>
+    <br />
+    <br />
+    <br />
+    <div style="overflow:hidden">
+        <div class="info-bubble" style="margin-left:25%; font: arial; text-align: center;">
+            <h1>Thank you for your purchase.</h1>
+            A reciept will be emailed to you along with details of when and where you can pick up your vehicle.
+            <br />
+            If you experience any issues please contact our customer support.
+            <br />
+            <br />
         </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="review-section">
+        <h1>Have something to Say?</h1>
+        <button id="writeReviewBtn" class="review-button">Write a Review</button>
+    </div>
 
     <div id="reviewModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Write a Review</h2>
-                <form id="reviewForm">
+            <form id="reviewForm">
 
                 <div id="reviewform-name-div">
                     <label for="reviewName">Name:</label>
                     <input type="text" id="reviewName" name="reviewName" placeholder="Your Name" required>
                 </div>
-                
+
                 <div id="reviewform-email-div">
                     <label for="reviewEmail">Email:</label>
                     <input type="email" id="reviewEmail" name="reviewEmail" placeholder="Your Email" required>
                 </div>
-                
+
                 <div id="reviewform-msg-div">
                     <label for="reviewMessage">Review:</label>
                     <textarea id="reviewMessage" name="reviewMessage" placeholder="Write your review here..." required></textarea>
                 </div>
-                
+
                 <div id="reviewform-rating-div">
                     <label for="reviewRating">Rating:</label>
                     <select id="reviewRating" name="reviewRating" required>
@@ -93,34 +100,34 @@
                 <div id="review-button-container">
                     <button id="review-submit-button" type="submit">Submit Review</button>
                 </div>
-                
-                
+
+
             </form>
         </div>
     </div>
-        
-        <!--stolen from home-->
-        <footer style="margin-top: auto;">
-            <div class="footer-social">
-                <ul class="footer-social_links">
-                    <li>
-                        <a class="icon icon-footer-instagram-circle" href="./wip.html" target="_self" title="Instagram">
-                            Instagram
-                        </a>
-                    </li>
-                    <li>
-                        <a class="icon icon-footer-twitter-circle" href="./wip.html" target="_self" title="Twitter">
-                            Twitter
-                        </a>
-                    </li>
-                    <li>
-                        <a class="icon icon-footer-facebook-circle" href="./wip.html" target="_self" title="Facebook">
-                            Facebook
-                        </a>
-                    </li>
-                </ul>
-        </footer>
-        <script src="./scripts/Review.js"></script>
-    </body>
+
+    <!--stolen from home-->
+    <footer style="margin-top: auto;">
+        <div class="footer-social">
+            <ul class="footer-social_links">
+                <li>
+                    <a class="icon icon-footer-instagram-circle" href="./wip.html" target="_self" title="Instagram">
+                        Instagram
+                    </a>
+                </li>
+                <li>
+                    <a class="icon icon-footer-twitter-circle" href="./wip.html" target="_self" title="Twitter">
+                        Twitter
+                    </a>
+                </li>
+                <li>
+                    <a class="icon icon-footer-facebook-circle" href="./wip.html" target="_self" title="Facebook">
+                        Facebook
+                    </a>
+                </li>
+            </ul>
+    </footer>
+    <script src="./scripts/Review.js"></script>
+</body>
 </html>
 
