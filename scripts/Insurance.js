@@ -103,8 +103,8 @@ function makePackageLists() {
         if (pressed) {
             //should allready be pressed
             button.innerHTML = "Selected";
-            button.style.color = "black"; // Change text color to black
-            button.style.backgroundColor = "white";
+            button.style.color = "White"; // Change text color to black
+            button.style.backgroundColor = "#333";
         }
         
         div.appendChild(button);
