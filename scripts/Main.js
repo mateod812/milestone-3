@@ -15,6 +15,7 @@ CalendarConfig = {
     defaultHour: 9,
     defaultMinute: 0,
     minDate: 'today',
+    maxDate: new Date(new Date().getTime() + 60 * 8.64e+7),
 
     disable: ["2024-12-25", "2025-01-01"],
 }
