@@ -96,26 +96,26 @@ class VehicleInventory {
             const bluetooth = document.createElement("p");
             bluetooth.id = "bluetooth";
             if (car.bluetooth == true) {
-                bluetooth.textContent = `This vehicle has bluetooth capabilities.`;
+                bluetooth.textContent = `Bluetooth`;
             }
 
             const ac = document.createElement("p");
             ac.id = "ac";
             if (car.ac == true) {
-                ac.textContent = `This vehicle has air conditioning.`;
+                ac.textContent = `Air Conditioning`;
             }
 
             const cruise = document.createElement("p");
             cruise.id = "cruise";
             if (car.cruise == true) {
-                cruise.textContent = `This vehicle has cruise control.`;
+                cruise.textContent = `Cruise Control`;
             }
 
             // weird sizing thing where if 1 vehicle has one of these elements and others don't it shifts the vehicle boxes up/down
             const carplay = document.createElement("p");
             carplay.id = "carplay";
             if (car.carplay == true) {
-                carplay.textContent = `This vehicle has Apple Carplay`;
+                carplay.textContent = `Apple Carplay`;
             }
 
             vehicleItem.appendChild(img);
