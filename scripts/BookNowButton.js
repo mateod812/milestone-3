@@ -7,7 +7,7 @@ function attach_book_now_button() {
         const previouslySelected = buttons.find(button => button.dataset.id === selectedButton.dataset.id);
         if (previouslySelected) {
             previouslySelected.textContent = "Selected";
-            previouslySelected.style.backgroundColor = "white";
+            previouslySelected.style.backgroundColor = "#333";
         }
     }
 
