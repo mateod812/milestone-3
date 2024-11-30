@@ -34,7 +34,17 @@ footer {
     color: rgb(255, 255, 255);
   }
   
-  .icon.icon-footer-socials-circle {
-    background-image: url("./icon-set/icon.png");
+  .icon.icon-footer-facebook-circle {
+    background-image: url("./icon-set/facebook.png");
+    background-repeat: no-repeat;
+  }
+
+  .icon.icon-footer-instagram-circle {
+    background-image: url("./icon-set/instagram.png");
+    background-repeat: no-repeat;
+  }
+
+  .icon.icon-footer-twitter-circle {
+    background-image: url("./icon-set/twitterx.png");
     background-repeat: no-repeat;
   }
