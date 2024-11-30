@@ -22,3 +22,7 @@ Credit for seats icon: <a href="https://www.flaticon.com/free-icons/chair" title
 Credit for luggage icon: <a href="https://www.flaticon.com/free-icons/travel" title="travel icons">Travel icons created by Freepik - Flaticon</a>
 
 Credit for money icon: <a href="https://www.flaticon.com/free-icons/coin" title="coin icons">Coin icons created by Gregor Cresnar - Flaticon</a>
+
+Credit for Pikachu: <a href="https://www.wired.com/story/was-the-surprised-pikachu-meme-a-stealth-marketing-campaign/" title="surprised pikachu">Surprised Pikachu Meme - WIRED</a>
+
+Credit for Mark Zuckerberg: <a href="https://www.forbes.com/profile/mark-zuckerberg/" title="mark zuckerberd headshot">Mark Zuckerberg Forbes Profile</a>
