@@ -44,7 +44,7 @@
 
                 <!--LOCATION-->
                 <li>
-                    <label for="locations">Location</label>
+                    <label for="locations" style="text-align: center">Location</label>
                     <select name="locations" class="locations" id="address_picker" 
                     required>
                         <option value="" disabled selected hidden>Choose a Location</option>
@@ -57,13 +57,13 @@
 
                 <!--PICKUP DATE-->
                 <li>
-                    <label for="start-date">Pickup Date</label>
+                    <label for="start-date"style="text-align: center">Pickup Date</label>
                     <input onclick="setMaxDate()" id="start_date" class="start_date" type="datetime-local" name="pickupdate" min="2024-11-29" max="2025-11-29" placeholder="Choose a pickup date" required>
                 </li>
 
                 <!--RETURN DATE-->
                 <li>
-                    <label for="end_date">Return Date</label>
+                    <label for="end_date"style="text-align: center">Return Date</label>
                     <input onclick="setMinDate()" id="end_date" class ="end_date" type="datetime-local" name="returndate" min="2024-11-30" max="2025-11-29" placeholder="Choose a return date" required>
                 </li>
             </ul>
